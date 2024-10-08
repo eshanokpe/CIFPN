@@ -296,19 +296,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="cta-one-bg col-12">
-                <div class="cta-one-inner">
-                    <div class="cta-left">
-                        <h3 class="title animated fadeIn">Let’s discuss about how we can help
-                            make your business better</h3>
-                    </div>
-                    <div class="cta-right">
-                        <a class="rts-btn btn-white" href="#">Lets Work Togather</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>
 <!-- rts services area End -->
@@ -410,77 +398,6 @@
 </div>
 <!-- rts team two area End -->
 
-<!-- rts faq section area -->
-<div class="rts-faq-section rts-section-gap rts-faq-bg bg_image">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="faq-two-inner">
-                    <div class="title-area-faq">
-                        <span class="sub">WHY CHOOSE US</span>
-                        <h2 class="title">We Are Experienced
-                            <span class="sm-title">Business <span>Solution</span></span>
-                        </h2>
-                    </div>
-                    <!-- faq accordion area -->
-                    <div class="faq-accordion-area">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span>01. </span> What should i included my personal details?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Neque partrient nascetur facilisis suscipit ridiculus agna lobortis
-                                        imperdiet vivamus est aliquam euismod nector quam convallis ornare justo
-                                        service lifereu visionary sources unleash online businesss solutions
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span>02. </span> Where i can find my business growth result?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Neque partrient nascetur facilisis suscipit ridiculus agna lobortis
-                                        imperdiet vivamus est aliquam euismod nector quam convallis ornare justo
-                                        service lifereu visionary sources unleash online businesss solutions
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span>03. </span> Did you get any business consultant?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Neque partrient nascetur facilisis suscipit ridiculus agna lobortis
-                                        imperdiet vivamus est aliquam euismod nector quam convallis ornare justo
-                                        service lifereu visionary sources unleash online businesss solutions
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- faq accordion area end -->
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="thumbnail-faq-four">
-                    <img src="assets/images/faq/02.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- rts faq section area End -->
 
 <!-- customers feed back area start -->
 <div class="rts-customer-feedback-area rts-section-gap bg-customer-feedback">
