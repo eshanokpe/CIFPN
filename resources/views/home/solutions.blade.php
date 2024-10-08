@@ -40,7 +40,7 @@
             <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
                 <div class="service-two-inner">
                     <a href="{{ route('solutions.detail', encrypt($service->id)) }}" class="thumbnail">
-                        <img src="{{ asset($service->image) }}" alt="Business_image" style="object-fit: contain; width: 100%; height: 300px;">
+                        <img src="{{ asset($service->image) }}" alt="Business_image" style="object-fit: cover; width: 100%; height: 300px;">
                     </a>
                     <div class="body-content">
                         <div class="hidden-area">
