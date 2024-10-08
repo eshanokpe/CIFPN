@@ -16,7 +16,7 @@ class PagesController extends Controller
     {
        
         $pages = [
-            'about-us' => 'home.pages.aboutUs.index',
+            'about-us' => 'home.pages.aboutUs.about',
             'vision' => 'home.pages.aboutUs.vision',
             'mission' => 'home.pages.aboutUs.mission',
             'core-values' => 'home.pages.aboutUs.core-values',
