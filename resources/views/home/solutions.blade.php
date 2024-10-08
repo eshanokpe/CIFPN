@@ -25,14 +25,7 @@
 <!-- our service area start -->
 <div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
     <div class="container">
-        <div class="title-area  service-h2 service">
-            <h6>Solutions</h6>
-            <p class="disc">
-                At <b>Infoscert Xpression Streams Limited</b>, we provide a comprehensive suite of technology solutions tailored to meet the specific needs of industries across agriculture, telecommunications, oil and gas, education, and the public sector. Our expertise lies in systems integration, enabling businesses to unlock their full potential through the power of digital transformation, automation, and innovative technology.
-            </p>
-            
-                
-        </div>
+       
         <div class="row g-5 service padding-controler">
           
             @forelse ($services as $service)
