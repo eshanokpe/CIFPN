@@ -28,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('contactUs', ContactUs::first());
         View::share('services', Service::latest()->get());
-
+ 
     }
 }

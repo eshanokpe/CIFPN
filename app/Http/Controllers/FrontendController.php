@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class FrontendController extends Controller
 {
@@ -32,6 +33,18 @@ class FrontendController extends Controller
 
     public function Solutions(){
         return view('home.solutions');
+    }
+
+    public function detailsSolutions($id){
+        $decryptedId = decrypt($id);
+    $service = Service::findOrFail($decryptedId);
+
+    // Retrieve related services excluding the currently selected one.
+    $relatedSolutions = Service::where('id', '!=', $decryptedId)
+                               ->latest()
+                               ->get();
+    
+        return view('home.solution-details', compact('service','relatedSolutions'));
     }
 
     public function ContactUs(){
