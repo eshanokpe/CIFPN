@@ -10,7 +10,6 @@ trait AdminTrait
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            // 'url' => 'required|string|max:255',
             'dropdown_items.*' => 'nullable|string|max:255',
         ]);
     }

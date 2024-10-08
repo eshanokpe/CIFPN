@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\FrontendController;
 require __DIR__.'/admin.php';
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('/{page}', [PagesController::class, 'index'])->name('home.pages');
+
 Route::get('/about-us', [FrontendController::class, 'AboutUS'])->name('aboutus');
 Route::get('/solutions', [FrontendController::class, 'Solutions'])->name('solutions');
 Route::get('/solutions/details/{id}', [FrontendController::class, 'detailsSolutions'])->name('solutions.detail');

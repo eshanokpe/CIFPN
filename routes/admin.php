@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SolutionsController;
+use App\Http\Controllers\Admin\IndustiesController;
+use App\Http\Controllers\Admin\MenuController;
 
- 
+   
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'showLogin'])->name('admin.login');
@@ -120,12 +122,16 @@ Route::prefix('admin')->group(function () {
         Route::get('quicklink/{id}', [QuicklinkController::class, 'destroy'])->name('admin.quicklink.destroy');
 
         //Services
-        Route::get('service/index', [ServiceController::class, 'index'])->name('admin.service.index');
-        Route::get('service/create', [ServiceController::class, 'create'])->name('admin.service.create');
-        Route::post('post/service', [ServiceController::class, 'store'])->name('admin.service.store');
-        Route::get('service/{id}/edit', [ServiceController::class, 'edit'])->name('admin.service.edit');
-        Route::put('service/{id}', [ServiceController::class, 'update'])->name('admin.service.update');
-        Route::get('service/{id}', [ServiceController::class, 'destroy'])->name('admin.service.destroy');
+        Route::get('solutions/index', [SolutionsController::class, 'index'])->name('admin.service.index');
+        Route::get('solutions/create', [SolutionsController::class, 'create'])->name('admin.service.create');
+        Route::post('post/solutions', [SolutionsController::class, 'store'])->name('admin.service.store');
+        Route::get('solutions/{id}/edit', [SolutionsController::class, 'edit'])->name('admin.service.edit');
+        Route::put('solutions/{id}', [SolutionsController::class, 'update'])->name('admin.service.update');
+        Route::get('solutions/{id}', [SolutionsController::class, 'destroy'])->name('admin.service.destroy');
+       
+       //Industries
+       Route::get('industries/index', [IndustiesController::class, 'index'])->name('admin.industries.index');
+
         //Faqs
         Route::get('faq/index', [FAQController::class, 'index'])->name('admin.faq.index');
         Route::get('faq/create', [FAQController::class, 'create'])->name('admin.faq.create');

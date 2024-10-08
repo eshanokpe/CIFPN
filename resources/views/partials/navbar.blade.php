@@ -6,7 +6,7 @@
                 <p class="top-details">
                     Are you ready to grow up your business? <a href="{{ route('contactus') }}">Contact Us <i class="fal fa-arrow-right"></i></a>
                 </p>
-            </div>
+            </div> 
             <div class="right-header-top">
                 <div class="working-time">
                     <i class="far fa-clock"></i>
@@ -33,30 +33,32 @@
                 <a class="thumbnail" href="{{ route('home') }}">
                     <img src="{{ asset('assets/images/logo/logo.jpeg')}}" alt="">
                 </a>
-                <nav class="nav-main mainmenu-nav d-none d-xl-block">
+                <nav class="nav-main mainmenu-nav">
                     <ul class="mainmenu">
-                        <li >
-                            <a class="nav-item" href="{{ route('home') }}">Home</a>
-                            
-                        </li>
-                        <li >
-                            <a class="nav-item" href="{{ route('aboutus') }}">About Us</a>
-                        </li>
-                        <li >
-                            <a class="nav-item" href="{{ route('solutions') }}">Solutions</a>
-                        </li>
-                        <li >
-                            <a class="nav-item" href="{{ route('industries') }}">Industries</a>
-                        </li>
-                       
-                        <li >
-                            <a class="nav-item" href="{{ route('socialImpact') }}">Social Impact</a>
-                        </li>
-                        <li><a class="nav-item" href="{{ route('careers')}}">Careers</a></li>
+                        @forelse ($menuItems as $item)
+                            <li class="menu-item {{ $item->dropdownItems->count() > 0 ? 'has-droupdown' : '' }}">
+                                <a class="menu-link" href="{{ route('home.pages', $item->slug) }}">{{ $item->name }}</a>
+                                
+                                @if($item->dropdownItems->count() > 0)
+                                    <ul class="submenu">
+                                        @foreach ($item->dropdownItems as $dropdownItem)
+                                            <li >
+                                                <a href="{{ route('home.pages', $dropdownItem->slug) }}">{{ $dropdownItem->name }}</a>
+                                                
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
+                        @empty
+                            <p>No data found</p>
+                        @endforelse
                         
-                        <li><a class="nav-item" href="{{ route('contactus') }}">Contact Us</a></li>
-                    </ul>
+                        <!-- Static menu items if needed -->
+                     </ul>
                 </nav>
+                
+                
             </div>
             <div class="header-right">
                 <div class="call-area">
@@ -71,7 +73,7 @@
                             <h6 class="call">+256 21458.2146</h6>
                         </a>
                     </div>
-                </div>
+                </div> 
                 <a class="rts-btn btn-primary-2 menu-block-none" href="{{ route('appointment')}}">Book a Meeting</a>
                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20">
                     <img class="menu-dark" src="{{ asset('assets/images/icon/menu.png')}}" alt="Menu-icon">

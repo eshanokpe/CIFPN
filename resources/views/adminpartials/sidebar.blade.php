@@ -60,11 +60,18 @@
                     <span class="nav-text">Services</span>
                 </a>
             </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="{{ route('admin.industries.index') }}" aria-expanded="false">
+                    <i class="flaticon-381-layer-1"></i>
+                    <span class="nav-text">Industries</span>
+                </a>
+            </li>
             
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-settings"></i>
                 <span class="nav-text">FAQs</span>
-            </a>
+            </a> 
             <ul aria-expanded="false" class="mm-collapse">
                
                 <li>
