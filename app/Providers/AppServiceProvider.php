@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Providers;
+use App\Models\ContactUs;
+use App\Models\Service;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -10,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      *
      * @return void
-     */
+     */ 
     public function register()
     {
         //
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::share('contactUs', ContactUs::first());
+        View::share('services', Service::latest()->get());
+
     }
 }

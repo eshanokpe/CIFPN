@@ -11,9 +11,9 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="bread-tag">
-                    <a href="index.html">Home</a>
+                    <a href="{{ route('home')}}">Home</a>
                     <span> / </span>
-                    <a href="#" class="active">Solutions</a>
+                    <a href="{{ route('solutions') }}" class="active">Solutions</a>
                 </div>
             </div>
         </div>
@@ -21,113 +21,42 @@
 </div>
 <!-- end breadcrumb area -->
 
-
+ 
 <!-- our service area start -->
 <div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
     <div class="container">
+        <div class="title-area  service-h2 service">
+            <h6>Solutions</h6>
+            <p class="disc">
+                At <b>Infoscert Xpression Streams Limited</b>, we provide a comprehensive suite of technology solutions tailored to meet the specific needs of industries across agriculture, telecommunications, oil and gas, education, and the public sector. Our expertise lies in systems integration, enabling businesses to unlock their full potential through the power of digital transformation, automation, and innovative technology.
+            </p>
+            
+                
+        </div>
         <div class="row g-5 service padding-controler">
+          
+            @forelse ($services as $service)
             <!-- single service area -->
             <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
                 <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail"><img src="assets/images/service/02.jpg" alt="Business_image"></a>
+                    <a href="{{ route('solutions.detail', encrypt($service->id)) }}" class="thumbnail">
+                        <img src="{{ asset($service->image) }}" alt="Business_image" style="object-fit: contain; width: 100%; height: 300px;">
+                    </a>
                     <div class="body-content">
                         <div class="hidden-area">
-                            <h5 class="title">Strategy Growth</h5>
+                            <h5 class="title">{{ $service->title }}</h5>
                             <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
+                                {!! Str::limit($service->content, 70) !!}
                             </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
+                            <a class="rts-read-more-two color-primary" href="{{ route('solutions.detail', encrypt($service->id)) }}">Read More<i class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- single service area end-->
-            <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
-                <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail two"><img src="assets/images/service/03.jpg" alt="Business_image"></a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">Grow Business</h5>
-                            <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single service area end-->
-            <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
-                <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail three"><img src="assets/images/service/04.jpg" alt="Business_image"></a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">Proudly Speech</h5>
-                            <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single service area end-->
-            <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
-                <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail"><img src="assets/images/service/02.jpg" alt="Business_image"></a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">Model Building</h5>
-                            <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single service area end-->
-            <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--60">
-                <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail two"><img src="assets/images/service/03.jpg" alt="Business_image"></a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">Solution Model</h5>
-                            <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single service area end-->
-            <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--60 pb_sm--60">
-                <div class="service-two-inner">
-                    <a href="service-details.html" class="thumbnail three"><img src="assets/images/service/04.jpg" alt="Business_image"></a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">Finbiz Solution</h5>
-                            <p class="dsic">
-                                Porta sagittis diam imperdiet eu, tempus nisi aenean vehicula torquent dis mattis nullam
-                                bibendum morbi laoreet lobortis id
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="service-details.html">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single service area end-->
+            @empty
+                <p> No data found</p>
+            @endforelse
         </div>
     </div>
 </div>

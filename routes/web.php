@@ -16,11 +16,12 @@ use App\Http\Controllers\FrontendController;
 */
 
 
-
+require __DIR__.'/admin.php';
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about-us', [FrontendController::class, 'AboutUS'])->name('aboutus');
 Route::get('/solutions', [FrontendController::class, 'Solutions'])->name('solutions');
+Route::get('/solutions/details/{id}', [FrontendController::class, 'detailsSolutions'])->name('solutions.detail');
 Route::get('/contact-us', [FrontendController::class, 'ContactUs'])->name('contactus');
 Route::get('/industries', [FrontendController::class, 'Industries'])->name('industries');
 Route::get('/social-impact', [FrontendController::class, 'SocialImpact'])->name('socialImpact');

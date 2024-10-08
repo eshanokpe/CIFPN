@@ -11,7 +11,7 @@ return [
     | reset options for your application. You may change these defaults
     | as required, but they're a perfect start for most applications.
     |
-    */
+    */ 
 
     'defaults' => [
         'guard' => 'web',
@@ -40,6 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -63,6 +72,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [

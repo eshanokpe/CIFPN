@@ -31,7 +31,7 @@
         <div class="content">
             <div class="header-left">
                 <a class="thumbnail" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/images/logo/logo-4.svg')}}" alt="">
+                    <img src="{{ asset('assets/images/logo/logo.jpeg')}}" alt="">
                 </a>
                 <nav class="nav-main mainmenu-nav d-none d-xl-block">
                     <ul class="mainmenu">

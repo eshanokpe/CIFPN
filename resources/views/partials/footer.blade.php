@@ -93,7 +93,7 @@
                 <div class="col-lg-12">
                     <div class="copyright-h-2-wrapper">
                         <p class="disc">
-                            Infoscert Consulting - Copyright {{ date('Y') }} . All rights reserved.
+                            Infoscert Xpression Streams Limited - Copyright {{ date('Y') }} . All rights reserved.
                         </p>
                         <div class="right">
                             <ul>

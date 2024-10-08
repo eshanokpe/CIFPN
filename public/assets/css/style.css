@@ -674,7 +674,7 @@ ol ul {
 }
 
 .rts-section-gap {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gap {
@@ -21058,7 +21058,7 @@ body.thirteen-body .title-area span {
 .about-company-wrapper p.disc {
   color: #5D666F;
   font-size: 18px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   line-height: 28px;
 }
 @media only screen and (max-width: 767px) {
@@ -22291,7 +22291,6 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   position: absolute;
   right: 0;
   top: 0;
-  content: "01";
   font-size: 18px;
   background: #fff;
   border-radius: 0 0 0 15px;
@@ -23055,6 +23054,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   letter-spacing: 0.1em;
   font-family: "Red Hat Display", sans-serif;
 }
+
 .rts-service-area4 .container .title-service-three .title {
   text-transform: none;
 }
@@ -23202,6 +23202,9 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   left: -13%;
   top: -110%;
   z-index: -1;
+}
+.rts-service-area .disc {
+  margin-bottom: 20px;
 }
 
 .service-single-style-six {
