@@ -46,7 +46,7 @@
                         <div class="hidden-area">
                             <h5 class="title">{{ $service->title }}</h5> 
                             <p class="dsic">
-                                {!! Str::limit($service->content, 40) !!}
+                                {!! Str::limit($service->content, 45) !!}
                             </p>
                             <a class="rts-read-more-two color-primary" href="{{ route('solutions.detail', encrypt($service->id)) }}">Read More<i class="far fa-arrow-right"></i></a>
                         </div>
