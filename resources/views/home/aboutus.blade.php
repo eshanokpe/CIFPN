@@ -11,9 +11,9 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="bread-tag">
-                    <a href="index.html">Home</a>
+                    <a href="{{ route('home')}}">Home</a>
                     <span> / </span>
-                    <a href="#" class="active">About Us</a>
+                    <a href="{{ route('aboutus') }}" class="active">About Us</a>
                 </div>
             </div>
         </div>

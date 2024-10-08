@@ -7,13 +7,13 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                <h1 class="title">Our Services</h1>
+                <h1 class="title">Our Industries</h1>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="bread-tag">
-                    <a href="index.html">Home</a>
+                    <a href="{{ route('home')}} ">Home</a>
                     <span> / </span>
-                    <a href="#" class="active">Our Services</a>
+                    <a href="{{ route('industries') }}" class="active">Our Industries</a>
                 </div>
             </div>
         </div>
