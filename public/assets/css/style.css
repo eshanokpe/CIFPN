@@ -177,7 +177,7 @@ h6,
 .h5,
 .h6,
 address,
-p,
+/* p, */
 pre,
 blockquote,
 menu,
@@ -22182,7 +22182,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   margin-bottom: 16px;
 }
 .service-detials-step-1 p.disc {
-  margin-bottom: 23px;
+  margin-bottom: 10px  !important;  
   font-size: 16px;
   line-height: 26px;
 }

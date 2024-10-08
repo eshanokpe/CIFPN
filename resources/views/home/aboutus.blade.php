@@ -8,7 +8,7 @@
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
                 <h1 class="title">About Us</h1>
-            </div>
+            </div> 
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="bread-tag">
                     <a href="{{ route('home')}}">Home</a>
@@ -31,8 +31,8 @@
                     <h6>About Our Company</h6>
                     {{-- <h2 class="title">Professional And Dedicated <br>Consulting Services</h2> --}}
                 </div>
-                <div class="about-company-wrapper ">
-                    <p class="disc text-wrap">
+                <div class="about-company-wrapper " style="text-align: justify">
+                    <p class="disc text-wrap" >
                         <b>Infoscert Xpression Streams Limited </b> is a forward-thinking technology systems integration company dedicated to delivering impactful solutions across key sectors including agriculture, telecommunications, oil and gas, education, and the public sector. We specialize in designing and implementing cutting-edge technologies that enhance operational efficiency, foster growth, and create sustainable value for our clients.
                     </p>
                     <p class="disc">

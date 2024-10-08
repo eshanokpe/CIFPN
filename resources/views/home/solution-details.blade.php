@@ -30,11 +30,10 @@
                 <div class="service-detials-step-1">
                     <div class="thumbnail">
                         <img src="{{ asset($service->image)}}" class="w-100" style="object-fit: cover; width: 100%; height: 600px;" alt="business-area">
-                    </div>
+                    </div> 
                     <h4 class="title">{{$service->title }} </h4>
-                    <p class="disc">
+                    <p class="disc" >
                         {!! $service->content !!}
-
                     </p>
                     
                 </div>
