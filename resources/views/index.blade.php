@@ -143,7 +143,7 @@
                                             </p>
                                         </div>
                                         <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages', 'contactus') }}">Contact Us</a>
-                                    </div>
+                                    </div>   
                                     <!-- start tab content End -->
                                 </div>
                                 
