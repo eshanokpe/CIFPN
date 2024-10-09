@@ -43,9 +43,38 @@ class PagesController extends Controller
             'enterprise-resource-planning-erp',
             'cybersecurity-solutions'
         ];
+        $industriesPages = [
+            'telecommunications',
+            'systems-integration',
+            'cloud-solutions',
+            'iot-and-automation-solutions',
+            'data-analytics-ai-solutions',
+            'enterprise-resource-planning-erp',
+            'cybersecurity-solutions'
+        ];
     
         if (array_key_exists($slug, $pages)) {
             return view($pages[$slug]);
+        }
+
+        if (in_array($slug, $industriesPages)) {
+            $solution = DropdownItem::where('slug', $slug)->first();
+    
+            if (!$solution) {
+                return view('home.errors.404'); 
+            }
+    
+            $industriesItem = Industries::where('title', $solution->name)->first();
+    
+            if (!$industriesItem) {
+                return view('home.errors.404'); 
+            }
+    
+            $relatedIndustries = Industries::where('id', '!=', $industriesItem->id)
+                                ->latest()
+                                ->get();
+    
+            return view('home.pages.industries.industries-details', compact('industriesItem', 'relatedIndustries'));
         }
     
         if (in_array($slug, $servicesPages)) {
