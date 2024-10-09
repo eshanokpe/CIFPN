@@ -99,7 +99,7 @@
                             <ul>
                                 <li><a href="blog-list.html">Company News</a></li>
                                 <li><a href="#">Faq</a></li>
-                                <li><a href="{{ route('contactus')}}">Contact</a></li>
+                                <li><a href="{{ route('home.pages', 'contactus') }}">Contact</a></li>
                             </ul>
                         </div>
                     </div>

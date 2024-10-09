@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SolutionsController;
-use App\Http\Controllers\Admin\IndustiesController;
+use App\Http\Controllers\Admin\IndustriesController; 
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\CoreValueController;
+use App\Http\Controllers\Admin\VisionMissionController;
 
-   
+    
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'showLogin'])->name('admin.login');
@@ -48,8 +51,13 @@ Route::prefix('admin')->group(function () {
         Route::put('/settings/update/about-us/{id}', [SettingsController::class, 'updateAboutUs'])->name('admin.settings.updateAboutus');
         //Core Value 
         Route::get('/settings/core-value', [CoreValueController::class, 'index'])->name('admin.coreValue.index');
-        Route::post('/settings/store/core-value', [CoreValueController::class, 'storeCoreValue'])->name('admin.settings.storeCoreValue');
-        Route::put('/settings/update/core-value/{id}', [CoreValueController::class, 'updateCoreValue'])->name('admin.settings.updateCoreValue');
+        Route::post('/settings/store/core-value', [CoreValueController::class, 'store'])->name('admin.coreValue.store');
+        Route::put('/settings/update/core-value/{id}', [CoreValueController::class, 'update'])->name('admin.coreValue.update');
+        //visionMission
+        Route::get('/settings/vision-mission', [VisionMissionController::class, 'index'])->name('admin.visionMission.index');
+        Route::post('/settings/vision-mission/store', [VisionMissionController::class, 'store'])->name('admin.visionMission.store');
+        Route::put('/settings/vision-mission/update/{id}', [VisionMissionController::class, 'update'])->name('admin.visionMission.update');
+        
         //Office Hours 
         Route::get('/settings/office/hours/index', [SettingsController::class, 'indexOfficeHours'])->name('admin.officeHours.index');
         Route::post('/settings/store/office-hours', [SettingsController::class, 'storeOfficeHours'])->name('admin.office-hours.store');
@@ -122,16 +130,21 @@ Route::prefix('admin')->group(function () {
         Route::get('quicklink/{id}', [QuicklinkController::class, 'destroy'])->name('admin.quicklink.destroy');
 
         //Services
-        Route::get('solutions/index', [SolutionsController::class, 'index'])->name('admin.service.index');
-        Route::get('solutions/create', [SolutionsController::class, 'create'])->name('admin.service.create');
-        Route::post('post/solutions', [SolutionsController::class, 'store'])->name('admin.service.store');
-        Route::get('solutions/{id}/edit', [SolutionsController::class, 'edit'])->name('admin.service.edit');
-        Route::put('solutions/{id}', [SolutionsController::class, 'update'])->name('admin.service.update');
-        Route::get('solutions/{id}', [SolutionsController::class, 'destroy'])->name('admin.service.destroy');
+        Route::get('solutions/index', [SolutionsController::class, 'index'])->name('admin.solution.index');
+        Route::get('solutions/create', [SolutionsController::class, 'create'])->name('admin.solution.create');
+        Route::post('post/solutions', [SolutionsController::class, 'store'])->name('admin.solution.store');
+        Route::get('solutions/{id}/edit', [SolutionsController::class, 'edit'])->name('admin.solution.edit');
+        Route::put('solutions/{id}', [SolutionsController::class, 'update'])->name('admin.solution.update');
+        Route::get('solutions/{id}', [SolutionsController::class, 'destroy'])->name('admin.solution.destroy');
        
        //Industries
-       Route::get('industries/index', [IndustiesController::class, 'index'])->name('admin.industries.index');
-
+        Route::get('industries/index', [IndustriesController::class, 'index'])->name('admin.industries.index');
+        Route::get('industries/create', [IndustriesController::class, 'create'])->name('admin.industries.create');
+        Route::post('industries/store', [IndustriesController::class, 'store'])->name('admin.industries.store');
+        Route::get('industries/{id}/edit', [IndustriesController::class, 'edit'])->name('admin.industries.edit');
+        Route::put('industries/{id}', [IndustriesController::class, 'update'])->name('admin.industries.update');
+        Route::get('industries/{id}', [IndustriesController::class, 'destroy'])->name('admin.industries.destroy');
+  
         //Faqs
         Route::get('faq/index', [FAQController::class, 'index'])->name('admin.faq.index');
         Route::get('faq/create', [FAQController::class, 'create'])->name('admin.faq.create');

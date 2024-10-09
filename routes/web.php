@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Admin\SolutionsController;
+use App\Http\Controllers\Admin\IndustriesController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +26,10 @@ Route::get('/{page}', [PagesController::class, 'index'])->name('home.pages');
 
 Route::get('/about-us', [FrontendController::class, 'AboutUS'])->name('aboutus');
 Route::get('/solutions', [FrontendController::class, 'Solutions'])->name('solutions');
-Route::get('/solutions/details/{id}', [FrontendController::class, 'detailsSolutions'])->name('solutions.detail');
-Route::get('/contact-us', [FrontendController::class, 'ContactUs'])->name('contactus');
-Route::get('/industries', [FrontendController::class, 'Industries'])->name('industries');
-Route::get('/social-impact', [FrontendController::class, 'SocialImpact'])->name('socialImpact');
-Route::get('/careers', [FrontendController::class, 'Careers'])->name('careers');
-Route::get('/appointment', [FrontendController::class, 'Appointment'])->name('appointment');
+Route::get('/solutions/{slug}', [SolutionsController::class, 'show'])->name('solutions.detail');
+Route::get('industries/{slug}', [IndustriesController::class, 'show'])->name('industries.detail');
 
+ 
 
 Auth::routes(); 
 

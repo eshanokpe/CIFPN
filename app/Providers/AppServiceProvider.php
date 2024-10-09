@@ -3,7 +3,10 @@
 namespace App\Providers;
 use App\Models\ContactUs;
 use App\Models\Service;
+use App\Models\Industries; 
 use App\Models\MenuItem;
+use App\Models\CoreValue;
+use App\Models\VisionMission;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -28,8 +31,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::share('contactUs', ContactUs::first());
-        View::share('services', Service::latest()->get());
+        View::share('industries', Industries::latest()->get());
+        View::share('solutions', Service::latest()->get());
         View::share('menuItems', MenuItem::with('dropdownItems')->get());
+        View::share('visionMission', VisionMission::first()); 
+        View::share('coreValue', CoreValue::first()); 
+    
 
  
     }

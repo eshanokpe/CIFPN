@@ -55,9 +55,9 @@
             </li>
 
             <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.service.index') }}" aria-expanded="false">
+                <a class="has-arrow ai-icon" href="{{ route('admin.solution.index') }}" aria-expanded="false">
                     <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Services</span>
+                    <span class="nav-text">Solutions</span>
                 </a>
             </li>
 
@@ -114,7 +114,7 @@
         </ul>
     
         <div class="copyright">
-            <p><strong>Archway Home</strong> ©  <span id="current-year"></span> All Rights Reserved</p>
+            <p><strong> </strong> ©  <span id="current-year"></span> All Rights Reserved</p>
             <p>by Archway Home</p>
         </div>
     </div>

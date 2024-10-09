@@ -39,12 +39,12 @@
                                             </svg>
                                         </span>
                                         <div class="media-body mb-sm-0 mb-3 me-5">
-                                            <h4 class="fs-22 text-white">Total Projects</h4>
+                                            <h4 class="fs-22 text-white">Total </h4>
                                             <div class="progress mt-3 mb-2" style="height:8px;">
                                                 
                                             </div>
                                             <span class="fs-13">
-                                                <a href="{{ route('admin.project.index')}}" class="text-white">Click here</a>
+                                                <a href="" class="text-white">Click here</a>
                                             </span>
 
                                         </div>
@@ -59,8 +59,8 @@
                                     <div class="media align-items-center">
                                         <div class="media-body me-3">
                                             <h2 class="fs-28 text-black font-w600">0</h2>
-                                            <p class="property-p mb-0 text-black font-w500">Total Consultant </p>
-                                            <span class="fs-13"><a href="{{ route('admin.consultant.index')}}" class="text-muted">Click here</a></span>
+                                            <p class="property-p mb-0 text-black font-w500">Total  </p>
+                                            <span class="fs-13"><a href="" class="text-muted">Click here</a></span>
                                         </div>
                                         
                                     </div>
@@ -73,8 +73,8 @@
                                     <div class="media align-items-center">
                                         <div class="media-body me-3">
                                             <h2 class="fs-28 text-black font-w600"> 0</h2>
-                                            <p class="property-p mb-0 text-black font-w500">Total Booking Inspection</p>
-                                            <span class="fs-13"><a href="{{ route('admin.inspection.index')}}" class="text-muted">Click here</a></span>
+                                            <p class="property-p mb-0 text-black font-w500">Total </p>
+                                            <span class="fs-13"><a href="" class="text-muted">Click here</a></span>
                                         </div>
                                        
                                     </div>
@@ -87,8 +87,8 @@
                                     <div class="media align-items-center">
                                         <div class="media-body me-3">
                                             <h2 class="fs-28 text-black font-w600">0</h2>
-                                            <p class="property-p mb-0 text-black font-w500">Total Gallery</p>
-                                            <span class="fs-13"><a href="{{ route('admin.projects.status.index')}}" class="text-muted">Click here</a></span>
+                                            <p class="property-p mb-0 text-black font-w500">Total </p>
+                                            <span class="fs-13"><a href="" class="text-muted">Click here</a></span>
                                       
                                         </div>
                                         

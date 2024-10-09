@@ -9,11 +9,11 @@ class SolutionsController extends Controller
 {
     public function index(){
        
-        return view('admin.service.index');
+        return view('admin.solution.index');
     }
 
     public function create(){
-        return view('admin.service.create');
+        return view('admin.solution.create');
     }
 
     public function store(Request $request)
@@ -28,18 +28,18 @@ class SolutionsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->extension();
-            $image->move(public_path('services'), $imageName);
+            $image->move(public_path('assets/images/solution/'), $imageName);
         }
         
-        Service::create(array_merge($validated, ['image' => 'services/'.$imageName]));
+        Service::create(array_merge($validated, ['image' => 'assets/images/solution/'.$imageName]));
     
-        return redirect()->route('admin.service.create')->with('success', 'Service created successfully.');
+        return redirect()->route('admin.solution.create')->with('success', 'Solution created successfully.');
     }
 
     public function edit($id)
     {
-        $service = Service::findOrFail(decrypt($id));
-        return view('admin.service.edit', compact('service'));
+        $solution = Service::findOrFail(decrypt($id));
+        return view('admin.solution.edit', compact('solution'));
     } 
 
     public function update(Request $request, $id)
@@ -47,35 +47,49 @@ class SolutionsController extends Controller
         // Validate the incoming request data
         $validated = $request->validate([
             'title' => 'required',
-            // 'icon_class' => 'required',
             'content' => 'required', 
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:32768', 
         ]);
     
-        // Find the service record by ID
-        $service = Service::findOrFail($id);   
+        // Find the solution record by ID
+        $solution = Service::findOrFail($id);   
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->extension();
-            $image->move(public_path('services'), $imageName);
+            $image->move(public_path('assets/images/solution/'), $imageName);
             
-            $service->update(['image' =>  'services/' . $imageName]);
+            $solution->update(['image' =>  'assets/images/solution/' . $imageName]);
         } 
        
-        $service->update([
+        $solution->update([
             'title' => $request->title,
-            // 'icon_class' => $request->icon_class,
             'content' => $request->content,
         ]);
     
-        return redirect()->route('admin.service.index')->with('success', 'Service updated successfully.');
+        return redirect()->route('admin.solution.index')->with('success', 'Solution updated successfully.');
     }
     
 
     public function destroy($id)
     {
-        $service= Service::findOrFail(decrypt($id));
-        $service->delete();
-        return redirect()->route('admin.service.index')->with('success', 'Service deleted successfully.');
+        $solution= Service::findOrFail(decrypt($id));
+        $solution->delete();
+        return redirect()->route('admin.solution.index')->with('success', 'Solution deleted successfully.');
+    }
+
+    public function show($slug)
+    {
+        $solutionItem = Service::where('slug', $slug)->first();
+
+        if (!$solutionItem) {
+            return view('home.errors.404'); 
+        }
+
+        $relatedSolutions = Service::where('id', '!=', $solutionItem->id)
+                                     ->inRandomOrder()
+                                     ->take(6) 
+                                     ->get();
+
+        return view('home.pages.solutions.solution-details', compact('solutionItem', 'relatedSolutions'));
     }
 }
