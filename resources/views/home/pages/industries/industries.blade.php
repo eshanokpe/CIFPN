@@ -33,15 +33,16 @@
                 Infoscert Xpression Streams Limited delivers cutting-edge technology solutions across a wide range of industries while embedding social impact at the core of every innovation. Explore how we help industries thrive and create positive change through responsible business practices and digital transformation.
             </p>
         </div>
-        @forelse ($industries as $item)
+       
             <div class="row g-5 mt--10">
+                @forelse ($industries as $item)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                     <!-- single service start -->
                     <div class="rts-single-service-h2 inner">
                         <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="thumbnail">
                             <img src="{{ asset($item->image) }}" alt="Service_image">
                         </a>
-                        <div class="body">
+                        <div class="body"> 
                             <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}">
                                 <h5 class="title">{{ $item->title }}</h5>
                             </a>
@@ -53,10 +54,11 @@
                     </div>
                     <!-- single service End -->
                 </div>
+                @empty
+                    <p>No data found</p>
+                @endforelse
             </div>
-        @empty
-            <p>No data found</p>
-        @endforelse
+        
         
     </div>
 </div>
