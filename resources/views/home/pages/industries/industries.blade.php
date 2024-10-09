@@ -34,30 +34,31 @@
             </p>
         </div>
        
-            <div class="row g-5 mt--10">
-                @forelse ($industries as $item)
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <!-- single service start -->
-                    <div class="rts-single-service-h2 inner">
-                        <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="thumbnail">
-                            <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" style="object-fit: cover; width: 100%; height: 219px;">
+        <div class="row g-5 mt--10">
+            @forelse ($industries as $item)
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <!-- single service start -->
+                <div class="rts-single-service-h2 inner">
+                    <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="thumbnail">
+                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" style="object-fit: cover; width: 100%; height: 219px;">
+                    </a>
+                    <div class="body"> 
+                        <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}">
+                            <h5 class="title">{{ $item->title }}</h5>
                         </a>
-                        <div class="body"> 
-                            <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}">
-                                <h5 class="title">{{ $item->title }}</h5>
-                            </a>
-                            <p class="disc">
-                                {!! Str::limit($item->content, 45) !!}
-                            </p>
-                            <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <p class="disc">
+                            {!! Str::limit($item->content, 45) !!}
+                        </p>
+                        <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- single service End -->
                 </div>
-                @empty
-                    <p>No data found</p>
-                @endforelse
+                <!-- single service End -->
             </div>
+            @empty
+                <p>No data found</p>
+            @endforelse
+        </div>
+        
         
         
     </div>
