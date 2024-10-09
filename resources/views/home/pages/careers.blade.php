@@ -13,7 +13,7 @@
                 <div class="bread-tag">
                     <a href="{{ route('home')}} ">Home</a>
                     <span> / </span>
-                    <a href="{{ route('careers') }}" class="active">Careers</a>
+                    <a href="{{ route('home.pages','careers') }}" class="active">Careers</a>
                 </div>
             </div>
         </div>

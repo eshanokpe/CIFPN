@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use App\Models\Industries;
 
+
 use Illuminate\Http\Request;
 
 class IndustriesController extends Controller
@@ -42,7 +43,7 @@ class IndustriesController extends Controller
         $industries = Industries::findOrFail(decrypt($id));
         return view('admin.industries.edit', compact('industries'));
     } 
-
+ 
     public function update(Request $request, $id)
     {
         try{
