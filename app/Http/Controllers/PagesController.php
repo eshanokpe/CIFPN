@@ -51,7 +51,14 @@ class PagesController extends Controller
             'iot-and-automation-solutions',
             'data-analytics-ai-solutions',
             'enterprise-resource-planning-erp',
-            'cybersecurity-solutions'
+            'cybersecurity-solutions',
+            'corporate-consulting',
+            'oil-gas',
+            'education',
+            'ngos',
+            'public-sector',
+            'manufacturing',
+            'banking',
         ];
     
         if (array_key_exists($slug, $pages)) {
