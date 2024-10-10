@@ -9,7 +9,7 @@ class ContactUs extends Model
 {
     use HasFactory;
  
-    protected $fillable = [
+    protected $fillable = [ 
         'company_name',
         'first_phone', 
         'second_phone', 

@@ -28,7 +28,7 @@ class PagesController extends Controller
             'contact-us' => 'home.pages.contact-us',
             'appointment' => 'home.pages.appointment',
             'blog' => 'home.pages.post',
-            'faqs' => 'home.pages.faqs',
+            'faq' => 'home.pages.faq',
             'events' => 'home.pages.events',
             'terms-conditions' => 'home.pages.terms-conditions',
             'privacy-policy' => 'home.pages.privacy-policy',

@@ -1,90 +1,112 @@
-<!-- start header area -->
-    <!-- footer area start -->
-    
-    <div class="rts-footer-area rts-section-gap footer-two footer-bg-two mt--10 mt_md--80 mt_sm--60">
-        <div class="container ">
-            <div class="row">
-                <!-- single wized -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="footer-two-single-wized left">
-                        <h3 class="title">
-                            <span>Ready To</span> <br>
-                        Work With Us?
-                        </h3>
-                        <p class="disc">
-                            Felis consequat magnis est fames sagittis ultrices placerat sodales porttitor quisque.
-                        </p>
-                        <a class="rts-btn btn-primary-2 color-h-black" href="#">Get a Quote</a>
+  <!-- start header area -->
+    <!-- rts footer three area start -->
+    <div class="rts-footer-area footer-three rts-section-gapTop footer-bg-2">
+        <div class="container pb--100 pb_sm--40">
+            <div class="row g-5">
+                <div class="col-xl-3 col-lg-6">
+                    <div class="footer-three-single-wized left">
+                        <a href="index" class="logo_footer">
+                            <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
+                        </a>
+                        <p class="disc">Felis consquat magnis fames sagittis ultrices plasodales porttitor quisque
+                            ultrice tempor turpis.</p>
+                        <ul class="social-three-wrapper"> 
+                            <li><a href="{{ $sociallink->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{ $sociallink->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{ $sociallink->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="{{ $sociallink->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--50">
-                    <div class="footer-two-single-wized two">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Quick Links</h5>
-                            <img src="{{ asset ('assets/images/footer/under-title-2.png')}}" alt="finbiz_footer">
-                        </div>
-                        <div class="wized-2-body">
-                            <ul>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>News & Update</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Blog</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Case Studies</a></li>
-                                <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Newsletter Signup</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- single wized -->
-                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--30 mt_md--30">
-                    <div class="footer-two-single-wized">
-                        <div class="wized-title-area">
-                            <h5 class="wized-title">Contact Us</h5>
-                            <img src="{{ asset ('assets/images/footer/under-title-2.png')}}" alt="finbiz_footer">
-                        </div>
-                        <div class="wized-2-body">
-                            <div class="contact-info-1">
-                                <div class="icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="disc">
-                                    <span>Call Us 24/7</span>
-                                    <a href="#">(+256) 2145.2156</a>
-                                </div>
-                            </div>
-                            <div class="contact-info-1">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="disc">
-                                    <span>Work with us</span>
-                                    <a href="#">info@finbiz.com</a>
+                <!-- footer three mid area -->
+                <div class="col-xl-6 col-lg-6">
+                    <div class="row">
+                        <!-- footer mid area left -->
+                        <div class="col-lg-6">
+                            <div class="footer-three-single-wized mid-left">
+                                <h5 class="title">Office Information</h5>
+                                <div class="body">
+                                    <div class="info-wrapper">
+                                        <div class="single">
+                                            <ul class="icon">
+                                                <li><i class="fas fa-phone-alt"></i></li>
+                                            </ul>
+                                            <div class="info">
+                                                <span>Call Us 24/7</span>
+                                                <a href="#">{{$contactUs->first_phone}}</a>
+                                            </div>
+                                        </div>
+                                        <div class="single">
+                                            <ul class="icon">
+                                                <li><i class="far fa-envelope"></i></li>
+                                            </ul>
+                                            <div class="info">
+                                                <span>Work with us</span>
+                                                <a href="#">{{$contactUs->first_email}}</a>
+                                            </div>
+                                        </div>
+                                        <div class="single">
+                                            <ul class="icon">
+                                                <li><i class="fas fa-map-marker-alt"></i></li>
+                                            </ul>
+                                            <div class="info">
+                                                <span>Our Location</span>
+                                                <a href="#">{{$contactUs->first_address}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- footer mid area left end -->
+
+                        <!-- footer mid area right -->
+                        <div class="col-lg-6">
+                            <div class="footer-two-single-wized two">
+                                <div class="wized-title-area">
+                                    <h5 class="wized-title">Quick Links</h5>
+                                </div>
+                                <div class="wized-2-body">
+                                    <ul>
+                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>News & Update</a></li>
+                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Blog</a></li>
+                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Case Studies</a></li>
+                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Newsletter Signup</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- footer mid area right end -->
                     </div>
                 </div>
-                <!-- single wized -->
-                <!-- single wized -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="footer-two-single-wized right">
-                        <div class="wized-2-body">
-                            <div class="contact-info-1">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="disc">
-                                    <span>Our Location</span>
-                                    <a href="#">XYZ Hilton Street, 125 Town <br>
-                                    United State</a>
+                <!-- footer three mid area ENd -->
+                <div class="col-xl-3 col-lg-6">
+                    <div class="footer-three-single-wized mid-right">
+                        <h5 class="title">Get Updates</h5>
+                        <div class="body">
+                            <div class="update-wrapper">
+                                <p class="disc">Sign up for our latest news & articles. We won’t give you spam
+                                    mails.</p>
+                                <form class="email-footer-area">
+                                    <input type="email" placeholder="Enter Email Address" required>
+                                    <button type="submit"><i class="fas fa-location-arrow"></i></button>
+                                </form>
+                                <div class="note-area">
+                                    <p><span>Note:</span> We do not publish your email</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- single wized -->
             </div>
         </div>
+        
     </div>
-    <!-- footer area end -->
+    <!-- rts footer three area end -->
+    <!-- ENd Header Area -->
+
+
 
     <!-- copyright-area start -->
     <div class="rts-copy-right ptb--30">
@@ -93,12 +115,12 @@
                 <div class="col-lg-12">
                     <div class="copyright-h-2-wrapper">
                         <p class="disc">
-                            Infoscert Xpression Streams Limited - Copyright {{ date('Y') }} . All rights reserved.
-                        </p>
+                            {{ $contactUs->company_name }}- Copyright {{ date('Y') }} . All rights reserved.
+                        </p> 
                         <div class="right">
                             <ul>
-                                <li><a href="blog-list.html">Company News</a></li>
-                                <li><a href="#">Faq</a></li>
+                                <li><a href="{{ route('home.pages', 'blog') }}">Company News</a></li>
+                                <li><a href="{{ route('home.pages', 'faq') }}">Faq</a></li>
                                 <li><a href="{{ route('home.pages', 'contactus') }}">Contact</a></li>
                             </ul>
                         </div>

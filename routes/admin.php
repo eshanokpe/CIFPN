@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\VisionMissionController;
+use App\Http\Controllers\Admin\SociallinkController;
+use App\Http\Controllers\Admin\FAQController;
 
     
 

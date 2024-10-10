@@ -120,6 +120,7 @@ class SettingsController extends Controller
     public function getAboutUs(Request $request){
         return view('admin.settings.aboutUs.index');
     }
+
     public function storeAboutUs(Request $request){
         $validated = $request->validate([
             'title' => 'required',
@@ -172,22 +173,28 @@ class SettingsController extends Controller
     public function storeContactUs(Request $request)
     {
         $validated = $request->validate([
-            'company_name' => 'required|string',
+            'company_name' => 'nullable|string',
             'website_link' => 'string',
-            'first_phone' => 'required|string',
+            'first_phone' => 'nullable|string',
             'second_phone' => '',
-            'first_email' => 'required|email',
+            'first_email' => 'nullable|email',
             'second_email' => '',
-            'first_address' => 'required|string',
+            'first_address' => 'nullable|string',
             'second_address' => '',
             'site_logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($request->hasFile('site_logo')) {
             $image = $request->file('site_logo');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('contactUsImages'), $imageName);
-            $validated['site_logo'] = 'contactUsImages/' . $imageName;
+            $siteLogo = uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('assets/images/logo'), $siteLogo);
+            $validated['site_logo'] = 'assets/images/logo/' . $siteLogo;
+        }
+        if ($request->hasFile('footer_logo')) {
+            $image = $request->file('footer_logo');
+            $footerLogo = uniqid().'.'. $image->getClientOriginalExtension();
+            $image->move(public_path('assets/images/logo'), $footerLogo);
+            $validated['footer_logo'] = 'assets/images/logo/' . $footerLogo;
         }
 
         ContactUs::create($validated);
@@ -214,8 +221,8 @@ class SettingsController extends Controller
 
         if ($request->hasFile('site_logo')) {
             $image = $request->file('site_logo');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('contactUsImages'), $imageName);
+            $imageName = uniqid(). '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('assets/images/logo'), $imageName);
 
             // Delete old site_logo file if exists
             if ($contactUs->site_logo) {
@@ -225,13 +232,13 @@ class SettingsController extends Controller
                 }
             }
 
-            $contactUs->site_logo = 'contactUsImages/' . $imageName;
+            $contactUs->site_logo = 'assets/images/logo/' . $imageName;
         }
 
         if ($request->hasFile('footer_logo')) {
             $imageFooter = $request->file('footer_logo');
-            $imageNameFooter = time() . '.' . $imageFooter->getClientOriginalExtension();
-            $imageFooter->move(public_path('contactUsImages'), $imageNameFooter);
+            $imageNameFooter = uniqid(). '.' . $imageFooter->getClientOriginalExtension();
+            $imageFooter->move(public_path('assets/images/logo'), $imageNameFooter);
 
             // Delete old footer_logo file if exists
             if ($contactUs->footer_logo) {
@@ -241,7 +248,7 @@ class SettingsController extends Controller
                 }
             }
 
-            $contactUs->footer_logo = 'contactUsImages/' . $imageNameFooter;
+            $contactUs->footer_logo = 'assets/images/logo/' . $imageNameFooter;
         }
 
         $contactUs->company_name = $validated['company_name'];

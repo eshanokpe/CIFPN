@@ -10,17 +10,17 @@
             <div class="right-header-top">
                 <div class="working-time">
                     <i class="far fa-clock"></i>
-                    <span>Working: 8.00am - 5.00pm</span>
+                    <span>Working: {{ ($contactUs->footer_logo)}}</span>
                 </div>
                 <div class="ht-social">
                     <span>Visit Us:</span>
                     <ul>
                         <li>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ $sociallink->facebook }}"><i class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $sociallink->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ $sociallink->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="{{ $sociallink->instagram }}"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <div class="content">
             <div class="header-left">
                 <a class="thumbnail" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/images/logo/logo.jpeg')}}" alt="">
+                    <img src="{{ asset($contactUs->site_logo)}}" alt="">
                 </a>
                 <nav class="nav-main mainmenu-nav">
                     <ul class="mainmenu">
@@ -64,12 +64,12 @@
                    
                     <div class="number-area">
                         <span>Call us anytime</span>
-                        <a href="tel:123-456-7890">
-                            <h6 class="call">+256 21458.2146</h6>
+                        <a href="tel:{{$contactUs->first_phone}}">
+                            <h6 class="call">{{$contactUs->first_phone}}</h6>
                         </a>
                     </div>
                 </div> 
-                <a class="rts-btn btn-primary-2 menu-block-none" href="{ {{ route('home.pages', 'appointment') }}">Book a Meeting</a>
+                <a class="rts-btn btn-primary-2 menu-block-none" href="{{ route('home.pages', 'appointment') }}">Book a Meeting</a>
                 
             </div>
         </div>
