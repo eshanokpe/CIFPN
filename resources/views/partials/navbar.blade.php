@@ -10,7 +10,7 @@
             <div class="right-header-top">
                 <div class="working-time">
                     <i class="far fa-clock"></i>
-                    <span>Working: {{ ($contactUs->footer_logo)}}</span>
+                    <span>Working: 8:00am - 5pm</span>
                 </div>
                 <div class="ht-social">
                     <span>Visit Us:</span>
