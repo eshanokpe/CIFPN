@@ -117,8 +117,8 @@
                                             <p class="disc">
                                                 Eu nisi quam senectus odio commodo quam pellente
                                             </p>
-                                        </div>
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus')}}">Contact Us</a>
+                                        </div> 
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages', 'contactus') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
