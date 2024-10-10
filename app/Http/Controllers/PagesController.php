@@ -8,6 +8,7 @@ use App\Models\DropdownItem;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Models\Service;
+use App\Models\Industries;
 
 
 class PagesController extends Controller
