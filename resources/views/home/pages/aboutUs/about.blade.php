@@ -63,7 +63,7 @@
                                         <p class="disc" style="text-align: justify">
                                             At <b>Infoscert Xpression Streams Limited</b>, our vision is to be a global leader in innovative technology systems integration, driving transformative change across industries while making a lasting social impact. We envision a world where cutting-edge technology not only fuels business growth but also empowers communities, enhances sustainability, and creates a more equitable future for all.
                                         </p>
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus')}}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us')}}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -75,7 +75,7 @@
                                             Our mission at <b>Infoscert Xpression Streams Limited</b> is to deliver seamless, innovative technology solutions that address the critical needs of diverse industries, including agriculture, telecom, oil and gas, education, and the public sector. We are committed to bridging the gap between profit and purpose by leveraging technology to solve complex challenges while uplifting communities through sustainable social impact initiatives. Through collaboration, expertise, and innovation, we strive to create a positive, lasting influence on the industries we serve and the world around us.
                                         </p>
                                         
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus')}}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us')}}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -130,7 +130,7 @@
                                             We are driven by a passion for continuous innovation. We believe in leveraging the latest technologies to create solutions that not only solve today’s challenges but also anticipate the needs of tomorrow. Our commitment to innovation enables us to remain at the forefront of technology integration across industries.
                                         </p>
                                        
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -142,7 +142,7 @@
                                             We strive for excellence in everything we do. From the quality of our solutions to the relationships we build with our clients and partners, we are committed to delivering superior results and exceeding expectations. Excellence is our standard, and we pursue it relentlessly.
                                         </p>
                                        
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -154,7 +154,7 @@
                                             We conduct our business with the highest level of integrity and transparency. Honesty and ethical practices form the foundation of our operations, ensuring that we build trust and long-lasting partnerships with clients, communities, and stakeholders.
                                         </p>
                                         
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -165,7 +165,7 @@
                                         <p class="disc">
                                             We believe that profit and purpose can coexist. As a company deeply invested in social impact, we prioritize giving back to society by using technology to address pressing social challenges. We are committed to driving sustainable development and improving lives through every project we undertake.
                                         </p>
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -176,7 +176,7 @@
                                         <p class="disc">
                                             We understand that the most transformative solutions are born from collaboration. By working closely with clients, partners, and communities, we co-create solutions that deliver maximum value and foster mutual success. We believe in teamwork and the power of collective effort.
                                         </p>
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -188,7 +188,7 @@
                                             Our clients are at the heart of everything we do. We take the time to understand their unique needs, and we design tailored solutions that empower them to achieve their goals. We are dedicated to delivering an exceptional customer experience and building relationships that stand the test of time.
                                         </p>
                                         
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -200,7 +200,7 @@
                                             Sustainability is central to our approach. We are committed to developing solutions that not only benefit our clients but also contribute to environmental and societal well-being. We aim to build systems that are efficient, scalable, and sustainable for future generations.
                                         </p>
                                         
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
@@ -212,7 +212,7 @@
                                             We are dedicated to empowering communities and individuals through technology. Whether it’s providing tools for better education, fostering digital inclusion, or supporting local economies, we believe in using technology as a force for empowerment and positive change.
                                         </p>
                                         
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('contactus') }}">Contact Us</a>
+                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages','contact-us') }}">Contact Us</a>
                                     </div>
                                     <!-- start tab content End -->
                                 </div>
