@@ -8,6 +8,7 @@ use App\Models\MenuItem;
 use App\Models\CoreValue;
 use App\Models\VisionMission;
 use App\Models\Sociallink;
+// use App\Models\projectMenus;
 use App\Models\Faqs;
 
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // View::share('projectMenus', projectMenus::latest()->get());
         View::share('contactUs', ContactUs::first());
         View::share('industries', Industries::latest()->get());
         View::share('solutions', Service::latest()->get());

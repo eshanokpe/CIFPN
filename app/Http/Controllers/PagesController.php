@@ -45,6 +45,7 @@ class PagesController extends Controller
             'cybersecurity-solutions'
         ];
         $industriesPages = [
+            'agriculture',
             'telecommunications',
             'systems-integration',
             'cloud-solutions',

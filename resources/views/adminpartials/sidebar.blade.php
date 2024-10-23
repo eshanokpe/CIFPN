@@ -94,7 +94,7 @@
                    
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"> Menu</a>
                         <ul aria-expanded="false" class="mm-collapse">
-                            <li><a href="{{route('admin.project.projectMenu')}}" previewlistener="true">Project Menu</a></li>
+                            {{-- <li><a href="{{route('admin.project.projectMenu')}}" previewlistener="true">Project Menu</a></li> --}}
                             <li><a href="{{route('admin.menu.index')}}" previewlistener="true">Manage Menu</a></li>
                         </ul>
                     </li>
