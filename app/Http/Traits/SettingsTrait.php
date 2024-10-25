@@ -35,9 +35,9 @@ trait SettingsTrait
             $image = $request->file('image');
             $imageName = time() . '.' . $image->extension();
             $image->move(public_path('assets/images/about'), $imageName);
-            if ($aboutUs->image) {
-                unlink(public_path($aboutUs->image));
-            }
+            // if ($aboutUs->image) {
+            //     unlink(public_path($aboutUs->image));
+            // }
             $aboutUs->image = 'assets/images/about/' . $imageName;
             $aboutUs->save();
         }
