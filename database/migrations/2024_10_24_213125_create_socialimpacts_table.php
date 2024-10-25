@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('socialimpacts', function (Blueprint $table) {
+        Schema::create('social_impacts', function (Blueprint $table) {
             $table->id();
             $table->text('content')->nullable();
             $table->text('image')->nullable();
