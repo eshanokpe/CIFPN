@@ -33,7 +33,7 @@
                                             </ul>
                                             <div class="info">
                                                 <span>Call Us 24/7</span>
-                                                <a href="#">{{$contactUs->first_phone}}</a>
+                                                <a href="#">{{$contactUs->first_phone}} | {{$contactUs->second_phone}}</a>
                                             </div>
                                         </div>
                                         <div class="single">
