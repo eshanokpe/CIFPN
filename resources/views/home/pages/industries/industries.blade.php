@@ -47,7 +47,7 @@
                             <h5 class="title">{{ $item->title }}</h5>
                         </a>
                         <p class="disc">
-                            {!! Str::limit($item->content, 60) !!} 
+                            {!! Str::limit($item->content, 65) !!} 
                         </p>
                         <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="btn-red-more">Learn More<i class="fas fa-arrow-right"></i></a>
                     </div>
