@@ -124,7 +124,7 @@
                                         <div class="media-body me-3">
                                             <h2 class="fs-28 text-black font-w600">0</h2>
                                             <p class="property-p mb-0 text-black font-w500">Total Contact </p>
-                                            <span class="fs-13"><a href="{{ route('admin.contact.index')}}" class="text-muted">Click here</a></span>
+                                            <span class="fs-13"><a href="{{ route('admin.contactForm.index')}}" class="text-muted">Click here</a></span>
                                         </div>
                                         
                                     </div>
