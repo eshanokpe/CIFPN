@@ -86,8 +86,8 @@ class IndustriesController extends Controller
 
     public function destroy($id)
     {
-        $solution= Service::findOrFail(decrypt($id));
-        $solution->delete();
+        $industries= Industries::findOrFail(decrypt($id));
+        $industries->delete();
         return redirect()->route('admin.industries.index')->with('success', 'Industries deleted successfully.');
     }
 
