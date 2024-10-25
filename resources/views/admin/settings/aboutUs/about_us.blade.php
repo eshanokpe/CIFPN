@@ -20,19 +20,7 @@
                             <label class="form-label">Content</label>
                             <textarea id="ckeditor" name="content" class="form-control" placeholder="Content" rows="8" spellcheck="false" required> {{ isset($aboutUs) ? $aboutUs->content : '' }}</textarea>
                         </div>
-                        <div class="mb-3 col-md-10">
-                            <label class="form-label">Header Image </label>
-                            <input id="header_image" type="file" class="form-control @error('image') is-invalid @enderror" name="header_image"  onchange="previewImagebg(event)">
-                            @error('image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            @if(isset($aboutUs))
-                            <img src="{{ asset($aboutUs->header_image) }}" alt="{{ $aboutUs->title }}" class="img-thumbnail mt-2" width="200">
-                            @endif
-                            <img id="image-previewbg" src="" alt="Image Previewbg" class="img-thumbnail mt-2" style="display:none; max-width: 200px;">
-                        </div>
+                       
                         <div class="mb-3 col-md-10">
                             <label class="form-label"> Image </label>
                             <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image"  onchange="previewImage(event)">
@@ -48,6 +36,21 @@
                         </div>
                         <small class="text-danger">Maximum file size: 2MB. Allowed file types: JPEG, PNG, JPG, GIF.</small>
                            
+                        <div class="mb-3 col-md-10">
+                            <label class="form-label">Header Image </label>
+                            <input id="header_image" type="file" class="form-control @error('image') is-invalid @enderror" name="header_image"  onchange="previewImagebg(event)">
+                            @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            @if(isset($aboutUs))
+                            <img src="{{ asset($aboutUs->header_image) }}" alt="{{ $aboutUs->title }}" class="img-thumbnail mt-2" width="200">
+                            @endif
+                            <img id="image-previewbg" src="" alt="Image Previewbg" class="img-thumbnail mt-2" style="display:none; max-width: 200px;">
+                        </div>
+                        <small class="text-danger">Maximum file size: 2MB. Allowed file types: JPEG, PNG, JPG, GIF.</small>
+
                     </div>
                     <button type="submit" class="btn btn-primary">{{ isset($aboutUs) ? 'Update' : 'Add' }}</button>
                 </form>
