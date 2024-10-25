@@ -33266,7 +33266,9 @@ p.disc {
 }
 
 .footer-bg-2 {
-  background: url(../images/footer/footer-bg-2.jpg);
+  /* background: url(../images/footer/footer-bg-2.jpg); */
+  background-color: #000;
+  color: #fff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -33277,10 +33279,12 @@ p.disc {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color: #1C2539;
+  /* color: #1C2539; */
+  color: #fff;
 }
 .footer-three .copyright-area P {
-  color: #1C2539;
+  /* color: #1C2539; */
+  color: #fff;
   flex-wrap: 400;
   font-size: 16px;
 }
@@ -33344,7 +33348,8 @@ p.disc {
 }
 .footer-three-single-wized.mid-right .body .update-wrapper .email-footer-area input {
   height: 55px;
-  border: 1px solid #E3E3E3;
+  /* border: 1px solid #E3E3E3; */
+  border: 1px solid #fff;
   border-radius: 8px;
   padding-right: 60px;
 }
@@ -33362,7 +33367,8 @@ p.disc {
   top: 0;
 }
 .footer-three-single-wized.mid-right .body .update-wrapper .note-area p {
-  color: #5D666F;
+  /* color: #5D666F; */
+  color: #fff !important;
   margin-top: 25px;
   font-weight: 400;
 }
@@ -33370,11 +33376,11 @@ p.disc {
   color: var(--color-primary-3);
 }
 .footer-three-single-wized.left a.logo_footer {
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   display: block;
 }
 .footer-three-single-wized.left p.disc {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 26px;
 }
@@ -33444,7 +33450,8 @@ p.disc {
 }
 .footer-three-single-wized .body .info-wrapper .single .info span {
   display: block;
-  color: #5D666F;
+  /* color: #5D666F; */
+  color: #fff;
   font-size: 15px;
   font-weight: 400;
 }

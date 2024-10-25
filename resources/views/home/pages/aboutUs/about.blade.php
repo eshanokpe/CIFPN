@@ -32,18 +32,7 @@
                     {{-- <h2 class="title">Professional And Dedicated <br>Consulting Services</h2> --}}
                 </div>
                 <div class="about-company-wrapper " style="text-align: justify">
-                    <p class="disc text-wrap" >
-                        <b>Infoscert Xpression Streams Limited </b> is a forward-thinking technology systems integration company dedicated to delivering impactful solutions across key sectors including agriculture, telecommunications, oil and gas, education, and the public sector. We specialize in designing and implementing cutting-edge technologies that enhance operational efficiency, foster growth, and create sustainable value for our clients.
-                    </p>
-                    <p class="disc">
-                        However, our mission extends far beyond business success. At Infoscert, we believe that technology has the power to not only drive industry transformation but also address critical societal challenges. That's why we are deeply committed to using our expertise to create positive social change. Whether through improving access to education in underserved communities, supporting sustainable agricultural practices, or enhancing digital infrastructure in public services, our solutions are designed to benefit both businesses and society at large.
-                    </p>
-                    <p class="disc">
-                        Driven by a passion for innovation and social responsibility, we are more than just a for-profit company—we are a force for good. Our team of experts combines technological excellence with a deep sense of purpose, working tirelessly to ensure that every project we undertake not only meets the needs of our clients but also contributes to a more equitable and sustainable world.
-                    </p>
-                    <p class="disc">
-                        With a diverse portfolio of successful projects, a strong commitment to ethical practices, and a relentless drive for excellence, <b>Infoscert Xpression Streams Limited</b> is your trusted partner in the journey toward growth, sustainability, and positive impact.
-                    </p>
+                    {{ $aboutUs->content}}
                     <div class="rts-tab-style-one">
                         <div class="d-flex align-items-start contoler-company">
                             <div class="nav flex-column nav-pills me-3 button-area" id="v-pills-tab" role="tablist"

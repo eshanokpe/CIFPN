@@ -128,19 +128,18 @@ class SettingsController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:5048',
             'header_image' => 'image|mimes:jpeg,png,jpg,gif|max:5048',
         ]);
-        
-        $imagePath = $this->uploadImageAboutUs($request, 'image', 'aboutUsImages');
-        $headerImagePath = $this->uploadHeaderImageAboutUs($request, 'header_image', 'aboutUsImages');
+         
+        $imagePath = $this->uploadImageAboutUs($request, 'image', 'assets/images/about');
+        $headerImagePath = $this->uploadHeaderImageAboutUs($request, 'header_image', 'assets/images/about');
         AboutUs::create(array_merge($validated, 
         [
-            'image' => $imagePath,
-            'header_image' => $headerImagePath
+            'image' => 'assets/images/about/'.$imagePath,
+            'header_image' => 'assets/images/about/'.$headerImagePath
         ]
         ));
 
         return redirect()->back()->with([
             'successAboutus' => 'About us created successfully.',
-            'active_tab' => 'v-pills-profile' 
         ]);
         //  return redirect()->route('admin.settings.content')->with('success', 'Data created successfully.');
    

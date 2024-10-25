@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Models\AboutUs;
 use App\Models\ContactUs;
 use App\Models\Service;
 use App\Models\Industries; 
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // View::share('projectMenus', projectMenus::latest()->get());
+        View::share('aboutUs', AboutUs::first());
         View::share('contactUs', ContactUs::first());
         View::share('industries', Industries::latest()->get());
         View::share('solutions', Service::latest()->get());

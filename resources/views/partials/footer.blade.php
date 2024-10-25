@@ -1,15 +1,17 @@
   <!-- start header area -->
     <!-- rts footer three area start -->
     <div class="rts-footer-area footer-three rts-section-gapTop footer-bg-2">
-        <div class="container pb--100 pb_sm--40">
+        <div class="container pb--100 pb_sm--40" >
             <div class="row g-5">
                 <div class="col-xl-3 col-lg-6">
-                    <div class="footer-three-single-wized left">
+                    <div class="footer-three-single-wized left" style=" color:#fff"">
                         <a href="index" class="logo_footer">
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
-                        <p class="disc">Felis consquat magnis fames sagittis ultrices plasodales porttitor quisque
-                            ultrice tempor turpis.</p>
+                        <div class="text-white" style="text-align: justify; color:#fff">
+                            Infoscert Xpression Streams Limited is a forward-thinking technology systems integration company dedicated to delivering
+                            <snap ><a href="{{ route('home.pages', 'about-us') }}" class="text-white" style="font-weight: bold">Read more..</a></snap>
+                        </div>
                         <ul class="social-three-wrapper"> 
                             <li><a href="{{ $sociallink->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="{{ $sociallink->twitter }}"><i class="fab fa-twitter"></i></a></li>
@@ -24,7 +26,7 @@
                         <!-- footer mid area left -->
                         <div class="col-lg-6">
                             <div class="footer-three-single-wized mid-left">
-                                <h5 class="title">Office Information</h5>
+                                <h5 class="title text-white">Office Information</h5>
                                 <div class="body">
                                     <div class="info-wrapper">
                                         <div class="single">
@@ -33,7 +35,7 @@
                                             </ul>
                                             <div class="info">
                                                 <span>Call Us 24/7</span>
-                                                <a href="#">{{$contactUs->first_phone}} | {{$contactUs->second_phone}}</a>
+                                                <a href="#" class="text-white">{{$contactUs->first_phone}} | {{$contactUs->second_phone}}</a>
                                             </div>
                                         </div>
                                         <div class="single">
@@ -42,7 +44,7 @@
                                             </ul>
                                             <div class="info">
                                                 <span>Work with us</span>
-                                                <a href="#">{{$contactUs->first_email}}</a>
+                                                <a href="#" class="text-white">{{$contactUs->first_email}}</a>
                                             </div>
                                         </div>
                                         <div class="single">
@@ -51,7 +53,7 @@
                                             </ul>
                                             <div class="info">
                                                 <span>Our Location</span>
-                                                <a href="#">{{$contactUs->first_address}}</a>
+                                                <a href="#" class="text-white">{{$contactUs->first_address}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -64,14 +66,14 @@
                         <div class="col-lg-6">
                             <div class="footer-two-single-wized two">
                                 <div class="wized-title-area">
-                                    <h5 class="wized-title">Quick Links</h5>
+                                    <h5 class="wized-title text-white" >Quick Links</h5>
                                 </div>
-                                <div class="wized-2-body">
+                                <div class="wized-2-body ">
                                     <ul>
-                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>News & Update</a></li>
-                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Blog</a></li>
-                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Case Studies</a></li>
-                                        <li><a href="service-details.html"><i class="fal fa-chevron-double-right"></i>Newsletter Signup</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About us</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'solutions') }}"><i class="fal fa-chevron-double-right "></i>Solutions</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'contactus') }}"><i class="fal fa-chevron-double-right "></i>Contact us</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,18 +84,18 @@
                 </div>
                 <!-- footer three mid area ENd -->
                 <div class="col-xl-3 col-lg-6">
-                    <div class="footer-three-single-wized mid-right">
-                        <h5 class="title">Get Updates</h5>
+                    <div class="footer-three-single-wized mid-right text-white">
+                        <h5 class="title text-white">Get Updates</h5>
                         <div class="body">
                             <div class="update-wrapper">
-                                <p class="disc">Sign up for our latest news & articles. We won’t give you spam
+                                <p class="disc text-white">Sign up for our latest news & articles. We won’t give you spam
                                     mails.</p>
                                 <form class="email-footer-area">
                                     <input type="email" placeholder="Enter Email Address" required>
                                     <button type="submit"><i class="fas fa-location-arrow"></i></button>
                                 </form>
-                                <div class="note-area">
-                                    <p><span>Note:</span> We do not publish your email</p>
+                                <div class="note-area text-white">
+                                    <p><span style="font-weight: bold" class="text-white">Note:</span> We do not publish your email</p>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +121,7 @@
                         </p> 
                         <div class="right">
                             <ul>
-                                <li><a href="{{ route('home.pages', 'blog') }}">Company News</a></li>
+                                {{-- <li><a href="{{ route('home.pages', 'blog') }}">Company News</a></li> --}}
                                 <li><a href="{{ route('home.pages', 'faqs') }}">Faq</a></li>
                                 <li><a href="{{ route('home.pages', 'contactus') }}">Contact</a></li>
                             </ul>

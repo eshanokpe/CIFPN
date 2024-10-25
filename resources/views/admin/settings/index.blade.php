@@ -51,7 +51,7 @@
                             <div class="col-sm-10">
                                 <div class="tab-content">
                                     <div id="v-pills-home" class="tab-pane fade show active " role="tabpanel">
-                                        @include('admin.settings.why_choose_us_statement')
+                                        @include('admin.settings.visionMission.index')
                                     </div>
                                    
                                   
