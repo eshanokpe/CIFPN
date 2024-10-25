@@ -4,7 +4,7 @@
         <div class="container pb--100 pb_sm--40" >
             <div class="row g-5">
                 <div class="col-xl-3 col-lg-6">
-                    <div class="footer-three-single-wized left" style=" color:#fff"">
+                    <div class="footer-three-single-wized left" style=" color:#fff">
                         <a href="index" class="logo_footer">
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
@@ -72,7 +72,7 @@
                                     <ul>
                                         <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About us</a></li>
                                         <li><a class="text-white" href="{{ route('home.pages', 'solutions') }}"><i class="fal fa-chevron-double-right "></i>Solutions</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'contactus') }}"><i class="fal fa-chevron-double-right "></i>Contact us</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'contact-us') }}"><i class="fal fa-chevron-double-right "></i>Contact us</a></li>
                                         <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li>
                                     </ul>
                                 </div>
