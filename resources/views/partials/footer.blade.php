@@ -120,7 +120,7 @@
                         <div class="right">
                             <ul>
                                 <li><a href="{{ route('home.pages', 'blog') }}">Company News</a></li>
-                                <li><a href="{{ route('home.pages', 'faq') }}">Faq</a></li>
+                                <li><a href="{{ route('home.pages', 'faqs') }}">Faq</a></li>
                                 <li><a href="{{ route('home.pages', 'contactus') }}">Contact</a></li>
                             </ul>
                         </div>
