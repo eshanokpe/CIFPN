@@ -187,7 +187,7 @@ ul,
 table,
 hr {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 h1,
@@ -359,7 +359,7 @@ p {
   line-height: var(--line-height-b2);
   font-weight: var(--p-regular);
   color: var(--color-body);
-  margin: 0 0 40px;
+  margin: 0 0 8px;
 }
 @media only screen and (max-width: 767px) {
   p {
@@ -536,7 +536,7 @@ ol ul {
 }
 
 .paragraph-area p.disc {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: #fff;
 }
 
@@ -21059,7 +21059,7 @@ body.thirteen-body .title-area span {
 .about-company-wrapper p.disc {
   color: #5D666F;
   font-size: 18px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   line-height: 28px;
 }
 @media only screen and (max-width: 767px) {
@@ -21720,7 +21720,7 @@ body.thirteen-body .title-area span {
   line-height: 28px;
   /* 155.556% */
   margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 @media only screen and (max-width: 1199px) {
   .inner-content-about-11 p.disc {
@@ -22151,7 +22151,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   }
 }
 .service-one-inner .service-details p {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .color-primary {
@@ -22183,7 +22183,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   margin-bottom: 16px;
 }
 .service-detials-step-1 p.disc {
-  margin-bottom: 10px  !important;  
+  /* margin-bottom: 10px  !important;   */
   font-size: 16px;
   line-height: 26px;
 }
@@ -22263,7 +22263,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 .service-detials-step-3 p.disc {
   font-size: 16px;
   line-height: 26px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .service-detials-step-3 .single-banifits {
   margin-bottom: 10px;
@@ -23205,7 +23205,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   z-index: -1;
 }
 .rts-service-area .disc {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .service-single-style-six {
@@ -31927,7 +31927,7 @@ p.disc {
 .rts-progress-one-wrapper .cadetblue > span {
   background-color: #DF0A0A;
 }
-
+ 
 .rts-progress-one-wrapper .single-progress {
   margin-bottom: 20px;
   border-bottom: 1px solid #F1F1F1;

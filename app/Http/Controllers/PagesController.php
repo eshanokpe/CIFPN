@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Models\Service;
 use App\Models\Industries;
+use App\Models\ContactForm;
 
 
 class PagesController extends Controller
@@ -18,6 +19,7 @@ class PagesController extends Controller
     public function index($slug)
     {
         $pages = [
+            'home' => 'index',
             'about-us' => 'home.pages.aboutUs.about',
             'vision' => 'home.pages.aboutUs.vision',
             'mission' => 'home.pages.aboutUs.mission',
@@ -29,7 +31,7 @@ class PagesController extends Controller
             'contact-us' => 'home.pages.contact-us',
             'appointment' => 'home.pages.appointment',
             'blog' => 'home.pages.post',
-            'faq' => 'home.pages.faq',
+            'faqs' => 'home.pages.faqs',
             'events' => 'home.pages.events',
             'terms-conditions' => 'home.pages.terms-conditions',
             'privacy-policy' => 'home.pages.privacy-policy',
@@ -109,7 +111,7 @@ class PagesController extends Controller
         return view('home.errors.404');
     }
     
-
+   
   
 
 }

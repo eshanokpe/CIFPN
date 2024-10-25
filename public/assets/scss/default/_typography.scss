@@ -14,7 +14,7 @@ html {
     overflow-y: auto;
     scroll-behavior: auto !important;
 }
-
+ 
 body {
     font-size: var(--font-size-b1);
     line-height: var(--line-height-b1);
@@ -62,7 +62,7 @@ h6,
 .h5,
 .h6,
 address,
-p,
+// p,
 pre,
 blockquote,
 menu,
@@ -71,7 +71,7 @@ ul,
 table,
 hr {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h1,
@@ -260,7 +260,7 @@ p {
     line-height: var(--line-height-b2);
     font-weight: var(--p-regular);
     color: var(--color-body);
-    margin: 0 0 40px;
+    margin: 0 0 0px;
 
     @media #{$sm-layout} {
         margin: 0 0 20px;
@@ -464,7 +464,7 @@ ol {
 }
 .paragraph-area{
     p.disc{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         color: #fff;
     }
 }

@@ -22,38 +22,40 @@
 <!-- end breadcrumb area -->
 
  
-<!-- our service area start -->
-<div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
+
+<!-- our service area end -->
+<div class="rts-project-area rts-section-gap">
     <div class="container">
-       
-        <div class="row g-5 service padding-controler">
-          
+        <div class="row g-5 ">
             @forelse ($solutions as $solution) 
             <!-- single service area -->
-            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
-                <div class="service-two-inner">
-                    <a href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}" class="thumbnail">
-                        <img src="{{ asset($solution->image) }}" alt="Business_image" style="object-fit: cover; width: 100%; height: 250px;">
-                    </a>
-                    <div class="body-content">
-                        <div class="hidden-area">
-                            <h5 class="title">{{ $solution->title }}</h5> 
-                            <p class="dsic">
-                                {!! Str::limit($solution->content, 45) !!}
-                            </p>
-                            <a class="rts-read-more-two color-primary" href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}">Read More<i class="far fa-arrow-right"></i></a>
-                        </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <!-- single -product area -->
+                <div class="rts-product-one">
+                    <div class="thumbnail-area">
+                        <img src="{{ asset($solution->image) }}" alt="{{ $solution->title }}" style="object-fit: cover; width: 100%; height: 250px;">
+                        <a class="rts-btn btn-primary rounded" href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}"><i class="far fa-arrow-right"></i></a>
+                    </div>
+                    <div class="product-contact-wrapper">
+                        {{-- <span>Business Solution</span> --}}
+                        <a href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}">
+                            <h5 class="title">{{ $solution->title }}</h5>
+                        </a>
+                        <p class="disc">
+                            {!! Str::limit($solution->content, 50) !!}
+                        </p>
                     </div>
                 </div>
+                <!-- single -product area End -->
             </div>
             <!-- single service area end-->
             @empty
                 <p> No data found</p>
             @endforelse
         </div>
+           
     </div>
 </div>
-<!-- our service area end -->
 
 
 

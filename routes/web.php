@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Admin\ContactFormController;
 use App\Http\Controllers\Admin\SolutionsController;
 use App\Http\Controllers\Admin\IndustriesController; 
 
@@ -30,6 +31,8 @@ Route::get('/solutions/{slug}', [SolutionsController::class, 'show'])->name('sol
 Route::get('industries/{slug}', [IndustriesController::class, 'show'])->name('industries.detail');
 
  
+Route::post('/contact-submit', [ContactFormController::class, 'store'])->name('contact.submit');
+
 
 Auth::routes(); 
 

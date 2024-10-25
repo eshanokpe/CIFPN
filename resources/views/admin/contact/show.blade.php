@@ -13,7 +13,7 @@
                     <h2 class="text-black font-w600">Contact</h2>
                     <p class="mb-0">Welcome to {{ $contactUs->company_name}} backend</p>
                 </div>
-                <a href="{{route('admin.contact.index')}}" class="btn btn-primary rounded light">View Contact</a>
+                <a href="{{route('admin.contactForm.index')}}" class="btn btn-primary rounded light">View Contact</a>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-12 align-center">
@@ -51,7 +51,7 @@
                                     <div class="mb-3 row align-items-center">
                                         <label class="col-sm-3 col-form-label form-label">Message</label>
                                         <div class="col-sm-9">
-                                            <textarea name="content" id="content" class="form-control" required>{{ $contact->comments}}</textarea>
+                                            <textarea name="content" id="content" class="form-control" required>{{ $contact->message}}</textarea>
                                         </div>
                                     </div>
                                    

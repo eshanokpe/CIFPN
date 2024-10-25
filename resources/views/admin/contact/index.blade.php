@@ -45,10 +45,9 @@
                         <div class="table-responsive">
                             <table class="table table-responsive-md">
                                 <thead>
-                                    <tr>
+                                    <tr> 
                                         <th class="width80">#</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
+                                        <th>Full Name</th>
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Message</th>
@@ -61,17 +60,16 @@
                                     @forelse ($contacts as $index => $contact)
                                         <tr>
                                             <td><strong>{{  $index + 1 }}</strong></td>
-                                            <td>{{ $contact->first_name }}</td>
-                                            <td>{{ $contact->last_name }}</td>
+                                            <td>{{ $contact->name }}</td>
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->phone }}</td>
-                                            <td>{{ $contact->comments }}</td>
+                                            <td>{{ $contact->message }}</td>
                                             <td>{{ \Carbon\Carbon::parse($contact->contactsDate)->format('d F Y') }}</td>
                                             <td>{{ $contact->created_at->format('d F Y') }}</td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a class="btn btn-primary " style="margin-right: 5px;" href="{{ route('admin.contact.show', encrypt($contact->id) )  }}">Edit</a>
-                                                    <a class="btn btn-danger" href="{{ route('admin.contact.destroy', encrypt($contact->id) ) }}" onclick="return confirm('Are you sure you want to delete this Contact ?');">Delete</a>
+                                                    <a class="btn btn-primary " style="margin-right: 5px;" href="{{ route('admin.contactForm.show', encrypt($contact->id) )  }}">Show</a>
+                                                    <a class="btn btn-danger" href="{{ route('admin.contactForm.destroy', encrypt($contact->id) ) }}" onclick="return confirm('Are you sure you want to delete this Contact ?');">Delete</a>
                                                 </div>
                                                
                                             </td>

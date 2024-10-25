@@ -23,8 +23,8 @@ class FAQController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'question' => 'required|string|max:255',
-            'answer' => 'required|string|max:255',
+            'question' => 'required|string',
+            'answer' => 'required|string',
         ]);
 
         Faqs::create($validated);
@@ -41,8 +41,8 @@ class FAQController extends Controller
     {
         // Validate the incoming request data
         $validated = $request->validate([
-            'question' => 'required|string|max:255',
-            'answer' => 'required|string|max:255',
+            'question' => 'required|string',
+            'answer' => 'required|string',
         ]);
     
         // Find the service record by ID

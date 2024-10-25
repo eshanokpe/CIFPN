@@ -11,8 +11,11 @@ use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\VisionMissionController;
 use App\Http\Controllers\Admin\SociallinkController;
 use App\Http\Controllers\Admin\FAQController;
+use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\ContactFormController;
+use App\Http\Controllers\Admin\SocialImpactController;
 
-    
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'showLogin'])->name('admin.login');
@@ -74,21 +77,12 @@ Route::prefix('admin')->group(function () {
         Route::post('/settings/store/social-links', [SociallinkController::class, 'storeSocialLinks'])->name('admin.settings.storeSocialLinks');
         Route::put('/settings/update/social-links/{id}', [SociallinkController::class, 'updateSocialLinks'])->name('admin.settings.updateSocialLinks');
        
-        //Project
-        Route::get('/project/index', [ProjectController::class, 'index'])->name('admin.project.index');
-        Route::get('/project/create', [ProjectController::class, 'create'])->name('admin.project.create');
-        Route::post('project/store', [ProjectController::class, 'store'])->name('admin.project.store');
-        Route::get('project/{id}/edit', [ProjectController::class, 'edit'])->name('admin.project.edit');
-        Route::put('/project/{id}', [ProjectController::class, 'update'])->name('admin.project.update');
-        Route::get('project/{id}', [ProjectController::class, 'destroy'])->name('admin.project.destroy');
+        //Careers 
+        Route::get('career/index', [CareerController::class, 'index'])->name('admin.career.index');
+        Route::post('career/store/', [CareerController::class, 'store'])->name('admin.career.store');
+        Route::put('career/update/{id}', [CareerController::class, 'update'])->name('admin.career.update');
+       
 
-        //Blog 
-        Route::get('post/index', [BlogController::class, 'index'])->name('admin.post.index');
-        Route::get('post/create/', [BlogController::class, 'createPost'])->name('admin.post.create');
-        Route::post('post/store', [BlogController::class, 'storePost'])->name('admin.post.store');
-        Route::get('post/{id}/edit', [BlogController::class, 'editPost'])->name('admin.post.edit');
-        Route::put('/post/{id}', [BlogController::class, 'updatePost'])->name('admin.post.update');
-        Route::get('post/{id}', [BlogController::class, 'destroyPost'])->name('admin.post.destroy');
         //Teams 
         Route::get('/team/index', [TeamController::class, 'getTeam'])->name('admin.team.getTeam');
         Route::get('/team/create', [TeamController::class, 'create'])->name('admin.team.create');
@@ -146,7 +140,11 @@ Route::prefix('admin')->group(function () {
         Route::get('industries/{id}/edit', [IndustriesController::class, 'edit'])->name('admin.industries.edit');
         Route::put('industries/{id}', [IndustriesController::class, 'update'])->name('admin.industries.update');
         Route::get('industries/{id}', [IndustriesController::class, 'destroy'])->name('admin.industries.destroy');
-  
+        //social-impact
+        Route::get('social-impact/index', [SocialImpactController::class, 'index'])->name('admin.socialimpact.index');
+        Route::put('social-impact/{id}', [SocialImpactController::class, 'update'])->name('admin.socialiimpact.update');
+        Route::post('social-impact/store', [SocialImpactController::class, 'store'])->name('admin.socialiimpact.store');
+
         //Faqs
         Route::get('faq/index', [FAQController::class, 'index'])->name('admin.faq.index');
         Route::get('faq/create', [FAQController::class, 'create'])->name('admin.faq.create');
@@ -167,9 +165,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/inspection/show/{id}', [BookInspection::class, 'show'])->name('admin.inspection.show');
         Route::get('/inspection/destroy/{id}', [BookInspection::class, 'destroy'])->name('admin.inspection.destroy');
         //Contact
-        Route::get('/contact/index', [ContactFormController::class, 'index'])->name('admin.contact.index');
-        Route::get('/contact/show/{id}', [ContactFormController::class, 'show'])->name('admin.contact.show');
-        Route::get('/contact/destroy/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact.destroy');
+        Route::get('/contact-form/index', [ContactFormController::class, 'index'])->name('admin.contactForm.index');
+        Route::get('/contact-form/show/{id}', [ContactFormController::class, 'show'])->name('admin.contactForm.show');
+        Route::get('/contact-form/destroy/{id}', [ContactFormController::class, 'destroy'])->name('admin.contactForm.destroy');
        
         
     });  

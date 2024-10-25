@@ -165,3 +165,27 @@
     <!-- main Js -->
     <script src="{{ asset ('assets/js/main.js')}}"></script>
     <!-- scripts end form hear -->
+    <style>
+        /* Increase font size of Toastr */
+        #toast-container > .toast {
+            font-size: 18px; /* You can change 18px to any size you want */
+        }
+    </style>
+    <script>
+       
+        @if(session('success'))
+            $(document).ready(function() {
+                toastr.success("{{ session('success') }}");
+            });
+        @endif
+    
+        @if($errors->any())
+            $(document).ready(function() {
+                @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}");
+                @endforeach
+            });
+        @endif
+    </script>
+    
+   

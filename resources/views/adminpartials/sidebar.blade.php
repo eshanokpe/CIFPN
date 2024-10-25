@@ -7,50 +7,18 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-{{-- 
-            <li><a class="has-arrow ai-icon" href="{{ route('admin.consultant.index') }}"  aria-expanded="false">
-                    <i class="flaticon-381-user-5"></i>
-                    <span class="nav-text">Consultant Form</span>
-                 </a>
-            </li> --}}
 
-            {{-- <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.inspection.index') }}"  aria-expanded="false">
-                    <i class="flaticon-381-user-5"></i>
-                    <span class="nav-text">Booking Inpsection</span>
-                </a>
-            </li> --}}
             <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.contact.index') }}"  aria-expanded="false">
+                <a class="has-arrow ai-icon" href="{{ route('admin.contactForm.index') }}"  aria-expanded="false">
                     <i class="flaticon-381-user-5"></i>
                     <span class="nav-text">Contact Form</span>
                 </a>
             </li>
            
-            {{-- <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.events.index') }}" aria-expanded="false">
-                    <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Events</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.projects.status.index') }}" aria-expanded="false">
-                    <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Project Status</span>
-                </a>
-            </li> 
-
             <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.project.index') }}" aria-expanded="false">
+                <a class="has-arrow ai-icon" href="{{ route('admin.career.index') }}" aria-expanded="false">
                     <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Project</span>
-                </a>
-            </li> --}}
-
-            <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.post.index') }}" aria-expanded="false">
-                    <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Post</span>
+                    <span class="nav-text">Careers</span>
                 </a>
             </li>
 
@@ -65,6 +33,13 @@
                 <a class="has-arrow ai-icon" href="{{ route('admin.industries.index') }}" aria-expanded="false">
                     <i class="flaticon-381-layer-1"></i>
                     <span class="nav-text">Industries</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="{{ route('admin.socialimpact.index') }}" aria-expanded="false">
+                    <i class="flaticon-381-layer-1"></i>
+                    <span class="nav-text">Social Impact</span>
                 </a>
             </li>
             

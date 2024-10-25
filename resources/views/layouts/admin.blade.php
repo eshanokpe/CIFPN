@@ -14,10 +14,8 @@
     <meta name="author" content="DexignZone">
     <meta name="robots" content="index, follow">
 
-    <meta name="keywords"
-        content="">
-    <meta name="description"
-        content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
 
     <meta property="og:title" content="{{ asset($contactUs->company_name) }}">
     <meta property="og:description"
