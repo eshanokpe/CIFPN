@@ -10,7 +10,7 @@
                 
             </ol>
         </div>
-        <!-- row -->
+        <!-- row --> 
  
         <div class="row">
             <div class="col-lg-12">
@@ -37,7 +37,9 @@
                         <div class="clearfix">
                             <h3 class="card-title">Consultant List</h3>
                         </div>
-                      
+                        <div class="clearfix text-center">
+                            <a href="{{route('admin.consultant.create')}}" class="btn btn-primary">Add Consultant</a>
+                        </div>
                     </div>
 
                     
@@ -51,8 +53,6 @@
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Date of birth</th>
-                                        <th>Referrals</th>
-                                        <th>Referee </th>
                                         <th>DATE   </th>
                                         <th>ACTION</th>
                                     </tr>
@@ -61,12 +61,10 @@
                                     @forelse ($consultants as $index => $consultant)
                                         <tr>
                                             <td><strong>{{  $index + 1 }}</strong></td>
-                                            <td>{{ $consultant->fullname }}</td>
+                                            <td>{{ $consultant->name }}</td>
                                             <td>{{ $consultant->phone }}</td>
                                             <td>{{ $consultant->email }}</td>
                                             <td>{{ \Carbon\Carbon::parse($consultant->date_of_birth)->format('d F Y') }}</td>
-                                            <td>{{ $consultant->total_referrals_made }}</td>
-                                            <td>{{ $consultant->total_referrals_received }}</td>
                                             <td>{{ $consultant->created_at->format('d F Y') }}</td>
                                             <td>
                                                 <div class="d-flex">

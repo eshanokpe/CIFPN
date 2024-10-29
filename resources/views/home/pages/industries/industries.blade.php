@@ -41,7 +41,7 @@
                 <div class="rts-single-service-h2 inner">
                     <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}" class="thumbnail">
                         <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" style="object-fit: cover; width: 100%; height: 219px;">
-                    </a>
+                    </a> 
                     <div class="body"> 
                         <a href="{{ route('industries.detail', ['slug' => $item->slug] ) }}">
                             <h5 class="title">{{ $item->title }}</h5>

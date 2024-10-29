@@ -35,7 +35,7 @@
                     <div class="thumbnail-area">
                         <img src="{{ asset($solution->image) }}" alt="{{ $solution->title }}" style="object-fit: cover; width: 100%; height: 250px;">
                         <a class="rts-btn btn-primary rounded" href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}"><i class="far fa-arrow-right"></i></a>
-                    </div>
+                    </div> 
                     <div class="product-contact-wrapper">
                         {{-- <span>Business Solution</span> --}}
                         <a href="{{ route('solutions.detail', ['slug' => $solution->slug] ) }}">

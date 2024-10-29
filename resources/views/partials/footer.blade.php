@@ -5,12 +5,12 @@
             <div class="row g-5">
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer-three-single-wized left" style=" color:#fff">
-                        <a href="index" class="logo_footer">
+                        <a href="{{ route('home') }}" class="logo_footer">
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
                         <div class="text-white" style="text-align: justify; color:#fff">
-                            Infoscert Xpression Streams Limited is a forward-thinking technology systems integration company dedicated to delivering
-                            <snap ><a href="{{ route('home.pages', 'about-us') }}" class="text-white" style="font-weight: bold">Read more..</a></snap>
+                            Infoscert Xpression Streams Limited is a forward-thinking technology systems integration company dedicated to delivering ...
+                            <snap ><a href="{{ route('home.pages', 'about-us') }}" class="text-white" style="font-weight: bold">Read more</a></snap>
                         </div>
                         <ul class="social-three-wrapper"> 
                             <li><a href="{{ $sociallink->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
@@ -70,9 +70,10 @@
                                 </div>
                                 <div class="wized-2-body ">
                                     <ul>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About us</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About Us</a></li>
                                         <li><a class="text-white" href="{{ route('home.pages', 'solutions') }}"><i class="fal fa-chevron-double-right "></i>Solutions</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'contact-us') }}"><i class="fal fa-chevron-double-right "></i>Contact us</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'social-impact') }}"><i class="fal fa-chevron-double-right "></i>Social Impact</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'contact-us') }}"><i class="fal fa-chevron-double-right "></i>Contact Us</a></li>
                                         <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li>
                                     </ul>
                                 </div>

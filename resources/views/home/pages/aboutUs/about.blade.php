@@ -33,7 +33,7 @@
                 </div>
                 <div class="about-company-wrapper " style="text-align: justify">
                     {!! $aboutUs->content !!}
-                </div>
+                </div> 
             </div>
             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-1">
                 <div class="about-company-thumbnail">

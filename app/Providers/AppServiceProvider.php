@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use App\Models\AboutUs;
+use App\Models\Consultant;
 use App\Models\ContactUs;
 use App\Models\Service;
 use App\Models\Industries; 
@@ -11,7 +12,7 @@ use App\Models\VisionMission;
 use App\Models\Sociallink;
 use App\Models\SocialImpact;
 use App\Models\Faqs;
-use App\Models\Career;
+use App\Models\Career; 
 use App\Models\ContactForm;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -38,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
         // View::share('projectMenus', projectMenus::latest()->get());
         View::share('aboutUs', AboutUs::first());
         View::share('contactUs', ContactUs::first());
-        View::share('industries', Industries::latest()->get());
+        View::share('industries', Industries::latest()->get()); 
         View::share('solutions', Service::latest()->get());
         View::share('menuItems', MenuItem::with('dropdownItems')->get());
         View::share('visionMission', VisionMission::first()); 
@@ -48,6 +49,8 @@ class AppServiceProvider extends ServiceProvider
         View::share('sociallink', Sociallink::first());
         View::share('faqs', Faqs::latest()->get());
         View::share('contacts', ContactForm::latest()->paginate(20));
+        View::share('consultants', Consultant::latest()->paginate(20));
+
      
 
  

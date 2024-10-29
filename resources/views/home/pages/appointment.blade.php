@@ -34,10 +34,10 @@
             <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
                 <div class="contact-form-area-one">
                     <div class="rts-title-area contact-appoinment text-start">
-                        <p class="pre-title">
+                        {{-- <p class="pre-title">
                             Make An Appointment
-                        </p>
-                        <h2 class="title">Request a free quote</h2>
+                        </p> --}}
+                        <h2 class="title">Make An Appointment</h2>
                     </div>
                     <form action="#">
                         <div class="name-email">
@@ -46,10 +46,30 @@
                         </div>
                         <div class="name-email">
                             <input type="text" placeholder="Phone Number">
-                            <input type="email" placeholder="Company Website">
+                            <input type="text" placeholder="Business Topic">
                         </div>
-                        <input type="text" placeholder="Business Topic">
-                        <textarea placeholder="Type Your Message"></textarea>
+                        {{-- <input type="text" placeholder="Business Topic"> --}}
+                        <label class="text-white" for="meeting_date">Select Solution</label>
+
+                        <div class="name-email">
+                            <select name="solution_id" id="solution" required>
+                                @foreach($solutions as $solution)
+                                    <option value="{{ $solution->id }}">{{ $solution->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <label for="meeting_date" class="text-white">Select Date & Time:</label>
+                        <input type="datetime-local" name="meeting_date" required>
+
+                        <label for="duration" class="text-white">Meeting Duration:</label>
+                        <select name="meeting_duration" id="duration" required>
+                            <option value="15">15 Minutes</option>
+                            <option value="30">30 Minutes</option>
+                            <option value="60">60 Minutes</option>
+                        </select>
+                        <div class="name-email">
+                            <textarea placeholder="Type Your Message"></textarea>
+                        </div>
                     </form>
                     <a href="#" class="rts-btn btn-primary">Submit Message</a>
                 </div>

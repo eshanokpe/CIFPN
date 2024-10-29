@@ -1,9 +1,11 @@
 <?php 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\GoogleCalendarController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SolutionsController;
+use App\Http\Controllers\Admin\ConsultantController;
 use App\Http\Controllers\Admin\IndustriesController; 
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -133,6 +135,20 @@ Route::prefix('admin')->group(function () {
         Route::put('solutions/{id}', [SolutionsController::class, 'update'])->name('admin.solution.update');
         Route::get('solutions/{id}', [SolutionsController::class, 'destroy'])->name('admin.solution.destroy');
        
+        //consultants
+        Route::get('consultants/index', [ConsultantController::class, 'index'])->name('admin.consultant.index');
+        Route::get('consultants/create', [ConsultantController::class, 'create'])->name('admin.consultant.create');
+        Route::post('consultants/post', [ConsultantController::class, 'createEvent'])->name('admin.consultant.post');
+        Route::get('/consultant/show/{id}', [ConsultantController::class, 'show'])->name('admin.consultant.show');
+        Route::get('/consultant/destroy/{id}', [ConsultantController::class, 'destroy'])->name('admin.consultant.destroy');
+       
+        // Google OAuth Routes
+        Route::get('/auth/google', [GoogleCalendarController::class, 'redirectToGoogle'])->name('google.redirect');
+        Route::get('auth/google/callback', [GoogleCalendarController::class, 'handleGoogleCallback'])->name('google.callback');
+        Route::get('/google-calendar/events', [GoogleCalendarController::class, 'listGoogleCalendarEvents']);
+
+        
+
        //Industries
         Route::get('industries/index', [IndustriesController::class, 'index'])->name('admin.industries.index');
         Route::get('industries/create', [IndustriesController::class, 'create'])->name('admin.industries.create');
@@ -156,10 +172,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/faq/form/view/{id}', [FAQController::class, 'submitFormShow'])->name('admin.faq.submitForm.show');
         Route::get('/faq/form/destroy/{id}', [FAQController::class, 'submitFormDestroy'])->name('admin.faq.submitForm.destroy');
 
-        //Consultant
-        Route::get('/consultant/index', [ConsultantFormController::class, 'index'])->name('admin.consultant.index');
-        Route::get('/consultant/show/{id}', [ConsultantFormController::class, 'show'])->name('admin.consultant.show');
-        Route::get('/consultant/destroy/{id}', [ConsultantFormController::class, 'destroy'])->name('admin.consultant.destroy');
         //Book Inspection
         Route::get('/inspection/index', [BookInspection::class, 'index'])->name('admin.inspection.index');
         Route::get('/inspection/show/{id}', [BookInspection::class, 'show'])->name('admin.inspection.show');
@@ -169,6 +181,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/contact-form/show/{id}', [ContactFormController::class, 'show'])->name('admin.contactForm.show');
         Route::get('/contact-form/destroy/{id}', [ContactFormController::class, 'destroy'])->name('admin.contactForm.destroy');
        
+    
         
     });  
 });

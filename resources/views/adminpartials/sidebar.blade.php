@@ -28,6 +28,12 @@
                     <span class="nav-text">Solutions</span>
                 </a>
             </li>
+            <li>
+                <a class="has-arrow ai-icon" href="{{ route('admin.consultant.index') }}" aria-expanded="false">
+                    <i class="flaticon-381-layer-1"></i>
+                    <span class="nav-text">Consultants</span>
+                </a>
+            </li>
 
             <li>
                 <a class="has-arrow ai-icon" href="{{ route('admin.industries.index') }}" aria-expanded="false">

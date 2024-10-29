@@ -675,7 +675,9 @@ ol ul {
 }
 
 .rts-section-gap {
-  padding: 100px 0;
+  /* padding: 100px 0; */
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gap {
@@ -21125,7 +21127,7 @@ body.thirteen-body .title-area span {
   color: #1C2539;
   line-height: 26px;
   margin-top: -4px;
-  margin-bottom: 24px;
+  margin-bottom: 1px;
 }
 .rts-tab-style-one .tab-content .rts-tab-content-one .check-area {
   display: flex;
@@ -21257,7 +21259,7 @@ body.thirteen-body .title-area span {
   }
 }
 .rts-about-our-company-h2.eight .title-area::after {
-  content: "04";
+  content: "";
 }
 
 .about-content-inner-style-six p.disc {
@@ -24020,14 +24022,14 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-weight: 800;
 }
 .cta-h2-wrapper .body a.number {
-  font-size: 72px;
+  font-size: 50px;
   font-weight: 700;
   color: #fff;
   margin-top: 20px;
 }
 @media only screen and (max-width: 575px) {
   .cta-h2-wrapper .body a.number {
-    font-size: 41px;
+    font-size: 30px;
   }
 }
 .cta-h2-wrapper .body a.rts-btn {
@@ -30953,6 +30955,14 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   font-size: 16px !important;
   line-height: 21px !important;
 }
+.background-contact-appoinment .contact-form-area-one select {
+  color: #fff;
+  background: #212329;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:15px;
+}
+
 
 .contact-image-one.appoinment {
   margin-right: -123px;
