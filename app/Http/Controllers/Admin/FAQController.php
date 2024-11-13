@@ -12,7 +12,6 @@ use Http;
 class FAQController extends Controller
 {
     public function index(){
-       
         return view('admin.faq.index');
     }
 
@@ -52,7 +51,6 @@ class FAQController extends Controller
         return redirect()->route('admin.faq.index')->with('success', 'Faqs updated successfully.');
     }
     
-
     public function destroy($id)
     {
         $faqs= Faqs::findOrFail(decrypt($id));
@@ -63,7 +61,6 @@ class FAQController extends Controller
    
     public function submitForm(Request $request)
     {
-      
         $validator = Validator::make($request->all(), [
             'full_name' => 'required|string|max:50',
             'phone_no' => 'required|string|max:20',

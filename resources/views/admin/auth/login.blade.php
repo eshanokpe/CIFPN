@@ -10,6 +10,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="DexignZone">
 	<meta name="robots" content="index, follow">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo/CIFPN_favi.jpg')}}">
+    
    
 	<meta name="keywords" content="admin, dashboard, admin dashboard, admin template, template, admin panel, administration, analytics, bootstrap, hospital admin, modern, property, real estate, responsive, creative, retina ready, modern Dashboard">
 	<meta name="description" content="Your Ultimate Real Estate Admin Dashboard Template. Streamline property management, analyze market trends, and boost productivity with our intuitive and feature-rich solution. Elevate your real estate business today!">
@@ -37,7 +40,7 @@
                         <div class="card-body">
                             <div class="text-center mb-3">
                                 <a href="#">
-                                    <img class="logo-auth"src="{{ asset('assets/images/logo/logo.jpeg')}}" width="20" alt="">
+                                    <img class="logo-auth"src="{{ asset($contactUs->site_logo)}}" width="20" alt="">
                                 </a> 
                             </div>
 

@@ -8,14 +8,13 @@ use App\Models\DropdownItem;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Models\Service;
-use App\Models\Industries;
+use App\Models\CoreActivities;
 use App\Models\ContactForm;
 
 
 class PagesController extends Controller
 {
    
-    
     public function index($slug)
     {
         $pages = [
@@ -23,18 +22,37 @@ class PagesController extends Controller
             'about-us' => 'home.pages.aboutUs.about',
             'vision' => 'home.pages.aboutUs.vision',
             'mission' => 'home.pages.aboutUs.mission',
-            'core-values' => 'home.pages.aboutUs.core-values',
-            'solutions' => 'home.pages.solutions.solutions',
-            'industries' => 'home.pages.industries.industries',
-            'social-impact' => 'home.pages.social-impact',
+            'core-activities' => 'home.pages.coreActivities.core-activities',
             'careers' => 'home.pages.careers',
-            'contact-us' => 'home.pages.contact-us',
+            'contact' => 'home.pages.contact-us',
             'appointment' => 'home.pages.appointment',
-            'blog' => 'home.pages.post',
-            'faqs' => 'home.pages.faqs',
-            'events' => 'home.pages.events',
+            'blognews' => 'home.pages.blognews',
+            'faq' => 'home.pages.faqs',
+            'testimonials' => 'home.pages.testimonials',
             'terms-conditions' => 'home.pages.terms-conditions',
             'privacy-policy' => 'home.pages.privacy-policy',
+            'governance-board' => 'home.pages.governance-board',
+            'membership-benefits' => 'home.pages.membership.Membership-benefits',
+            'membership-overview' => 'home.pages.membership.membership-overview',
+            'membership-subscription-fees' => 'home.pages.membership.membership-subscription-fees',
+            'membership-tiers' => 'home.pages.membership.membership-tiers',
+            'mentorship-programme' => 'home.pages.membership.mentorship-programme',
+            'membership-login' => 'home.pages.membership.membership-login',
+            'membership-signup' => 'home.pages.membership.membership-signup',
+            'membership-application' => 'home.pages.membership.membership-application',
+
+            'programmes-and-examinations' => 'home.pages.certification.programmes-and-examinations',
+            'exam-requirement' => 'home.pages.certification.exam-requirement',
+
+            'events' => 'home.pages.event.event',
+
+            'membership-dashboard' => 'home.pages.dashboard.index',
+            'membership-logout' => 'home.pages.membership.membership-login',
+
+            'legislative-recommendations' => 'home.pages.advocacyPolicy.legislative-recommendations',
+            'government-ngo-partnerships' => 'home.pages.advocacyPolicy.government-ngo-partnerships',
+            'position-papers-policy-briefs' => 'home.pages.advocacyPolicy.position-papers-policy-briefs',
+
         ];
     
         $servicesPages = [
@@ -46,47 +64,15 @@ class PagesController extends Controller
             'enterprise-resource-planning-erp',
             'cybersecurity-solutions'
         ];
-        $industriesPages = [
-            'agriculture',
-            'telecommunications',
-            'systems-integration',
-            'cloud-solutions',
-            'iot-and-automation-solutions',
-            'data-analytics-ai-solutions',
-            'enterprise-resource-planning-erp',
-            'cybersecurity-solutions',
-            'corporate-consulting',
-            'oil-gas',
-            'education',
-            'ngos',
-            'public-sector',
-            'manufacturing',
-            'banking',
-        ];
-    
+        
         if (array_key_exists($slug, $pages)) {
             return view($pages[$slug]);
         }
+        // if ($slug === 'privacy-policy') {
+        //     return redirect()->route('home.privacyPolicy');
+        // }
 
-        if (in_array($slug, $industriesPages)) {
-            $solution = DropdownItem::where('slug', $slug)->first();
-    
-            if (!$solution) {
-                return view('home.errors.404'); 
-            }
-    
-            $industriesItem = Industries::where('title', $solution->name)->first();
-    
-            if (!$industriesItem) {
-                return view('home.errors.404'); 
-            }
-    
-            $relatedIndustries = Industries::where('id', '!=', $industriesItem->id)
-                                ->latest()
-                                ->get();
-    
-            return view('home.pages.industries.industries-details', compact('industriesItem', 'relatedIndustries'));
-        }
+       
     
         if (in_array($slug, $servicesPages)) {
             $solution = DropdownItem::where('slug', $slug)->first();

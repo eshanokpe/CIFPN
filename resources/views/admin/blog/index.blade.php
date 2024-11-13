@@ -35,10 +35,10 @@
 
                     <div class="card-header border-0 pb-0">
                         <div class="clearfix">
-                            <h3 class="card-title">Post List</h3>
+                            <h3 class="card-title">Posts List</h3>
                         </div>
                         <div class="clearfix text-center">
-                            <a href="{{route('admin.post.create')}}" class="btn btn-primary">Add Post</a>
+                            <a href="{{route('admin.blog.create')}}" class="btn btn-primary">Add Post</a>
                         </div>
                     </div>
 
@@ -68,8 +68,8 @@
                                             <td>{{ $post->created_at->format('d F Y') }}</td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a class="btn btn-primary " style="margin-right: 5px;" href="{{ route('admin.post.edit',  encrypt($post->id) ) }}">Edit</a>
-                                                    <a class="btn btn-danger" href="{{ route('admin.post.destroy', encrypt($post->id) )  }}" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                                                    <a class="btn btn-primary " style="margin-right: 5px;" href="{{ route('admin.blog.edit',  encrypt($post->id) ) }}">Edit</a>
+                                                    <a class="btn btn-danger" href="{{ route('admin.blog.destroy', encrypt($post->id) )  }}" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -82,37 +82,34 @@
                                 </tbody>
                             </table>
 
-                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                            {{-- <div class="d-flex align-items-center justify-content-between flex-wrap">
                                 <p class="mb-2 me-3">
                                     Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}, showing {{ $posts->count() }} records out of {{ $posts->total() }} total, starting on record {{ $posts->firstItem() }}, ending on record {{ $posts->lastItem() }}
                                 </p>  
                                 <nav aria-label="Page navigation example mb-2">
                                   <ul class="pagination mb-2 mb-sm-0">
-                                    <!-- Previous Page Link -->
+                                 
                                     <li class="page-item {{ $posts->onFirstPage() ? 'disabled' : '' }}">
                                       <a class="page-link" href="{{ $posts->previousPageUrl() }}">
-                                        {{-- <i class="fa-solid fa-angle-left"></i> --}}
+                                       
                                         <i>Previous</i>
                                       </a>
                                     </li>
-
-                                    <!-- Pagination Elements -->
                                     @for ($i = 1; $i <= $posts->lastPage(); $i++)
                                       <li class="page-item {{ $posts->currentPage() == $i ? 'active' : '' }}">
                                         <a class="page-link" href="{{ $posts->url($i) }}">{{ $i }}</a>
                                       </li>
                                     @endfor
-
-                                    <!-- Next Page Link -->
+                          
                                     <li class="page-item {{ $posts->hasMorePages() ? '' : 'disabled' }}">
                                       <a class="page-link" href="{{ $posts->nextPageUrl() }}">
-                                        {{-- <i class="fa-solid fa-angle-right"></i> --}}
                                         <i>Next</i>
                                       </a>
                                     </li>
                                   </ul>
                                 </nav>
-                            </div>
+                            </div> --}}
+                            
                         </div>
                     </div>
                 </div>

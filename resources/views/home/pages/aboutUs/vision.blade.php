@@ -58,7 +58,7 @@
                         </p>
                         
                         
-                        <a href="{{ route('home.pages', 'appointment') }}" class="rts-btn btn-primary">Make an Appointment</a>
+                        {{-- <a href="{{ route('home.pages', 'appointment') }}" class="rts-btn btn-primary">Make an Appointment</a> --}}
                     </div>
                     <!-- end -->
                 </div>
@@ -67,45 +67,5 @@
     </div>
 </div>
 <!-- rts about us section end -->
-
-<!-- business progress area start -->
-<div class="business-progress-area rts-section-gap">
-    <div class="box">
-        <img src="{{ asset('assets/images/business-goal/icon/box.png')}}" alt="box">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="thumbnail-progress-7">
-                    <img src="{{ asset('assets/images/business-goal/05.png')}}" alt="progress">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="title-area-style-six text-start">
-                    <div class="pre-title">
-                        <img src="{{ asset('assets/images/banner/shape/pre-title.png')}}" alt="pre-title">
-                        {{-- <span class="pre">Business Progress</span> --}}
-                        <img class="two" src="{{ asset('assets/images/banner/shape/pre-title.png')}}" alt="pre-title">
-                    </div>
-                    <h2 class="title">
-                        Vision Statement
-                    </h2>
-                </div>
-                <div class="inner-goal-progress-7" style="text-align: justify">
-                    <p class="disc" style="text-align: justify; width: 100%;">
-                        {!! $visionMission->vision !!}
-                    </p>
-                    
-                    <div class="row mb--50 g-5">
-                       
-                        
-                    </div>
-                    <a href="{{ route('home.pages', 'appointment') }}" class="rts-btn btn-primary-5">Let’s Work Together</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- business progress area end -->
 
 @endsection

@@ -13,7 +13,7 @@
                     <h2 class="text-black font-w600">Post</h2>
                     <p class="mb-0">Welcome to Archway Home backend</p>
                 </div>
-                <a href="{{route('admin.post.index')}}" class="btn btn-primary rounded light">View Post</a>
+                <a href="{{route('admin.blog.index')}}" class="btn btn-primary rounded light">View Post</a>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-12 align-center">
@@ -39,7 +39,7 @@
                                 @endif
                 
                                 
-                                <form method="POST"  action="{{ route('admin.post.update', $post->id) }}" enctype="multipart/form-data">
+                                <form method="POST"  action="{{ route('admin.blog.update', $post->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="mb-3 row align-items-center">
@@ -76,7 +76,6 @@
                                          
                                     </div>
                                       
-                                    
                                   
                                     <div class="mb-3 row">
                                         <div class="col-sm-10">

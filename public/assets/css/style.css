@@ -44,21 +44,21 @@
 40. footer
 
 ----------------------------*/
-/* Default  */
+/* Default  */ 
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 :root {
   /* #C8C9DD */
-  --color-primary: #0B1471;
-  --color-primary-2: #0B1471;
-  --color-primary-3: #0B1471;
+  --color-primary: #D4AF37;
+  --color-primary-2: #5264F3;
+  --color-primary-3: #D4AF37;
   --color-primary-4: #5264F3;
-  --color-primary-5: #B00F0F;
+  --color-primary-5: #D4AF37;
   --color-primary-6: #F64A00;
   --color-primary-7: #E87556;
   --color-primary-8: #845CFF;
   --color-primary-9: #4A3BCA;
-  --color-primary-alta: #FFECEC;
+  --color-primary-alta: #339AF0;
   --color-secondary:#111D5E;
   --color-terciary:#90FF03;
   --color-gray: #f6f6f6;
@@ -10903,7 +10903,6 @@ body {
 }
 .rts-title-area::after {
   position: absolute;
-  content: "About Us";
   left: -14%;
   top: -39%;
   color: #ffffff;
@@ -10960,12 +10959,10 @@ body {
   margin-bottom: 24px;
 }
 .rts-title-area.service::after {
-  content: "Services";
   left: 50%;
   transform: translateX(-50%);
 }
 .rts-title-area.pricing-planes::after {
-  content: "price plans";
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
@@ -10973,7 +10970,6 @@ body {
   top: -70%;
 }
 .rts-title-area.service-four::after {
-  content: "Services";
   left: 50%;
   transform: translateX(-50%);
   top: -20%;
@@ -11016,12 +11012,12 @@ body {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .rts-title-area.feature::after {
-    left: 55%;
+    left: 55%; 
     font-size: 110px;
   }
 }
 .rts-title-area.reviews::after {
-  content: "Reviews";
+  content: "";
   left: 32%;
   transform: translateX(-50%);
   z-index: -1;
@@ -11314,7 +11310,7 @@ body {
 }
 .home-blue .title-area::after {
   position: absolute;
-  content: "00";
+  content: "";
   left: 50%;
   transform: translateX(-50%);
   top: -39%;
@@ -11387,7 +11383,6 @@ body {
   left: 3%;
   transform: translateX(-50%);
   top: -42%;
-  content: "04";
 }
 @media only screen and (max-width: 767px) {
   .home-blue .title-area.service-h2.service::after {
@@ -21173,12 +21168,12 @@ body.thirteen-body .title-area span {
 }
 
 .about-company-thumbnail {
-  position: relative;
+  position: relative; 
   z-index: 1;
 }
 .about-company-thumbnail::after {
   position: absolute;
-  background-image: url(../images/about/shape/03.png);
+  /* background-image: url(../images/about/shape/03.png); */
   content: "";
   height: 517.43px;
   min-width: 712px;
@@ -22015,7 +22010,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 
 .service-one-inner {
   display: flex;
-  padding: 52px 35px 40px 64px;
+  padding: 52px 30px 40px 60px;
   position: relative;
   height: 100%;
 }
@@ -32029,7 +32024,9 @@ p.disc {
   background: #FFFFFF;
   border: 1px solid #F0F0F0;
   border-radius: 15px;
-  height: 100%;
+  padding: 10px 0px;
+  max-width: 100%;
+
 }
 .single-contact-one-inner .thumbnail {
   display: block;
@@ -32046,8 +32043,9 @@ p.disc {
 .single-contact-one-inner .content {
   display: flex;
   align-items: center;
-  padding: 40px;
-  background-color: var(--color-primary-alta);
+  padding: 10px;
+  /* background-color: var(--color-primary-alta); */
+  
 }
 @media only screen and (max-width: 767px) {
   .single-contact-one-inner .content {
@@ -32114,6 +32112,12 @@ p.disc {
 }
 .rts-working-process-1 .inner.four::after {
   content: "04";
+}
+.rts-working-process-1 .inner.five::after {
+  content: "05";
+}
+.rts-working-process-1 .inner.six::after {
+  content: "06";
 }
 .rts-working-process-1 .inner::after {
   position: absolute;
@@ -33277,7 +33281,7 @@ p.disc {
 
 .footer-bg-2 {
   /* background: url(../images/footer/footer-bg-2.jpg); */
-  background-color: #000;
+  background-color: #151515;
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;

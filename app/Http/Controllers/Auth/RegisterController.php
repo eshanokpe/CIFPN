@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Events\UserCreating;
 use Mail;
-use Http; 
+use Http;  
 use App\Mail\MailNotify;
 use App\Mail\EmailVerification;
 use App\Mail\EmailConfirmation;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use App\Models\Notifications;
+use Illuminate\Validation\Rules\Password;
 
 
 class RegisterController extends Controller
@@ -29,12 +30,10 @@ class RegisterController extends Controller
     
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'fullname' => ['required', 'string', 'max:30'],
-            'phone' => ['required', 'min:11', 'numeric'],
-            'email' => ['required', 'string', 'email', 'max:30', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'g-recaptcha-response'=> 'required',
+        return  $request->validate([
+            'username' => 'required|string|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
         ]);
     } 
 
@@ -46,7 +45,7 @@ class RegisterController extends Controller
      */
     
    
-    public function register(Request $request)
+    public function registerrr(Request $request)
     {
        
         $validator = Validator::make($request->all(), [
@@ -174,5 +173,28 @@ class RegisterController extends Controller
             return view('frontend.emails.emailconfirm',['user'=>$user]);
 
         }
+    }
+
+    public function register(Request $request)
+    {
+        // Validate the input
+        $request->validate([
+            'name' => 'required|string|max:50|unique:users',
+            'email' => 'required|string|email|max:50|unique:users',
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
+            // 'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        // Create the user
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        // auth()->login($user);
+
+        // Redirect to the intended page or dashboard
+        return redirect()->back()->with('success', 'Registration successful!, Please Login');
     }
 }

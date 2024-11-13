@@ -4,7 +4,7 @@
 
  <!-- start breadcrumb area -->
  <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
-    <div class="container">
+    <div class="container"> 
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
                 <h1 class="title">About Us</h1>
@@ -13,7 +13,7 @@
                 <div class="bread-tag">
                     <a href="{{ route('home')}}">Home</a>
                     <span> / </span>
-                    <a href="{{ route('aboutus') }}" class="active">About Us</a>
+                    <a href="{{ route('home.pages','about-us') }}" class="active">About Us</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 mt_sm--30">
                 
                 <div class="title-area about-company">
-                    <h6>About Our Company</h6>
+                    <h6>About Us</h6>
                     {{-- <h2 class="title">Professional And Dedicated <br>Consulting Services</h2> --}}
                 </div>
                 <div class="about-company-wrapper " style="text-align: justify">
@@ -45,138 +45,129 @@
 </div>
 <!-- start about our company End -->
 
-<!-- rts services area start -->
-<div class="rts-service-area rts-section-gapBottom">
-    <div class="container-fluid service-main about-service-width-controler">
-        <div class="background-service service-three row">
-            <div class="row g-5">
-                <div class="rts-title-area service-four text-center pt--40 pt_md--0 mt_sm--0 mt_md--0">
-                    <p class="pre-title">
-                        Our Services
-                    </p>
-                    <h2 class="title">What We Provide</h2>
-                </div>
-                <!-- start single Service -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pt--15 mb--80 mb_md--40 mb_sm--30">
-                    <div class="service-one-inner-four">
-                        <div class="big-thumbnail-area">
-                            <a href="#" class="thumbnail">
-                                <img src="assets/images/service/07.jpg" alt="Business-service">
-                            </a>
-                            <div class="content">
-                                <img src="assets/images/service/icon/13.svg" alt="Business-icon">
-                                <h5 class="title">Business Consultancy</h5>
-                                <p class="disc">Aenean augue venenatis est porttitor fames aptent lobortis nam
-                                    potenti</p>
-                            </div>
-                            <a href="service-details.html" class="over_link"></a>
-                        </div>
-                        <a href="service-details.html" class="rts-btn btn-primary"> Read More<i
-                                class="fal fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- start single Service -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pt--15 mb--80 mb_md--40 mb_sm--30">
-                    <div class="service-one-inner-four">
-                        <div class="big-thumbnail-area">
-                            <a href="#" class="thumbnail">
-                                <img src="assets/images/service/08.jpg" alt="Business-service">
-                            </a>
-                            <div class="content">
-                                <img src="assets/images/service/icon/14.svg" alt="Business-icon">
-                                <h5 class="title">Business Appoinment</h5>
-                                <p class="disc">Aenean augue venenatis est porttitor fames aptent lobortis nam
-                                    potenti</p>
-                            </div>
-                            <a href="service-details.html" class="over_link"></a>
-                        </div>
-                        <a href="service-details.html" class="rts-btn btn-primary"> Read More<i
-                                class="fal fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- start single Service -->
-                <div class="col-xl-4 col-md-6 col-sm-12 col-12 pt--15 mb--80">
-                    <div class="service-one-inner-four">
-                        <div class="big-thumbnail-area">
-                            <a href="#" class="thumbnail">
-                                <img src="assets/images/service/09.jpg" alt="Business-service">
-                            </a>
-                            <div class="content">
-                                <img src="assets/images/service/icon/15.svg" alt="Business-icon">
-                                <h5 class="title">Consultancy Foundation</h5>
-                                <p class="disc">Aenean augue venenatis est porttitor fames aptent lobortis nam
-                                    potenti</p>
-                            </div>
-                            <a href="service-details.html" class="over_link"></a>
-                        </div>
-                        <a href="service-details.html" class="rts-btn btn-primary"> Read More<i
-                                class="fal fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-</div>
-<!-- rts services area End -->
-
-
-<!-- customers feed back area start -->
-<div class="rts-customer-feedback-area rts-section-gap bg-customer-feedback">
+<!-- Objectives -->
+<div class="rts-business-goal rts-business-goal5 mt--0 rts-section-gapBottom">
     <div class="container">
-        <div class="row">
-            <div class="rts-title-area feedback team text-center">
-                <p class="pre-title">
-                    Feedbacks
-                </p>
-                <h2 class="title">Customer Feedbacks</h2>
-            </div>
-        </div>
-        <div class="row g-5 mt--20">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                <div class="testimopnial-wrapper-two">
-                    <div class="test-header">
-                        <div class="thumbnail">
-                            <img src="assets/images/testimonials/02.png" alt="">
-                        </div>
-                        <div class="name-desig">
-                            <h5 class="title">David Smith</h5>
-                            <span class="designation">Business Expert</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <p class="disc">
-                            “Parallel task user friendly convergence through supply are chains type siflify reliable
-                            meta provide service visionary sources unleash tactical thinking via granular
-                            intellectual capital architect dynamic information value online business solution
-                            services”
-                        </p>
-                    </div>
+        <div class="row text-center">
+            <div class="col-12">
+                <div class="title-area">
+                    <h2 class="title">
+                        Objectives
+                    </h2>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                <div class="testimopnial-wrapper-two">
-                    <div class="test-header">
-                        <div class="thumbnail">
-                            <img src="assets/images/testimonials/03.png" alt="">
-                        </div>
-                        <div class="name-desig">
-                            <h5 class="title">David Smith</h5>
-                            <span class="designation">Business Expert</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <p class="disc">
-                            “Parallel task user friendly convergence through supply are chains type siflify reliable
-                            meta provide service visionary sources unleash tactical thinking via granular
-                            intellectual capital architect dynamic information value online business solution
-                            services”
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <!-- business goal left -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 first-child">
+                <ul class="content-box first">
+                    <li class="content left">
+                        <p class="desc">
+                            To promote excellence and professional competence in financial crime prevention and fraud control.
                         </p>
+                    </li>
+                    <li class="content left one">
+                        <p class="desc">
+                            To enhance the understanding and implementation of compliance frameworks across sectors.
+                        </p>
+                    </li>
+                    <li class="content left">
+                         <p class="desc">
+                            To foster cooperation and collaboration between public and private institutions in combating financial crime.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 text-center">
+                <div class="business-goal-one">
+                    <img src="assets/images/business-goal/characters.png" alt="Business_Goal">
+                    <div class="shape"><img src="assets/images/business-goal/icon/line.png" alt=""></div>
+                </div>
+            </div>
+            <!-- business goal right -->
+
+            <!-- right area business -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <ul class="content-box last">
+                    <li class="content right">
+                        <p class="desc">
+                            To provide education, training, and certification for professionals to build capacity in fraud detection and prevention.
+                        </p>
+                    </li>
+                    <li class="content right two">
+                        <p class="desc">
+                            To advocate for the development and enforcement of robust anti-fraud regulations and policies in Nigeria.
+                        </p>
+                    </li>
+                    <li class="content right">
+                        <p class="desc">
+                            To create a network of experts and practitioners who can share insights, research, and best practices in combating financial crime.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- right area business ENd -->
+        </div>
+    </div>
+</div>
+<!-- Objectives End -->
+
+
+<!-- Committees -->
+<div class="rts-about-area rts-section-gap about-home-seven ">
+    <div class="container">
+       
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <div class="thumbnail">
+                    <img src="assets/images/about/main/06.jpg" alt="about_image">
+                    <img src="assets/images/about/main/about-02-sm.jpg" alt="small" class="small">
+                   
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-start home-seven-about">
+                    
+                    <h2 class="title">Committees</h2>
+
+                </div>
+                <div class="inner-about-home-7">
+                    <div class="disc" style="text-align: justify">
+                        <ol >
+                            <li>
+                                <b>Education & Professional Development Committee:</b> 
+                                Responsible for the design and delivery of IFPN's educational programs, certifications, and professional development activities.
+                            </li>
+                            <li>
+                                <b>Research & Policy Advocacy Committee:</b>
+                                Manages membership services, including recruitment, retention, and adherence to the IFPN's ethical standards.
+                            </li>
+                            <li>
+                                <b>Conferences & Events Committee:</b>
+                                Organizes and manages IFPN’s events, conferences, seminars, and other networking activities to foster engagement among members and stakeholders.
+                            </li>
+                            <li>
+                                <b>Compliance & Disciplinary Committee:</b>
+                                Ensures members adhere to the highest standards of professionalism and ethical conduct, investigating breaches and implementing disciplinary actions where necessary.
+                            </li>
+                            <li>
+                                <b>Joint Working Committee:</b>
+                                Facilitates collaboration with industry regulators and stakeholders across all sectors, promoting coordinated efforts in financial crime prevention and enhancing the overall effectiveness of initiatives.
+                            </li>
+                            <li>
+                                <b>Mentorship Committee:</b>
+                                Oversees the mentorship program, ensuring effective mentor-mentee matching, providing guidance, and monitoring progress to support the professional growth of both mentors and mentees.
+                            </li>
+                        </ol>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- customers feed back area end -->
+<!-- Committees -->
+
+
+
 @endsection

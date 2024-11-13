@@ -27,12 +27,61 @@
         </div>
     </div>
 
+    {{-- <div class="header-main-one bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm- col-4">
+                    <div class="thumbnail">
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset($contactUs->site_logo)}}"  alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class=" col-xl-10 col-lg-9 col-md-9 col-sm-9 col-8">
+                    <div class="main-header">
+                       
+                        <nav class="nav-main mainmenu-nav d-none d-xl-block">
+                            <ul class="mainmenu">
+                                @forelse ($menuItems as $item)
+                                    <li class="menu-item {{ $item->dropdownItems->count() > 0 ? 'has-droupdown' : '' }}">
+                                        <a class="menu-link" href="{{ route('home.pages', $item->slug) }}">{{ $item->name }}</a>
+                                        
+                                        @if($item->dropdownItems->count() > 0)
+                                            <ul class="submenu">
+                                                @foreach ($item->dropdownItems as $dropdownItem)
+                                                    <li >
+                                                        <a href="{{ route('home.pages', $dropdownItem->slug) }}">{{ $dropdownItem->name }}</a>
+                                                         
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @empty
+                                    <p>No data found</p>
+                                @endforelse
+                                
+                             </ul>
+                        </nav>
+                        <div class="button-area">
+                            <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
+                                <img class="menu-dark" src="{{ asset('assets/images/icon/menu.png')}}" alt="Menu-icon">
+                                <img class="menu-light" src="{{ asset('assets/images/icon/menu-light.png')}}" alt="Menu-icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
     <div class="main-header">
         <div class="content">
             <div class="header-left">
                 <a class="thumbnail" href="{{ route('home') }}">
-                    <img src="{{ asset($contactUs->site_logo)}}"  alt="">
-                </a>
+                    <img src="{{ asset($contactUs->site_logo)}}"  alt="" style="object-fit: contain; width: 60%;">
+                </a> 
                 <nav class="nav-main mainmenu-nav d-none d-xl-block">
                     <ul class="mainmenu">
                         @forelse ($menuItems as $item)
@@ -58,20 +107,11 @@
                 </nav>
             </div>
             <div class="header-right">
-                <div class="call-area">
-                   
-                    <div class="number-area">
-                        <span>Call us anytime</span>
-                        <a href="tel:{{$contactUs->first_phone}}">
-                            <h6 class="call">{{$contactUs->first_phone}}</h6>
-                        </a>
-                    </div>
-                </div> 
-                <a class="rts-btn btn-primary-2 menu-block-none" href="{{ route('home.pages', 'appointment') }}">Book a Meeting</a>
+               
                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20">
                     <img class="menu-dark" src="{{ asset('assets/images/icon/menu.png')}}" alt="Menu-icon">
                     <img class="menu-light" src="{{ asset('assets/images/icon/menu-light.png')}}" alt="Menu-icon">
-                </button>
+                </button> 
             </div>
         </div>
     </div>

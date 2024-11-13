@@ -13,6 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="DexignZone">
     <meta name="robots" content="index, follow">
+     <!-- Favicon icon -->
+     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo/CIFPN_favi.jpg')}}">
+    
 
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -20,12 +23,11 @@
     <meta property="og:title" content="{{ asset($contactUs->company_name) }}">
     <meta property="og:description"
         content="">
-    <meta property="og:image" content="{{ asset('assets/images/logo/logo.jpeg')}}">
     <meta name="format-detection" content="telephone=no">
-
+   
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
  
     <!-- Favicon icon -->
@@ -44,8 +46,8 @@
 
 <body>
 
-    @include('adminpartials.navbar');
-    @include('adminpartials.sidebar');
+    @include('admin/partials.navbar');
+    @include('admin/partials.sidebar');
 
     <!--**********************************
         Main wrapper start

@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\ContactFormController;
 use App\Http\Controllers\Admin\SolutionsController;
-use App\Http\Controllers\Admin\IndustriesController; 
+use App\Http\Controllers\Admin\CoreActivitiesController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -21,19 +22,24 @@ use App\Http\Controllers\Admin\IndustriesController;
 
 
 require __DIR__.'/admin.php';
+require __DIR__.'/portal.php';
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/{page}', [PagesController::class, 'index'])->name('home.pages');
 
-Route::get('/about-us', [FrontendController::class, 'AboutUS'])->name('aboutus');
 Route::get('/solutions', [FrontendController::class, 'Solutions'])->name('solutions');
 Route::get('/solutions/{slug}', [SolutionsController::class, 'show'])->name('solutions.detail');
-Route::get('industries/{slug}', [IndustriesController::class, 'show'])->name('industries.detail');
+Route::get('coreActivities/{slug}', [CoreActivitiesController::class, 'show'])->name('coreActivities-details');
 
- 
-Route::post('/contact-submit', [ContactFormController::class, 'store'])->name('contact.submit');
+Route::get('/membership-login', [LoginController::class, 'showLogin'])->name('membership.signin');
+Route::post('/membership-login-post', [LoginController::class, 'loginnn'])->name('membership');
 
+Route::get('/membership-signup', [AuthLoginController::class, 'showSignup'])->name('membership.signup');
+
+
+Route::get('/privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('home.privacyPolicy');
+Route::get('/contact-us', [FrontendController::class, 'AboutUS'])->name('contact.submit');
+Route::post('/membership-logout', [LoginController::class, 'logout'])->name('membership.logout');
 
 Auth::routes(); 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,18 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\GoogleCalendarController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\SolutionsController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ConsultantController;
-use App\Http\Controllers\Admin\IndustriesController; 
+use App\Http\Controllers\Admin\CoreActivitiesController; 
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\VisionMissionController;
-use App\Http\Controllers\Admin\SociallinkController;
+use App\Http\Controllers\Admin\SociallinkController; 
+use App\Http\Controllers\Admin\TestimonialsController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\ContactFormController;
-use App\Http\Controllers\Admin\SocialImpactController;
+use App\Http\Controllers\Admin\MembersController;
+use App\Http\Controllers\Admin\CertificationController;
 
 
 
@@ -56,6 +60,48 @@ Route::prefix('admin')->group(function () {
         Route::get('/settings/about-us', [SettingsController::class, 'getAboutUs'])->name('admin.settings.aboutUs');
         Route::post('/settings/store/about-us', [SettingsController::class, 'storeAboutUs'])->name('admin.settings.storeAboutus');
         Route::put('/settings/update/about-us/{id}', [SettingsController::class, 'updateAboutUs'])->name('admin.settings.updateAboutus');
+        // Governance-board
+        Route::get('/about-us', [AboutUsController::class, 'index'])->name('admin.about-us');
+        Route::get('/governance-board', [AboutUsController::class, 'governanceBoard'])->name('admin.governanceBoard');
+        Route::post('/governance-board/store', [AboutUsController::class, 'governanceBoardStore'])->name('admin.governanceBoard.store');
+        Route::put('/governance-board/update/about-us/{id}', [AboutUsController::class, 'governanceBoardUpdate'])->name('admin.governanceBoard.update');
+        // members
+        Route::get('/members', [MembersController::class, 'index'])->name('admin.members');
+       
+        Route::get('/members-benefit', [MembersController::class, 'membersBenefit'])->name('admin.members.membersBenefit');
+        Route::post('/members-benefit/post', [MembersController::class, 'membersBenefitStore'])->name('admin.membersBenefit.store');
+        Route::put('/members-benefit/update/{id}', [MembersController::class, 'membersBenefitUpate'])->name('admin.membersBenefit.update');
+
+        Route::get('/membership-overview', [MembersController::class, 'membersOverview'])->name('admin.members.membersOverview');
+        Route::post('/membership-overview/post', [MembersController::class, 'membersOverviewStore'])->name('admin.membersOverview.store');
+        Route::put('/membership-overview/update/{id}', [MembersController::class, 'membersOverviewUpate'])->name('admin.membersOverview.update');
+
+        Route::get('/membership-subscription-fees', [MembersController::class, 'membersSubscriptionFees'])->name('admin.members.membersSubscriptionFees');
+        Route::post('/membership-subscription-fees/post', [MembersController::class, 'membersSubscriptionFeesStore'])->name('admin.membersSubscriptionFees.store');
+        Route::put('/membership-subscription-fees/update/{id}', [MembersController::class, 'membersSubscriptionFeesUpate'])->name('admin.membersSubscriptionFees.update');
+        
+        Route::get('/membership-tiers', [MembersController::class, 'membershipTiers'])->name('admin.members.membershipTiers');
+        Route::post('/membership-tiers/post', [MembersController::class, 'membershipTiersStore'])->name('admin.membershipTiers.store');
+        Route::put('/membership-tiers/update/{id}', [MembersController::class, 'membershipTiersUpate'])->name('admin.membershipTiers.update');
+        
+        Route::get('/membership-programme', [MembersController::class, 'membersProgramme'])->name('admin.members.membersProgramme');
+        Route::post('/membership-programme/post', [MembersController::class, 'membersProgrammeStore'])->name('admin.membersProgramme.store');
+        Route::put('/membership-programme/update/{id}', [MembersController::class, 'membersProgrammeUpate'])->name('admin.membersProgramme.update');
+        
+        Route::get('/membership-application', [MembersController::class, 'membershipApplication'])->name('admin.members.membershipApplication');
+        Route::post('/membership-application/post', [MembersController::class, 'membershipApplicationStore'])->name('admin.membershipApplication.store');
+        Route::put('/membership-application/update/{id}', [MembersController::class, 'membershipApplicationUpate'])->name('admin.membershipApplication.update');
+       
+        // certification
+        Route::get('/certification', [CertificationController::class, 'index'])->name('admin.certification');
+        Route::get('/programme-examination', [CertificationController::class, 'programmeExamination'])->name('admin.certification.programmeExamination');
+        Route::post('/programme-examination/post', [CertificationController::class, 'programmeExaminationStore'])->name('admin.programmeExamination.store');
+        Route::put('/programme-examination/update/{id}', [CertificationController::class, 'programmeExaminationUpate'])->name('admin.programmeExamination.update');
+        
+        Route::get('/exam-requirement', [CertificationController::class, 'examRequirement'])->name('admin.certification.examRequirement');
+        Route::post('/exam-requirement/post', [CertificationController::class, 'examRequirementStore'])->name('admin.examRequirement.store');
+        Route::put('/exam-requirement/update/{id}', [CertificationController::class, 'examRequirementUpate'])->name('admin.examRequirement.update');
+       
         //Core Value 
         Route::get('/settings/core-value', [CoreValueController::class, 'index'])->name('admin.coreValue.index');
         Route::post('/settings/store/core-value', [CoreValueController::class, 'store'])->name('admin.coreValue.store');
@@ -127,13 +173,23 @@ Route::prefix('admin')->group(function () {
         Route::put('quicklink/{id}', [QuicklinkController::class, 'update'])->name('admin.quicklink.update');
         Route::get('quicklink/{id}', [QuicklinkController::class, 'destroy'])->name('admin.quicklink.destroy');
 
-        //Services
-        Route::get('solutions/index', [SolutionsController::class, 'index'])->name('admin.solution.index');
-        Route::get('solutions/create', [SolutionsController::class, 'create'])->name('admin.solution.create');
-        Route::post('post/solutions', [SolutionsController::class, 'store'])->name('admin.solution.store');
-        Route::get('solutions/{id}/edit', [SolutionsController::class, 'edit'])->name('admin.solution.edit');
-        Route::put('solutions/{id}', [SolutionsController::class, 'update'])->name('admin.solution.update');
-        Route::get('solutions/{id}', [SolutionsController::class, 'destroy'])->name('admin.solution.destroy');
+        //Blog
+        Route::get('blog/index', [BlogController::class, 'index'])->name('admin.blog.index');
+        Route::get('blog/create', [BlogController::class, 'create'])->name('admin.blog.create');
+        Route::post('post/blog', [BlogController::class, 'store'])->name('admin.blog.store');
+        Route::get('blog/{id}/edit', [BlogController::class, 'edit'])->name('admin.blog.edit');
+        Route::put('blog/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
+        Route::get('blog/{id}', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
+        Route::get('blog/{id}/details', [BlogController::class, 'details'])->name('blog.details');
+        
+        //Event
+        Route::get('event/index', [EventController::class, 'index'])->name('admin.event.index');
+        Route::get('event/create', [EventController::class, 'create'])->name('admin.event.create');
+        Route::post('post/event', [EventController::class, 'store'])->name('admin.event.store');
+        Route::get('event/{id}/edit', [EventController::class, 'edit'])->name('admin.event.edit');
+        Route::put('event/{id}', [EventController::class, 'update'])->name('admin.event.update');
+        Route::get('event/{id}', [EventController::class, 'destroy'])->name('admin.event.destroy');
+        Route::get('event/{id}/details', [EventController::class, 'details'])->name('event.details');
        
         //consultants
         Route::get('consultants/index', [ConsultantController::class, 'index'])->name('admin.consultant.index');
@@ -142,24 +198,23 @@ Route::prefix('admin')->group(function () {
         Route::get('/consultant/show/{id}', [ConsultantController::class, 'show'])->name('admin.consultant.show');
         Route::get('/consultant/destroy/{id}', [ConsultantController::class, 'destroy'])->name('admin.consultant.destroy');
        
-        // Google OAuth Routes
-        Route::get('/auth/google', [GoogleCalendarController::class, 'redirectToGoogle'])->name('google.redirect');
-        Route::get('auth/google/callback', [GoogleCalendarController::class, 'handleGoogleCallback'])->name('google.callback');
-        Route::get('/google-calendar/events', [GoogleCalendarController::class, 'listGoogleCalendarEvents']);
-
         
+       //CoreActivitiesController
+        Route::get('core-activities/index', [CoreActivitiesController::class, 'index'])->name('admin.coreActivities.index');
+        Route::get('core-activities/create', [CoreActivitiesController::class, 'create'])->name('admin.coreActivities.create');
+        Route::post('core-activities/store', [CoreActivitiesController::class, 'store'])->name('admin.coreActivities.store');
+        Route::get('core-activities/{id}/edit', [CoreActivitiesController::class, 'edit'])->name('admin.coreActivities.edit');
+        Route::put('core-activities/{id}', [CoreActivitiesController::class, 'update'])->name('admin.coreActivities.update');
+        Route::get('core-activities/{id}', [CoreActivitiesController::class, 'destroy'])->name('admin.coreActivities.destroy');
+        
+        //Testimonials
+        Route::get('testimonials/index', [TestimonialsController::class, 'index'])->name('admin.testimonials.index');
+        Route::get('testimonials/create', [TestimonialsController::class, 'create'])->name('admin.testimonials.create');
+        Route::post('testimonials/post', [TestimonialsController::class, 'store'])->name('admin.testimonials.store');
+        Route::get('testimonials/{id}/edit', [TestimonialsController::class, 'edit'])->name('admin.testimonials.edit');
+        Route::put('testimonials/{id}/post', [TestimonialsController::class, 'update'])->name('admin.testimonials.update');
+        Route::get('testimonials/{id}', [TestimonialsController::class, 'destroy'])->name('admin.testimonials.destroy');
 
-       //Industries
-        Route::get('industries/index', [IndustriesController::class, 'index'])->name('admin.industries.index');
-        Route::get('industries/create', [IndustriesController::class, 'create'])->name('admin.industries.create');
-        Route::post('industries/store', [IndustriesController::class, 'store'])->name('admin.industries.store');
-        Route::get('industries/{id}/edit', [IndustriesController::class, 'edit'])->name('admin.industries.edit');
-        Route::put('industries/{id}', [IndustriesController::class, 'update'])->name('admin.industries.update');
-        Route::get('industries/{id}', [IndustriesController::class, 'destroy'])->name('admin.industries.destroy');
-        //social-impact
-        Route::get('social-impact/index', [SocialImpactController::class, 'index'])->name('admin.socialimpact.index');
-        Route::put('social-impact/{id}', [SocialImpactController::class, 'update'])->name('admin.socialiimpact.update');
-        Route::post('social-impact/store', [SocialImpactController::class, 'store'])->name('admin.socialiimpact.store');
 
         //Faqs
         Route::get('faq/index', [FAQController::class, 'index'])->name('admin.faq.index');

@@ -9,7 +9,7 @@
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
                         <div class="text-white" style="text-align: justify; color:#fff">
-                            Infoscert Xpression Streams Limited is a forward-thinking technology systems integration company dedicated to delivering ...
+                            The Chartered Institute of Financial Crime and Fraud Prevention of Nigeria (CIFPN) is a leading professional body dedicated to the advancement of financial crime prevention and fraud control in Nigeria. ...
                             <snap ><a href="{{ route('home.pages', 'about-us') }}" class="text-white" style="font-weight: bold">Read more</a></snap>
                         </div>
                         <ul class="social-three-wrapper"> 
@@ -66,15 +66,16 @@
                         <div class="col-lg-6">
                             <div class="footer-two-single-wized two">
                                 <div class="wized-title-area">
-                                    <h5 class="wized-title text-white" >Quick Links</h5>
+                                    <h5 class="wized-title text-white" >Membership</h5>
                                 </div>
                                 <div class="wized-2-body ">
                                     <ul>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About Us</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'solutions') }}"><i class="fal fa-chevron-double-right "></i>Solutions</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'social-impact') }}"><i class="fal fa-chevron-double-right "></i>Social Impact</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'contact-us') }}"><i class="fal fa-chevron-double-right "></i>Contact Us</a></li>
-                                        <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'membership-login') }}"><i class="fal fa-chevron-double-right "></i>Membership Login</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'membership-overview') }}"><i class="fal fa-chevron-double-right "></i>IFPN Membership</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'membership-subscription-fees') }}"><i class="fal fa-chevron-double-right "></i>Membership Subscription Fees</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'membership-signup') }}"><i class="fal fa-chevron-double-right "></i>Join IFPN</a></li>
+                                        <li><a class="text-white" href="{{ route('home.pages', 'membership-application') }}"><i class="fal fa-chevron-double-right "></i>Membership Application</a></li>
+                                        {{-- <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -86,18 +87,19 @@
                 <!-- footer three mid area ENd -->
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer-three-single-wized mid-right text-white">
-                        <h5 class="title text-white">Get Updates</h5>
-                        <div class="body">
-                            <div class="update-wrapper">
-                                <p class="disc text-white">Sign up for our latest news & articles. We won’t give you spam
-                                    mails.</p>
-                                <form class="email-footer-area">
-                                    <input type="email" placeholder="Enter Email Address" required>
-                                    <button type="submit"><i class="fas fa-location-arrow"></i></button>
-                                </form>
-                                <div class="note-area text-white">
-                                    <p><span style="font-weight: bold" class="text-white">Note:</span> We do not publish your email</p>
-                                </div>
+                        <div class="footer-two-single-wized two">
+                            <div class="wized-title-area">
+                                <h5 class="wized-title text-white" >IFPN</h5>
+                            </div>
+                            <div class="wized-2-body ">
+                                <ul>
+                                    <li><a class="text-white" href="{{ route('home.pages', 'about-us') }}"><i class="fal fa-chevron-double-right "></i>About IFPN</a></li>
+                                    <li><a class="text-white" href="{{ route('home.pages', 'vision') }}"><i class="fal fa-chevron-double-right "></i>Vision</a></li>
+                                    <li><a class="text-white" href="{{ route('home.pages', 'mission') }}"><i class="fal fa-chevron-double-right "></i>Mission</a></li>
+                                    <li><a class="text-white" href="{{ route('home.privacyPolicy') }}"><i class="fal fa-chevron-double-right "></i>Privacy Policy</a></li>
+                                    <li><a class="text-white" href="{{ route('home.pages', 'contact-us') }}"><i class="fal fa-chevron-double-right "></i>Contact Us</a></li>
+                                    {{-- <li><a class="text-white" href="{{ route('home.pages', 'faqs') }}"><i class="fal fa-chevron-double-right "></i>FAQs</a></li> --}}
+                                </ul>
                             </div>
                         </div>
                     </div>

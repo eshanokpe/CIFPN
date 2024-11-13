@@ -10,16 +10,16 @@
         <div class="container-fluid">
             <div class="form-head d-md-flex mb-sm-4 mb-3 align-items-start">
                 <div class="me-auto d-lg-block d-block">
-                    <h2 class="text-black font-w600">Post</h2>
+                    <h2 class="text-black font-w600">blog</h2>
                     <p class="mb-0">Welcome to Archway Home backend</p>
                 </div>
-                <a href="{{route('admin.post.index')}}" class="btn btn-primary rounded light">View Post</a>
+                <a href="{{route('admin.blog.index')}}" class="btn btn-primary rounded light">View blog</a>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-12 align-center">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Add Post</h4>
+                            <h4 class="card-title">Add blog</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
@@ -39,7 +39,7 @@
                                 @endif
                 
                                 
-                                <form method="POST"  action="{{ route('admin.post.store') }}" enctype="multipart/form-data">
+                                <form method="POST"  action="{{ route('admin.blog.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3 row align-items-center">
                                         <label class="col-sm-3 col-form-label form-label">Title</label>
@@ -47,16 +47,16 @@
                                             <input type="text" class="form-control" placeholder="Title" name="title" id="title" required>
                                         </div>
                                     </div>
+                                    
                                     <div class="mb-3 row align-items-center">
                                         <label class="col-sm-3 col-form-label form-label">Content</label>
                                         <div class="col-sm-9">
                                             <div class="">
-                                                <textarea name="content" id="ckeditor" class="form-control" required></textarea>
+                                                <textarea name="content" id="ckeditor" class="form-control" ></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
+ 
                                     <div class="mb-3 row align-items-center">
                                         <label class="col-sm-3 col-form-label form-label">Image</label>
                                         <div class="col-sm-9">
@@ -71,6 +71,7 @@
                                         </div>
                                     </div>
                                     
+                                   
                                   
                                     <div class="mb-3 row">
                                         <div class="col-sm-10">

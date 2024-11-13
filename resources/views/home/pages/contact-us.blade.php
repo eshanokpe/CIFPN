@@ -8,7 +8,7 @@
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
                 <h1 class="title">Contact Us</h1>
-            </div>
+            </div> 
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="bread-tag">
                     <a href="#">Home</a>
@@ -26,85 +26,63 @@
   <div class="rts-contact-area rts-section-gap">
     <div class="container">
         <div class="row g-5">
-            <!-- single contact area -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="single-contact-one-inner">
-                    <div class="thumbnail">
-                        <img src="{{ asset('assets/images/contact/01.png')}}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="icone">
-                            <img src="{{ asset('assets/images/contact/shape/01.svg')}}" alt="">
-                        </div>
-                        <div class="info">
-                            <span>Call Us 24/7</span>
-                            <a href="tel:+18475555555">
-                                <h5>{{ $contactUs->first_phone}} | {{ $contactUs->second_phone}}</h5>
-                            </a>
+                    <div class="contact__us--info__list d-flex align-items-center">
+                        <div class="content">
+                            <div class="icone" style="background-color: #5264F3; -webkit-mask: url('{{ asset('assets/images/contact/shape/01.svg') }}') no-repeat center; mask: url('{{ asset('assets/images/contact/shape/01.svg') }}') no-repeat center; width: 100px; height: 100px;">
+                            </div>
+                            <div class="info">
+                                <span>Call Us 24/7</span>
+                                <a href="tel:+18475555555">
+                                    <h6>{{ $contactUs->first_phone}} | {{ $contactUs->second_phone}}</h6>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- single contact area end -->
-            <!-- single contact area -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="single-contact-one-inner">
-                    <div class="thumbnail">
-                        <img src="{{ asset('assets/images/contact/02.png')}}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="icone">
-                            <img src="{{ asset('assets/images/contact/shape/02.svg')}}" alt="">
-                        </div>
-                        <div class="info">
-                            <span>MAke A Quote</span>
-                            <a href="mailto:{{ $contactUs->first_email}} ">
-                                <h5>{{ $contactUs->first_email}} {{ $contactUs->second_email}} </h5>
-                                <br/>
-                            </a>
+                    <div class="contact__us--info__list d-flex align-items-center">
+                        <div class="content">
+                            <div class="icone" style="background-color: #5264F3; -webkit-mask: url('{{ asset('assets/images/contact/shape/02.svg') }}') no-repeat center; mask: url('{{ asset('assets/images/contact/shape/02.svg') }}') no-repeat center; width: 100px; height: 100px;">
+                            </div>
+                            <div class="info">
+                                <span>MAke A Quote</span>
+                                <a href="mailto:{{ $contactUs->first_email}} ">
+                                    <h5>{{ $contactUs->first_email}} {{ $contactUs->second_email}} </h5>
+                                    <br/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- single contact area end -->
-            <!-- single contact area -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="single-contact-one-inner">
-                    <div class="thumbnail">
-                        <img src="{{ asset('assets/images/contact/03.png')}}" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="icone">
-                            <img src="{{ asset('assets/images/contact/shape/03.svg')}}" alt="">
-                        </div>
-                        <div class="info">
+                    <div class="contact__us--info__list d-flex align-items-center">
+                        <div class="content">
+                            <div class="icone" style="background-color: #5264F3; -webkit-mask: url('{{ asset('assets/images/contact/shape/03.svg') }}') no-repeat center; mask: url('{{ asset('assets/images/contact/shape/03.svg') }}') no-repeat center; width: 100px; height: 100px;">
+                            </div>
                             
-                            <h6>{{ $contactUs->first_address}}</h6>
+                            <div class="info">
+                                
+                                <h6>{{ $contactUs->first_address}}</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- single contact area end -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="contact-map-area-fluid">
+                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.408009985622!2d3.344683!3d6.5961068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b922431bb3a15%3A0xc7b0fa06a5f9ff0b!2s2nd%20Floor%2C%201%20Adeola%20Adeoye%20St%2C%20Opebi%2C%20Ikeja%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1731414482384!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+           
         </div>
     </div>
 </div>
 <!-- conact single area end -->
 
-<!-- bizup map area start -->
-<div class="rts-contact-map-area">
-    <div class="contaciner-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="contact-map-area-fluid">
-                    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3963.1445011589967!2d3.336454373547364!3d6.628968021931741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sng!4v1729816609331!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    {{-- <img class="location" src="{{ asset('assets/images/contact/shape/location.svg')}}" alt="Business_map"> --}}
-                
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- bizup map area end -->
+
 
 
 <!-- conact us form fluid start -->
