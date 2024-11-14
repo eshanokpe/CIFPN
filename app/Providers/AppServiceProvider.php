@@ -6,6 +6,7 @@ use App\Models\Consultant;
 use App\Models\ContactUs;
 use App\Models\Posts; 
 use App\Models\CoreActivities; 
+use App\Models\Slider;
 use App\Models\MenuItem;
 use App\Models\CoreValue;
 use App\Models\VisionMission;
@@ -49,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // View::share('projectMenus', projectMenus::latest()->get());
+        View::share('sliders', Slider::all());
         View::share('aboutUs', AboutUs::first());
         View::share('contactUs', ContactUs::first());
         View::share('coreActivities', CoreActivities::latest()->get()); 

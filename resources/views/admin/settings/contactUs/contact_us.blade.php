@@ -77,6 +77,21 @@
                         </div>
                         <small class="text-danger">Maximum file size: 2MB. Allowed file types: JPEG, PNG, JPG, GIF.</small>
                            
+                        <div class="mb-3 col-md-10">
+                            <label class="form-label"> Favicon Logo </label>
+                            <input id="image" type="file" class="form-control @error('favicon') is-invalid @enderror" name="favicon"  onchange="previewImageFavicon(event)">
+                            @error('favicon')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            @if(isset($contactUs)) 
+                            <img src="{{ asset($contactUs->favicon) }}" alt="{{ $contactUs->title }}" class="img-thumbnail mt-2" width="200">
+                            @endif
+                            <img id="image-preview-favicon" src="" alt="Image Preview" class="img-thumbnail mt-2" style="display:none; max-width: 200px;">
+                        </div>
+                        <small class="text-danger">Maximum file size: 2MB. Allowed file types: JPEG, PNG, JPG, GIF.</small>
+                           
                     </div>
                     <button type="submit" class="btn btn-primary">{{ isset($contactUs) ? 'Update' : 'Add' }}</button>
                 </form>
@@ -99,6 +114,21 @@
                     function previewImageFooter(event) {
                         const input = event.target;
                         const preview = document.getElementById('image-preview-footer');
+                        
+                        if (input.files && input.files[0]) {
+                            const reader = new FileReader();
+                            
+                            reader.onload = function(e) {
+                                preview.src = e.target.result;
+                                preview.style.display = 'block';
+                            };
+                            
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    function previewImageFavicon(event) {
+                        const input = event.target;
+                        const preview = document.getElementById('image-preview-favicon');
                         
                         if (input.files && input.files[0]) {
                             const reader = new FileReader();

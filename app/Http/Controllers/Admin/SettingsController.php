@@ -181,6 +181,7 @@ class SettingsController extends Controller
             'first_address' => 'nullable|string',
             'second_address' => '',
             'site_logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'favicon' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($request->hasFile('site_logo')) {
@@ -189,11 +190,17 @@ class SettingsController extends Controller
             $image->move(public_path('assets/images/logo'), $siteLogo);
             $validated['site_logo'] = 'assets/images/logo/' . $siteLogo;
         }
-        if ($request->hasFile('footer_logo')) {
-            $image = $request->file('footer_logo');
+        if ($request->hasFile('favicon')) {
+            $image = $request->file('favicon');
             $footerLogo = uniqid().'.'. $image->getClientOriginalExtension();
             $image->move(public_path('assets/images/logo'), $footerLogo);
-            $validated['footer_logo'] = 'assets/images/logo/' . $footerLogo;
+            $validated['favicon'] = 'assets/images/logo/' . $footerLogo;
+        }
+        if ($request->hasFile('site_logo')) {
+            $image = $request->file('site_logo');
+            $siteLogo = uniqid().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('assets/images/logo'), $siteLogo);
+            $validated['site_logo'] = 'assets/images/logo/' . $siteLogo;
         }
 
         ContactUs::create($validated);
@@ -214,6 +221,7 @@ class SettingsController extends Controller
             'second_address' => '',
             'site_logo' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
             'footer_logo' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
+            'favicon' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
         ]);
 
         $contactUs = ContactUs::findOrFail($id);
@@ -246,8 +254,21 @@ class SettingsController extends Controller
                     unlink($oldImagePath);
                 }
             }
-
             $contactUs->footer_logo = 'assets/images/logo/' . $imageNameFooter;
+        }
+        if ($request->hasFile('favicon')) {
+            $imagefavicon = $request->file('favicon');
+            $imageNameFavicon = uniqid(). '.' . $imagefavicon->getClientOriginalExtension();
+            $imagefavicon->move(public_path('assets/images/logo'), $imageNameFavicon);
+
+            // Delete old footer_logo file if exists
+            if ($contactUs->favicon) {
+                $oldImagePath = public_path($contactUs->favicon);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+            $contactUs->favicon = 'assets/images/logo/' . $imageNameFavicon;
         }
 
         $contactUs->company_name = $validated['company_name'];

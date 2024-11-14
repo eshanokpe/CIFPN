@@ -5,7 +5,7 @@
             <div class="row g-5">
                 <div class="col-xl-3 col-lg-6">
                     <div class="footer-three-single-wized left" style=" color:#fff">
-                        <a href="{{ route('home') }}" class="logo_footer">
+                        <a href="{{ route('home') }}" class="logo_footer" style="background-color: #fff">
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
                         <div class="text-white" style="text-align: justify; color:#fff">

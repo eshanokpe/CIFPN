@@ -2,69 +2,33 @@
 
 @section('content')
  <!-- banner blank space area -->
- <div class="rts-banner-area rts-banner-one">
-    <div class="swiper mySwiper banner-one">
+ <div class="rts-banner-area-two">
+    <div class="swiper mySwiperh2_banner swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress swiper-backface-hidden">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <!-- banner single content -->
-                <div class="banner-one-inner text-start">
-                    <p class="pre-title"> 
-                        <span>Welcome!</span> Start Growing Your Business Today
-                    </p>
-                     <h1 class="title ">Make <span>Business Unique </span> <br>
-                        With Great Ideas</h1>
-                    <p class="disc banner-para">
-                        Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                        feugiat
-                        fusce conubia ridiculus tristique parturient
-                    </p>
-                    <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                    <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
+            @foreach ($sliders as $slider)
+                <div class="swiper-slide" role="group" aria-label="{{ $loop->iteration }} / {{ $sliders->count() }}">
+                    <div class="banner-two" style="background-image: url('{{ asset($slider->image) }}');">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="banner-two-content text-center">
+                                        <div class="wrapper">
+                                            <h1 class="title">{{ $slider->title }}</h1>
+                                            <span class="sub">{{ $slider->caption }}</span>
+                                            <a class="rts-btn btn-primary-2" href="{{ route('home.pages', 'membership-overview')}}">View Membership Overview</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- banner single content end -->
-            </div>
-            <div class="swiper-slide two">
-                <!-- banner single content -->
-                <div class="banner-one-inner text-start">
-                    <p class="pre-title">
-                        <span>Welcome!</span> Start Growing Your Business Today
-                    </p>
-                    <h1 class="title ">Launch <span>Ultra Modern</span> <br> Effective Business</h1>
-                    <p class="disc banner-para">
-                        Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                        feugiat
-                        fusce conubia ridiculus tristique parturient
-                    </p>
-                    <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                    <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
-                </div>
-                <!-- banner single content end -->
-            </div>
-            <div class="swiper-slide three">
-                <!-- banner single content -->
-                <div class="banner-one-inner text-start">
-                    <p class="pre-title">
-                        <span>Welcome!</span> Start Growing Your Business Today
-                    </p>
-                    <h1 class="title ">Make <span>Business Growth</span> <br> With Next Level</h1>
-                    <p class="disc banner-para">
-                        Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                        feugiat
-                        fusce conubia ridiculus tristique parturient
-                    </p>
-                    <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                    <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
-                </div>
-                <!-- banner single content end -->
-            </div>
+            @endforeach
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="animation-img">
-        <img class="shape-img two" src="assets/images/banner/shape/02.png" alt="banner_business">
-        <img class="shape-img three" src="assets/images/banner/shape/03.png" alt="banner_business">
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
     </div>
 </div>
+
 <!-- banner blank space area end -->
 
 
@@ -141,13 +105,10 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
                 <div class="image-area">
-                    <img src="assets/images/service/h2/03.jpg" alt="Service_Image">
-                    <img class="two"  src="assets/images/service/h2/02.jpg" alt="Service_Image">
-                    <img class="three" style="object-fit: cover; width: 60%; height: 400px;" src="assets/images/service/h2/01.jpg" alt="Service_Image">
-                    <div class="ratio-area">
-                        <h3 class="ratio">85%</h3>
-                        <span>Successful Ratio</span>
-                    </div>
+                    {{-- <img src="assets/images/service/h2/03.jpg" alt="Service_Image"> --}}
+                    <img   src="assets/images/service/h2/022.jpg" alt="Service_Image">
+                    {{-- <img  style="object-fit: cover; width: 60%; height: 500px;" src="assets/images/service/h2/01.jpg" alt="Service_Image"> --}}
+                    
                 </div>
             </div>
             <div class="col-lg-6">
@@ -161,7 +122,7 @@
                         <p class="disc" style="text-align: justify">
                             IFPN is an institute comprised of professionals in the fields of financial crime prevention, anti-money laundering (AML), know your customer (KYC) processes, transaction monitoring, and fraud control. Our members range from financial institutions, law enforcement agencies, compliance officers, and consultants to legal professionals and academics. We are dedicated to promoting best practices and standards across industries to tackle financial crime and safeguard the integrity of Nigeria’s and Africa' s economy
                         </p>
-                        <div class="feature-one-wrapper mt--40">
+                        {{-- <div class="feature-one-wrapper mt--40">
                             <div class="single-feature-one">
                                 <i class="fal fa-check"></i>
                                 <p>Fast Growing Sells</p>
@@ -178,7 +139,7 @@
                                 <i class="fal fa-check"></i>
                                 <p>Best Quality Services</p>
                             </div>
-                        </div>
+                        </div> --}}
                         
                     </div>
                 </div>
@@ -306,24 +267,6 @@
 <!-- our working Process End -->
 
 
-<!-- cta section start -->
-<div class="rts-cta-section-start rts-section-gap cta-bg-h2">
-    <div class="container">
-        <div class="row">
-            <div class="cta-h2-wrapper text-center">
-                <div class="icon">
-                    <a href="{{ route('home.pages', 'contactus') }}"><i class="fas fa-phone-alt"></i></a>
-                </div>
-                <div class="body">
-                    <p class="info">Contact Our Agent For Any kind off Business Help <span>(24/7 Available)</span></p>
-                    <a href="#" class="number">{{$contactUs->first_phone}} | {{$contactUs->second_phone}}</a>
-                    <a href="{{ route('home.pages', 'contactus') }}" class="rts-btn btn-primary-2">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- cta section end -->
 
 
 

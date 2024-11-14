@@ -48,17 +48,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 :root {
-  /* #C8C9DD */
+  /* #C8C9DD */ 
   --color-primary: #D4AF37;
-  --color-primary-2: #557ef8; 
+  --color-primary-2: #3A3A82; 
   --color-primary-3: #D4AF37;
-  --color-primary-4: #557ef8;
+  --color-primary-4: #3A3A82;
   --color-primary-5: #D4AF37;
   --color-primary-6: #F64A00;
   --color-primary-7: #E87556;
   --color-primary-8: #845CFF;
   --color-primary-9: #4A3BCA;
-  --color-primary-alta: #557ef8;
+  --color-primary-alta: #3A3A82;
   --color-secondary:#111D5E;
   --color-terciary:#90FF03;
   --color-gray: #f6f6f6;
@@ -19000,8 +19000,8 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 }
 
 .banner-two {
-  background-image: url(../images/banner/banner-05.png);
-  height: 850px;
+  /* background-image: url(../images/banner/banner-05.png); */
+  height: 750px;
   background-repeat: no-repeat;
   position: relative;
   background-position: center;
@@ -19010,14 +19010,14 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 }
 @media only screen and (max-width: 767px) {
   .banner-two {
-    height: 500px;
+    height: 400px;
   }
 }
 .banner-two.slide-2 {
-  background-image: url(../images/banner/banner-06.png);
+  /* background-image: url(../images/banner/banner-06.png); */
 }
 .banner-two.slide-3 {
-  background-image: url(../images/banner/banner-07.png);
+  /* background-image: url(../images/banner/banner-07.png); */
 }
 
 .banner-two-content {

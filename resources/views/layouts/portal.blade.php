@@ -13,7 +13,7 @@
     {{-- @viteReactRefresh --}}
     {{-- @vite(['resources/js/app.js']) --}}
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/CIFPN_favi.jpg')}}">
+    <link rel="shortcut icon" href="{{ asset($contactUs->favicon)}}">
     <!-- App css -->
     <link href="{{ asset('portal/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('portal/css/icons.min.css')}}" rel="stylesheet" type="text/css" />

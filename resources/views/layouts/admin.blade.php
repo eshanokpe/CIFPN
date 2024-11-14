@@ -9,29 +9,21 @@
     <title>{{$contactUs->company_name }}</title>
 
     <!-- Meta -->
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="DexignZone">
     <meta name="robots" content="index, follow">
      <!-- Favicon icon -->
-     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo/CIFPN_favi.jpg')}}">
+     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($contactUs->favicon)}}">
     
 
     <meta name="keywords" content="">
     <meta name="description" content="">
-
     <meta property="og:title" content="{{ asset($contactUs->company_name) }}">
-    <meta property="og:description"
-        content="">
+    <meta property="og:description" content="">
     <meta name="format-detection" content="telephone=no">
-   
-
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-
- 
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo/logo.jpeg')}}">
     <!-- Vectormap -->
     <link href="{{ asset ('backend/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
     <link href="{{ asset ('backend/vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet">

@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\ContactFormController;
 use App\Http\Controllers\Admin\AdovacyPolicyController;
 use App\Http\Controllers\Admin\MembersController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\CertificationController;
 
 
@@ -48,12 +49,12 @@ Route::prefix('admin')->group(function () {
         Route::put('/menu/{id}', [MenuController::class, 'updateMenu'])->name('admin.menu.update');
         Route::get('/menu/{id}', [MenuController::class, 'destroyMenu'])->name('admin.menu.destroy');
         //Slider 
-        Route::get('/manage/sliderIndex', [SliderController::class, 'indexSlider'])->name('admin.slider.index');
-        Route::get('/manage/sliderCreate', [SliderController::class, 'createSlider'])->name('admin.slider.create');
-        Route::post('/slider', [SliderController::class, 'storeSlider'])->name('slider.store');
-        Route::get('/slider/{id}/edit', [SliderController::class, 'editSlider'])->name('admin.slider.edit');
-        Route::put('/slider/{id}', [SliderController::class, 'updateSlider'])->name('admin.slider.update');
-        Route::get('/slider/{id}', [SliderController::class, 'destroySlider'])->name('admin.slider.destroy');
+        Route::get('/manage/sliderIndex', [SliderController::class, 'index'])->name('admin.slider.index');
+        Route::get('/manage/sliderCreate', [SliderController::class, 'create'])->name('admin.slider.create');
+        Route::post('/slider', [SliderController::class, 'store'])->name('slider.store');
+        Route::get('/slider/{id}/edit', [SliderController::class, 'edit'])->name('admin.slider.edit');
+        Route::put('/slider/{id}', [SliderController::class, 'update'])->name('admin.slider.update');
+        Route::get('/slider/{id}', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
         //Why choose us 
         Route::get('/settings/content', [SettingsController::class, 'WhyChooseUs'])->name('admin.settings.content');
         Route::post('/settings/store/why-choose-us', [SettingsController::class, 'storeWhyChooseUs'])->name('admin.settings.store_why_choose_us');

@@ -55,7 +55,7 @@ class EventController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->extension();
             $image->move(public_path('assets/images/event/'), $imageName);
-            
+             
             $event->update(['image' =>  'assets/images/event/' . $imageName]);
         } 
        

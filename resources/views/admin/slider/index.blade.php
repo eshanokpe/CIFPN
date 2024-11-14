@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Slider</a></li>
                 
             </ol>
-        </div>
+        </div> 
         <!-- row -->
 
         <div class="row">
@@ -32,7 +32,7 @@
                             }
                         }, 3000);
                     </script>
-
+ 
                     <div class="card-header border-0 pb-0">
                         <div class="clearfix">
                             <h3 class="card-title">Slider List</h3>

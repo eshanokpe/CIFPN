@@ -214,11 +214,11 @@
 
 body.dark-topbar .navbar-custom,
 body.dark-topbar .topbar {
-    background-color: #486BD3
+    background-color: #3A3A82
 }
 
 body.dark-topbar .left-sidebar .brand {
-    background-color: #486BD3;
+    background-color: #3A3A82;
     border-right: 1px solid #131d35
 }
 
@@ -716,11 +716,11 @@ body.dark-topbar .app-search form .form-control:focus {
 }
 
 body.dark-sidebar .left-sidebar {
-    background-color: #486BD3
+    background-color: #3A3A82
 }
 
 body.dark-sidebar .left-sidebar .brand {
-    background-color: #486BD3;
+    background-color: #3A3A82;
     border-bottom: 1px solid #131d35
 }
 
@@ -770,7 +770,7 @@ body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-item.show.active,
 body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-item.show:focus,
 body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-item.show:hover {
     color: #ccd1e0;
-    background-color: #486BD3;
+    background-color: #3A3A82;
     border-color: transparent transparent transparent
 }
 
@@ -782,7 +782,7 @@ body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-link.active,
 body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-link:focus,
 body.dark-sidebar .left-sidebar .nav.nav-tabs.menu-tab .nav-link:hover {
     color: #ccd1e0;
-    background-color: #486BD3;
+    background-color: #3A3A82;
     border-color: transparent transparent transparent
 }
 
@@ -1470,12 +1470,12 @@ body.dark-sidebar.enlarge-menu .left-sidebar:hover .sidebar-user-pro {
 
 body[data-layout=horizontal].dark-topbar .navbar-custom,
 body[data-layout=horizontal].dark-topbar .topbar {
-    background-color: #486BD3
+    background-color: #3A3A82
 }
 
 body[data-layout=horizontal].dark-topbar .navbar-custom .brand,
 body[data-layout=horizontal].dark-topbar .topbar .brand {
-    background-color: #486BD3
+    background-color: #3A3A82
 }
 
 body[data-layout=horizontal].dark-topbar .navbar-custom .brand .logo .logo-lg,
@@ -3090,7 +3090,7 @@ a.badge:hover {
 }
 
 .modal-content .modal-header {
-    background-color: #486BD3
+    background-color: #3A3A82
 }
 
 .modal-content .modal-header .modal-title {

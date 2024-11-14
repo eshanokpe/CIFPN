@@ -8,7 +8,7 @@ trait AdminTrait
 {
     private function validateMenu(Request $request)
     {
-        $request->validate([
+        $request->validate([ 
             'name' => 'required|string|max:255',
             'dropdown_items.*' => 'nullable|string|max:255',
         ]);
@@ -23,7 +23,7 @@ trait AdminTrait
     }
      
     private function validateSlider(Request $request, $isNew = true)
-    {
+    { 
         $rules = [
             'title' => 'required|string|max:255',
             'caption' => 'nullable|string',
@@ -38,8 +38,8 @@ trait AdminTrait
     private function uploadImageSlider($image)
     {
         $imageName = time() . '.' . $image->extension();
-        $image->move(public_path('sliderImages'), $imageName);
-        return 'sliderImages/' . $imageName;
+        $image->move(public_path('assets/images/slider/'), $imageName);
+        return 'assets/images/slider/' . $imageName;
     }
 
 }

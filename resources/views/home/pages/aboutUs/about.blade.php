@@ -120,7 +120,7 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-6">
                 <div class="thumbnail">
-                    <img src="assets/images/about/main/06.jpg" alt="about_image">
+                    <img src="assets/images/about/main/about-05.jpg" alt="about_image">
                     <img src="assets/images/about/main/about-02-sm.jpg" alt="small" class="small">
                    
                 </div>

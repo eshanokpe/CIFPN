@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $contactUs->company_name }}</title> 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo/CIFPN_favi.jpg')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($contactUs->favicon)}}">
     
     
     <link rel="stylesheet" href="{{ asset ('assets/css/plugins/swiper.min.css')}}">
