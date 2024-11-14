@@ -36,12 +36,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/settings/show-password', [AdminLoginController::class, 'showChangePasswordForm'])->name('admin.show.password');
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         // Menu
-        Route::get('/manage/project/index', [MenuController::class, 'projectMenu'])->name('admin.project.projectMenu');
-        Route::post('/project/menu/store', [MenuController::class, 'storeProjectMenu'])->name('admin.projectMenu.store');
-        Route::get('/project/menu/store/{id}', [MenuController::class, 'editProjectMenu'])->name('admin.projectMenu.edit');
-        Route::put('/project-menu/update/{id}', [MenuController::class, 'updateProjectMenu'])->name('admin.projectMenu.update');
-        Route::get('/project-menu/destroy/{id}', [MenuController::class, 'destroyProjectMenu'])->name('admin.projectMenu.destroy');
-
+       
         Route::get('/menu/create', [MenuController::class, 'creatMenu'])->name('admin.menu.create');
         Route::get('/manage/menu/index', [MenuController::class, 'indexMenu'])->name('admin.menu.index');
         Route::post('/menu', [MenuController::class, 'storeMenu'])->name('admin.menu.store');
