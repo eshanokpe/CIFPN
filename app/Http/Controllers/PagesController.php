@@ -53,7 +53,7 @@ class PagesController extends Controller
             'legislative-recommendations' => 'home.pages.advocacyPolicy.legislative-recommendations',
             'government-ngo-partnerships' => 'home.pages.advocacyPolicy.government-ngo-partnerships',
             'position-papers-policy-briefs' => 'home.pages.advocacyPolicy.position-papers-policy-briefs',
-            
+            'advisory-board-members' => 'home.pages.advocacyPolicy.advisory-board-members',
             'policies-governance-framework' => 'home.pages.advocacyPolicy.policies-governance-framework',
 
         ];
