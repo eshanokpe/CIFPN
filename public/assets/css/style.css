@@ -50,15 +50,15 @@
 :root {
   /* #C8C9DD */
   --color-primary: #D4AF37;
-  --color-primary-2: #5264F3;
+  --color-primary-2: #557ef8; 
   --color-primary-3: #D4AF37;
-  --color-primary-4: #5264F3;
+  --color-primary-4: #557ef8;
   --color-primary-5: #D4AF37;
   --color-primary-6: #F64A00;
   --color-primary-7: #E87556;
   --color-primary-8: #845CFF;
   --color-primary-9: #4A3BCA;
-  --color-primary-alta: #339AF0;
+  --color-primary-alta: #557ef8;
   --color-secondary:#111D5E;
   --color-terciary:#90FF03;
   --color-gray: #f6f6f6;

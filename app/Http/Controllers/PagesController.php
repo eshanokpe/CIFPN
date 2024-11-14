@@ -45,13 +45,16 @@ class PagesController extends Controller
             'exam-requirement' => 'home.pages.certification.exam-requirement',
 
             'events' => 'home.pages.event.event',
+            'livestream' => 'home.pages.livestream',
+            'partners-and-affiliates' => 'home.pages.partnersAffiliates',
 
-            'membership-dashboard' => 'home.pages.dashboard.index',
             'membership-logout' => 'home.pages.membership.membership-login',
 
             'legislative-recommendations' => 'home.pages.advocacyPolicy.legislative-recommendations',
             'government-ngo-partnerships' => 'home.pages.advocacyPolicy.government-ngo-partnerships',
             'position-papers-policy-briefs' => 'home.pages.advocacyPolicy.position-papers-policy-briefs',
+            
+            'policies-governance-framework' => 'home.pages.advocacyPolicy.policies-governance-framework',
 
         ];
     
@@ -95,6 +98,10 @@ class PagesController extends Controller
         }
     
         return view('home.errors.404');
+    }
+
+    public function membershipLogin(){
+        return view('home.pages.membership.membership-login'); 
     }
     
    

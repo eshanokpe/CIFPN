@@ -17,7 +17,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/membership-dashboard';
+    protected $redirectTo = '/membership/dashboard';
 
     public function __construct()
     {
@@ -48,7 +48,7 @@ class LoginController extends Controller
         return back()->withErrors([
             'login_error' => 'Invalid email or password.',
         ])->onlyInput('email'); // retain the email input value
-    }
+    } 
 
     /**
      * Validate the login request.

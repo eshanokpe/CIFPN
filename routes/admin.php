@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\GoogleCalendarController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\LivestreamController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ConsultantController;
 use App\Http\Controllers\Admin\CoreActivitiesController; 
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\TestimonialsController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\ContactFormController;
+use App\Http\Controllers\Admin\AdovacyPolicyController;
 use App\Http\Controllers\Admin\MembersController;
 use App\Http\Controllers\Admin\CertificationController;
 
@@ -65,6 +67,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/governance-board', [AboutUsController::class, 'governanceBoard'])->name('admin.governanceBoard');
         Route::post('/governance-board/store', [AboutUsController::class, 'governanceBoardStore'])->name('admin.governanceBoard.store');
         Route::put('/governance-board/update/about-us/{id}', [AboutUsController::class, 'governanceBoardUpdate'])->name('admin.governanceBoard.update');
+        
+        // AdovacyPolicy
+        Route::get('/advocacyPolicy', [AdovacyPolicyController::class, 'index'])->name('admin.advocacyPolicy');
+        // Route::get('/members-benefit', [AdovacyPolicyController::class, 'membersBenefit'])->name('admin.members.membersBenefit');
+        Route::post('/policies-governance/post', [AdovacyPolicyController::class, 'policiesGovernanceStore'])->name('admin.policiesGovernanceFramework.store');
+        Route::put('/policies-governance/update/{id}', [AdovacyPolicyController::class, 'policiesGovernanceUpate'])->name('admin.policiesGovernanceFramework.update');
+
         // members
         Route::get('/members', [MembersController::class, 'index'])->name('admin.members');
        
@@ -157,6 +166,15 @@ Route::prefix('admin')->group(function () {
         Route::put('/events/{id}', [EventController::class, 'update'])->name('admin.events.update');
         Route::get('/events/{id}', [EventController::class, 'destroy'])->name('admin.events.destroy');
 
+        //Livestream
+        Route::get('livestream/index', [LivestreamController::class, 'index'])->name('admin.livestream.index');
+        Route::get('livestream/create', [LivestreamController::class, 'create'])->name('admin.livestream.create');
+        Route::post('livestream/store', [LivestreamController::class, 'store'])->name('admin.livestream.store');
+        Route::get('/livestream/{id}/edit', [LivestreamController::class, 'edit'])->name('admin.livestream.edit');
+        Route::put('/livestream/{id}', [LivestreamController::class, 'update'])->name('admin.livestream.update');
+        Route::get('/livestream/{id}', [LivestreamController::class, 'destroy'])->name('admin.livestream.destroy');
+
+         
         //Galleries
         Route::get('projects/status/index', [GalleryContoller::class, 'index'])->name('admin.projects.status.index');
         Route::get('projects/status/create', [GalleryContoller::class, 'create'])->name('admin.projects.status.create');

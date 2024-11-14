@@ -26,6 +26,12 @@
                 <span class="nav-text">Certification</span>
                 </a>
             </li>
+            <li>
+                <a class="has-arrow ai-icon" href="{{ route('admin.advocacyPolicy') }}" aria-expanded="false">
+                <i class="flaticon-381-layer-1"></i>
+                <span class="nav-text">Advocacy & Policy</span>
+                </a>
+            </li>
 
             <li>
                 <a class="has-arrow ai-icon" href="{{ route('admin.contactForm.index') }}"  aria-expanded="false">
@@ -38,6 +44,13 @@
                 <a class="has-arrow ai-icon" href="{{ route('admin.event.index') }}" aria-expanded="false">
                     <i class="flaticon-381-layer-1"></i>
                     <span class="nav-text">Events</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="{{ route('admin.livestream.index') }}" aria-expanded="false">
+                    <i class="flaticon-381-layer-1"></i>
+                    <span class="nav-text">Livestream</span>
                 </a>
             </li>
           

@@ -9,7 +9,7 @@
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
                         <div class="text-white" style="text-align: justify; color:#fff">
-                            The Chartered Institute of Financial Crime and Fraud Prevention of Nigeria (CIFPN) is a leading professional body dedicated to the advancement of financial crime prevention and fraud control in Nigeria. ...
+                            The Institute of Financial Crime and Fraud Prevention of Nigeria (IFPN) is a leading professional body dedicated to the advancement of financial crime prevention and fraud control in Nigeria. ...
                             <snap ><a href="{{ route('home.pages', 'about-us') }}" class="text-white" style="font-weight: bold">Read more</a></snap>
                         </div>
                         <ul class="social-three-wrapper"> 

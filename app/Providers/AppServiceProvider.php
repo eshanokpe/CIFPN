@@ -16,11 +16,13 @@ use App\Models\MembersBenefit;
 use App\Models\MembersOverview;
 use App\Models\MembersProgramme;
 use App\Models\MembersSubscriptionFees;
+use App\Models\PoliciesGovernance;
 use App\Models\Testimonials;
 use App\Models\Faqs;
 use App\Models\Career; 
 use App\Models\ContactForm;
 use App\Models\Service;
+use App\Models\Livestream;
 use App\Models\Event;
 use App\Models\ExamRequirement;
 use App\Models\ProgrammeExamination;
@@ -72,9 +74,12 @@ class AppServiceProvider extends ServiceProvider
         View::share('membersProgramme', MembersProgramme::first()); 
         View::share('membershipApplication', MembershipApplication::first()); 
 
+        View::share('policiesGovernance', PoliciesGovernance::first()); 
+
         View::share('programmeExamination', ProgrammeExamination::first()); 
         View::share('examRequirement', ExamRequirement::first()); 
         View::share('events', Event::latest()->paginate(20)); 
+        View::share('livestream', Livestream::latest()->paginate(20)); 
         
      
 
