@@ -14,7 +14,7 @@
                     <p class="mb-0">Welcome to  {{ $contactUs->company_name}} backend</p>
                 </div>
                 <a href="{{route('admin.faq.index')}}" class="btn btn-primary rounded light">View FAQs</a>
-            </div>
+            </div> 
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-12 align-center">
                     <div class="card">

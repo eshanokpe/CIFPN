@@ -12,7 +12,7 @@
                 <div class="me-auto d-lg-block d-block">
                     <h2 class="text-black font-w600">Contact</h2>
                     <p class="mb-0">Welcome to {{ $contactUs->company_name}} backend</p>
-                </div>
+                </div> 
                 <a href="{{route('admin.contactForm.index')}}" class="btn btn-primary rounded light">View Contact</a>
             </div>
             <div class="row justify-content-center">

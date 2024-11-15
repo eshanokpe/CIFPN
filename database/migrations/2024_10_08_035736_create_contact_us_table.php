@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('second_address')->nullable();
             $table->string('website_link')->nullable();
             $table->string('site_logo')->nullable();
+            $table->string('footer_logo')->nullable();
             $table->string('favicon')->nullable();
             $table->timestamps();
         });

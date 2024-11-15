@@ -181,6 +181,7 @@ class SettingsController extends Controller
             'first_address' => 'nullable|string',
             'second_address' => '',
             'site_logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'footer_logo' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
             'favicon' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -196,11 +197,11 @@ class SettingsController extends Controller
             $image->move(public_path('assets/images/logo'), $footerLogo);
             $validated['favicon'] = 'assets/images/logo/' . $footerLogo;
         }
-        if ($request->hasFile('site_logo')) {
-            $image = $request->file('site_logo');
+        if ($request->hasFile('footer_logo')) {
+            $image = $request->file('footer_logo');
             $siteLogo = uniqid().'.'.$image->getClientOriginalExtension();
             $image->move(public_path('assets/images/logo'), $siteLogo);
-            $validated['site_logo'] = 'assets/images/logo/' . $siteLogo;
+            $validated['footer_logo'] = 'assets/images/logo/' . $siteLogo;
         }
 
         ContactUs::create($validated);
@@ -222,7 +223,7 @@ class SettingsController extends Controller
             'site_logo' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
             'footer_logo' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
             'favicon' => 'image|mimes:jpeg,png,jpg,gif|max:4048',
-        ]);
+        ]); 
 
         $contactUs = ContactUs::findOrFail($id);
 

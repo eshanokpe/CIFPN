@@ -35,7 +35,7 @@ class FAQController extends Controller
         $faqs = Faqs::findOrFail(decrypt($id));
         return view('admin.faq.edit', compact('faqs'));
     }
-
+ 
     public function update(Request $request, $id)
     {
         // Validate the incoming request data
