@@ -68,7 +68,7 @@ class BlogController extends Controller
     
         return redirect()->route('admin.blog.index')->with('success', 'Blog updated successfully.');
     }
-    
+     
 
     public function destroy($id)
     {

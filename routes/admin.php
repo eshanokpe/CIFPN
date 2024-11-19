@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\GoogleCalendarController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\LivestreamController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\MembersController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ConsultantController;
 use App\Http\Controllers\Admin\CoreActivitiesController; 
 use App\Http\Controllers\Admin\MenuController;
@@ -20,8 +23,7 @@ use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\ContactFormController;
 use App\Http\Controllers\Admin\AdovacyPolicyController;
-use App\Http\Controllers\Admin\MembersController;
-use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\AdvisoryBoardMemberController;
 use App\Http\Controllers\Admin\CertificationController;
 
 
@@ -30,7 +32,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'showLogin'])->name('admin.login');
     Route::post('/manage/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
     Route::post('/manage/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
-    
+     
     Route::middleware('auth.admin')->group(function () {
         Route::post('/settings/update-password', [AdminLoginController::class, 'updatePassword'])->name('admin.password.update');
         Route::get('/settings/show-password', [AdminLoginController::class, 'showChangePasswordForm'])->name('admin.show.password');
@@ -54,6 +56,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/settings/content', [SettingsController::class, 'WhyChooseUs'])->name('admin.settings.content');
         Route::post('/settings/store/why-choose-us', [SettingsController::class, 'storeWhyChooseUs'])->name('admin.settings.store_why_choose_us');
         Route::put('/settings/update/why-choose-us/{id}', [SettingsController::class, 'updateWhyChooseUs'])->name('admin.settings.update_why_choose_us');
+        
+        //User
+        Route::name('admin.')->group(function () {
+            Route::resource('users', UserController::class);
+        });
         //About us
         Route::get('/settings/about-us', [SettingsController::class, 'getAboutUs'])->name('admin.settings.aboutUs');
         Route::post('/settings/store/about-us', [SettingsController::class, 'storeAboutUs'])->name('admin.settings.storeAboutus');
@@ -69,6 +76,13 @@ Route::prefix('admin')->group(function () {
         // Route::get('/members-benefit', [AdovacyPolicyController::class, 'membersBenefit'])->name('admin.members.membersBenefit');
         Route::post('/policies-governance/post', [AdovacyPolicyController::class, 'policiesGovernanceStore'])->name('admin.policiesGovernanceFramework.store');
         Route::put('/policies-governance/update/{id}', [AdovacyPolicyController::class, 'policiesGovernanceUpate'])->name('admin.policiesGovernanceFramework.update');
+        // advisoryBoardMember
+        Route::get('/advisory-board-member', [AdvisoryBoardMemberController::class, 'index'])->name('admin.advisoryBoardMember.index');
+        Route::get('/advisory-board-member/create', [AdvisoryBoardMemberController::class, 'create'])->name('admin.advisoryBoardMember.create');
+        Route::post('/advisory-board-member/store', [AdvisoryBoardMemberController::class, 'store'])->name('admin.advisoryBoardMember.store');
+        Route::get('/advisory-board-member/edit/{id}', [AdvisoryBoardMemberController::class, 'edit'])->name('admin.advisoryBoardMember.edit');
+        Route::put('/advisory-board-member/update/{id}', [AdvisoryBoardMemberController::class, 'update'])->name('admin.advisoryBoardMember.update');
+        Route::get('/advisory-board-member/delete/{id}', [AdvisoryBoardMemberController::class, 'destroy'])->name('admin.advisoryBoardMember.destroy');
 
         // members
         Route::get('/members', [MembersController::class, 'index'])->name('admin.members');
@@ -136,24 +150,12 @@ Route::prefix('admin')->group(function () {
         Route::put('career/update/{id}', [CareerController::class, 'update'])->name('admin.career.update');
        
 
-        //Teams 
-        Route::get('/team/index', [TeamController::class, 'getTeam'])->name('admin.team.getTeam');
-        Route::get('/team/create', [TeamController::class, 'create'])->name('admin.team.create');
-        Route::post('/team/store', [TeamController::class, 'store'])->name('admin.team.store');
-        Route::get('/team/{id}/edit', [TeamController::class, 'edit'])->name('admin.team.edit');
-        Route::put('/team/{id}', [TeamController::class, 'update'])->name('admin.team.update');
-        Route::get('/team/{id}', [TeamController::class, 'destroy'])->name('admin.team.destroy');
-       
          //Privacy
-        Route::get('/index/privacypolicy', [PrivacyController::class, 'index'])->name('admin.privacyPolicy.index');
-        Route::post('/store/privacypolicy', [PrivacyController::class, 'store'])->name('admin.privacy.store');
-        Route::put('/update/privacypolicy/{id}', [PrivacyController::class, 'update'])->name('admin.privacy.update');
+        // Route::get('/index/privacypolicy', [PrivacyController::class, 'index'])->name('admin.privacyPolicy.index');
+        // Route::post('/store/privacypolicy', [PrivacyController::class, 'store'])->name('admin.privacy.store');
+        // Route::put('/update/privacypolicy/{id}', [PrivacyController::class, 'update'])->name('admin.privacy.update');
         
-        //Terms Conditions
-        Route::get('/terms/conditions', [TermsConditionController::class, 'index'])->name('admin.termsCondition.index');
-        Route::post('/terms/conditions/store/', [TermsConditionController::class, 'store'])->name('admin.termsCondition.store');
-        Route::put('/terms/conditions/update/{id}', [TermsConditionController::class, 'update'])->name('admin.termsCondition.update');
-         
+        
         //Events
         Route::get('events/index', [EventController::class, 'index'])->name('admin.events.index');
         Route::get('events/create', [EventController::class, 'create'])->name('admin.events.create');
@@ -170,24 +172,8 @@ Route::prefix('admin')->group(function () {
         Route::put('/livestream/{id}', [LivestreamController::class, 'update'])->name('admin.livestream.update');
         Route::get('/livestream/{id}', [LivestreamController::class, 'destroy'])->name('admin.livestream.destroy');
 
-         
-        //Galleries
-        Route::get('projects/status/index', [GalleryContoller::class, 'index'])->name('admin.projects.status.index');
-        Route::get('projects/status/create', [GalleryContoller::class, 'create'])->name('admin.projects.status.create');
-        Route::post('projects/status/store', [GalleryContoller::class, 'store'])->name('admin.projects.status.store');
-        Route::get('/projects/status/{id}/edit', [GalleryContoller::class, 'edit'])->name('admin.projects.status.edit');
-        Route::put('/projects/status/{id}', [GalleryContoller::class, 'update'])->name('admin.gallery.update');
-        Route::get('/gaprojects/statusllery/{id}', [GalleryContoller::class, 'destroy'])->name('admin.projects.status.destroy');
-        
-        //QuickLink 
-        Route::get('/quicklink/index', [QuicklinkController::class, 'index'])->name('admin.quicklink.index');
-        Route::get('/quicklink/create', [QuicklinkController::class, 'create'])->name('admin.quicklink.create');
-        Route::post('/quicklink/store', [QuicklinkController::class, 'store'])->name('admin.quicklink.store');
-        Route::get('quicklink/{id}/edit', [QuicklinkController::class, 'edit'])->name('admin.quicklink.edit');
-        Route::put('quicklink/{id}', [QuicklinkController::class, 'update'])->name('admin.quicklink.update');
-        Route::get('quicklink/{id}', [QuicklinkController::class, 'destroy'])->name('admin.quicklink.destroy');
-
-        //Blog
+       
+        //Blog 
         Route::get('blog/index', [BlogController::class, 'index'])->name('admin.blog.index');
         Route::get('blog/create', [BlogController::class, 'create'])->name('admin.blog.create');
         Route::post('post/blog', [BlogController::class, 'store'])->name('admin.blog.store');
@@ -204,13 +190,6 @@ Route::prefix('admin')->group(function () {
         Route::put('event/{id}', [EventController::class, 'update'])->name('admin.event.update');
         Route::get('event/{id}', [EventController::class, 'destroy'])->name('admin.event.destroy');
         Route::get('event/{id}/details', [EventController::class, 'details'])->name('event.details');
-       
-        //consultants
-        Route::get('consultants/index', [ConsultantController::class, 'index'])->name('admin.consultant.index');
-        Route::get('consultants/create', [ConsultantController::class, 'create'])->name('admin.consultant.create');
-        Route::post('consultants/post', [ConsultantController::class, 'createEvent'])->name('admin.consultant.post');
-        Route::get('/consultant/show/{id}', [ConsultantController::class, 'show'])->name('admin.consultant.show');
-        Route::get('/consultant/destroy/{id}', [ConsultantController::class, 'destroy'])->name('admin.consultant.destroy');
        
         
        //CoreActivitiesController
@@ -241,10 +220,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/faq/form/view/{id}', [FAQController::class, 'submitFormShow'])->name('admin.faq.submitForm.show');
         Route::get('/faq/form/destroy/{id}', [FAQController::class, 'submitFormDestroy'])->name('admin.faq.submitForm.destroy');
 
-        //Book Inspection
-        Route::get('/inspection/index', [BookInspection::class, 'index'])->name('admin.inspection.index');
-        Route::get('/inspection/show/{id}', [BookInspection::class, 'show'])->name('admin.inspection.show');
-        Route::get('/inspection/destroy/{id}', [BookInspection::class, 'destroy'])->name('admin.inspection.destroy');
         //Contact
         Route::get('/contact-form/index', [ContactFormController::class, 'index'])->name('admin.contactForm.index');
         Route::get('/contact-form/show/{id}', [ContactFormController::class, 'show'])->name('admin.contactForm.show');

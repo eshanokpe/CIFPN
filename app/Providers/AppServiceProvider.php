@@ -19,6 +19,7 @@ use App\Models\MembersProgramme;
 use App\Models\MembersSubscriptionFees;
 use App\Models\PoliciesGovernance;
 use App\Models\Testimonials;
+use App\Models\AdvisoryBoardMember;
 use App\Models\Faqs;
 use App\Models\Career; 
 use App\Models\ContactForm;
@@ -55,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('contactUs', ContactUs::first());
         View::share('coreActivities', CoreActivities::latest()->get()); 
         View::share('posts', Posts::latest()->paginate(20));
+        
         View::share('menuItems', MenuItem::with('dropdownItems')->get());
         View::share('visionMission', VisionMission::first()); 
         View::share('governanceBoard', GovernanceBoard::first()); 
@@ -81,6 +83,9 @@ class AppServiceProvider extends ServiceProvider
         View::share('examRequirement', ExamRequirement::first()); 
         View::share('events', Event::latest()->paginate(20)); 
         View::share('livestream', Livestream::latest()->paginate(20)); 
+        View::share('advisoryBoardMember', AdvisoryBoardMember::latest()->paginate(20));
+
+
         
      
 

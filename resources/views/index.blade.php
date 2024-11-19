@@ -15,7 +15,6 @@
                                         <div class="wrapper">
                                             <h1 class="title">{{ $slider->title }}</h1>
                                             <span class="sub">{{ $slider->caption }}</span>
-                                            <a class="rts-btn btn-primary-2" href="{{ route('home.pages', 'membership-overview')}}">View Membership Overview</a>
                                         </div>
                                     </div>
                                 </div>
@@ -122,24 +121,7 @@
                         <p class="disc" style="text-align: justify">
                             IFPN is an institute comprised of professionals in the fields of financial crime prevention, anti-money laundering (AML), know your customer (KYC) processes, transaction monitoring, and fraud control. Our members range from financial institutions, law enforcement agencies, compliance officers, and consultants to legal professionals and academics. We are dedicated to promoting best practices and standards across industries to tackle financial crime and safeguard the integrity of Nigeria’s and Africa' s economy
                         </p>
-                        {{-- <div class="feature-one-wrapper mt--40">
-                            <div class="single-feature-one">
-                                <i class="fal fa-check"></i>
-                                <p>Fast Growing Sells</p>
-                            </div>
-                            <div class="single-feature-one">
-                                <i class="fal fa-check"></i>
-                                <p>24/7 Quality Services</p>
-                            </div>
-                            <div class="single-feature-one">
-                                <i class="fal fa-check"></i>
-                                <p>Expert Members</p>
-                            </div>
-                            <div class="single-feature-one">
-                                <i class="fal fa-check"></i>
-                                <p>Best Quality Services</p>
-                            </div>
-                        </div> --}}
+                        
                         
                     </div>
                 </div>

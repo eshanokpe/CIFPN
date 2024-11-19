@@ -22,103 +22,40 @@
 <!-- end breadcrumb area -->
 
 
- <!-- rts blog mlist area -->
- <div class="rts-blog-list-area rts-section-gap">
-    <div class="container">
-        <div class="row g-5">
-            <!-- rts blo post area -->
-            <div class="col-xl-8 col-md-12 col-sm-12 col-12">
-                <!-- single post -->
-                <div class="blog-single-post-listing details mb--0">
-                   
-                    <div class="blog-listing-content">
-                     
-                        {{-- <h3 class="title"> Members Benefit</h3> --}}
-                        
-                        <h5 class="disc para-1">
-                            Coming Soon
-                        </h5>
-                        
-                     
-                    </div>
-                </div>
-                <!-- single post End-->
-            </div>
-            <!-- rts-blog post end area -->
-            <!--rts blog wizered area -->
-            <div class="col-xl-4 col-md-12 col-sm-12 col-12">
-                <!-- single wizered start -->
-               
-                <!-- single wizered start -->
-                <div class="rts-single-wized Categories">
-                    <div class="wized-header">
-                        <h5 class="title">
-                            Categories
-                        </h5>
-                    </div>
-                    <div class="wized-body">
-                       
-                        <!-- single categoris -->
-                        <ul class="single-categories">
-                            <li><a href="#">Menu<i class="far fa-long-arrow-right"></i></a></li>
-                        </ul>
-                        <!-- single categoris End -->
-                    </div>
-                </div>
-                <!-- single wizered End -->
-                <!-- single wizered start -->
-                <div class="rts-single-wized Recent-post">
-                    <div class="wized-header">
-                        <h5 class="title">
-                            Recent Posts
-                        </h5>
-                    </div>
-                    <div class="wized-body">
-                        @forelse ($posts as $post)
-                             <!-- recent-post -->
-                            <div class="recent-post-single">
-                                <div class="thumbnail">
-                                    <a href=""><img src="{{ asset($post->image) }}" alt="Blog_post"></a>
-                                </div>
-                                <div class="content-area">
-                                    <div class="user">
-                                        <i class="fal fa-clock"></i>
-                                        <span>{{ $post->created_at->format('d M, Y')  }}</span>
-                                    </div>
-                                    <a class="post-title" href="#">
-                                        <h6 class="title"> {{ $post->title }} </h6>
-                                    </a>
-                                </div>
+
+ 
+ <!-- team area start-->
+    <div class="rts-team-area rts-section-gap bg-team-color">
+        <div class="container">
+            <div class="row g-5">
+                <!-- team single start -->
+                @forelse ($advisoryBoardMember as $data)
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="team-single-one-start">
+                            <div class="team-image-area">
+                                <a href="team-details.html">
+                                    <img 
+                                    style="object-fit: cover; max-width:100%; max-height:100%; width:250px; height:250px " 
+                                    src="{{asset($data->image)}}" alt="Business_Team_single">
+                                    
+                                </a>
                             </div>
-                            <!-- recent-post End -->
-                        @empty
-                            <p>No data found</p>
-                        @endforelse
-                       
-                     
-                  
+                            <div class="single-details">
+                                <a href="team-details.html">
+                                    <h5 class="title">{!! Str::limit($data->name, 70) !!}</h5>
+                                </a>
+                                {{-- <p>{{ $data->name }}</p> --}}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- single wizered End -->
+                @empty
+                    <p>No data available</p>
+                @endforelse
                 
-                <!-- single wizered start -->
-                <div class="rts-single-wized contact">
-                    <div class="wized-header">
-                        <a href="#"><img src="{{ asset($contactUs->site_logo)}}" alt="Business_logo"></a>
-                    </div>
-                    <div class="wized-body">
-                        <h5 class="title">Need Help? We Are Here
-                            To Help You</h5>
-                        <a class="rts-btn btn-primary" href="contactus.html">Contact Us</a>
-                    </div>
-                </div>
-                <!-- single wizered End -->
+               
             </div>
-            <!-- rts- blog wizered end area -->
         </div>
     </div>
-</div>
-<!-- rts blog mlist area End -->
-
+    <!-- team area End -->
 
 @endsection

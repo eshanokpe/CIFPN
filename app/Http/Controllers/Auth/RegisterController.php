@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Events\UserCreating;
 use Mail;
-use Http;  
+use Http;   
 use App\Mail\MailNotify;
 use App\Mail\EmailVerification;
 use App\Mail\EmailConfirmation;
@@ -17,7 +17,6 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use App\Models\Notifications;
 use Illuminate\Validation\Rules\Password;
-
 
 class RegisterController extends Controller
 {
@@ -192,7 +191,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // auth()->login($user);
+        event(new Registered($user));
 
         // Redirect to the intended page or dashboard
         return redirect()->back()->with('success', 'Registration successful!, Please Login');

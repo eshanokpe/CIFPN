@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MenuItem;
 use App\Models\DropdownItem;
+use App\Models\User;
 use App\Models\Slider;
 use App\Http\Traits\AdminTrait;
  
@@ -19,11 +20,8 @@ class AdminController extends Controller
 
     public function index()
     { 
-       
-        return view('admin.users.index', [
-            'bheading' => 'Index',
-            'breadcrumb' => 'Index',
-        ]);
+        $data['data'] = User::latest()->get();
+        return view('admin.users.index', $data);
     }
 
 }

@@ -40,7 +40,7 @@
                                     <a href="#" class="nav-link ">Position Papers & Policy Briefs </a>
                                     <a href="#" class="nav-link ">Government & NGO Partnerships</a>
                                     <a href="#" class="nav-link ">Legislative Recommendations</a>
-                                </div> 
+                                </div>  
                             </div>
                             <div class="col-sm-9">
                                 <div class="tab-content">

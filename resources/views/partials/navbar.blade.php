@@ -152,7 +152,7 @@
                     <!-- single -->
                     <div class="single">
                         <i class="fas fa-globe"></i>
-                        <a href="https://infoscert.com">https://infoscert.com/</a>
+                        <a href="https://cifpn.org/">https://cifpn.org/</a>
                     </div>
                     <!-- single ENd -->
                     <!-- single -->

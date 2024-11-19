@@ -57,7 +57,7 @@ class AdovacyPolicyController extends Controller
                 'content' => 'required|string',
                 'image' => 'image|mimes:jpeg,png,jpg,gif|max:5048',
             ]);
-    
+     
             $policiesGovernance = PoliciesGovernance::findOrFail($id);
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
