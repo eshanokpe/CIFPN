@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('work_experience_path')->nullable();
             $table->string('professional_certifications_path')->nullable();
             $table->string('identification_path')->nullable();
+            $table->string('applicant_status');
             $table->string('payment_option');
             $table->boolean('fee_acknowledged');
             $table->string('reference');

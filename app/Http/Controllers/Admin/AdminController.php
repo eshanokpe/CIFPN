@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\MenuItem;
+use App\Models\Transaction;
 use App\Models\DropdownItem;
 use App\Models\User;
 use App\Models\Slider;
@@ -17,11 +18,16 @@ class AdminController extends Controller
     {
         $this->middleware('auth.admin');
     }
-
+ 
     public function index()
     { 
         $data['data'] = User::latest()->get();
         return view('admin.users.index', $data);
+    }
+
+    public function transaction(){
+        $data['data'] = Transaction::latest()->get();
+        return view('admin.transaction.index', $data);
     }
 
 }

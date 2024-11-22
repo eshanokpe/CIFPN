@@ -92,11 +92,13 @@
                                                 <div class="d-flex">
                                                     <a class="btn btn-primary " style="margin-right: 5px;" href="{{ route('admin.application.show',  encrypt($data->id) ) }}">View</a>
                                                     <!-- Delete Button with Form -->
-                                                    <form action="{{ route('admin.application.destroy', encrypt($data->id)) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this data?');">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                    </form>
+                                                    {{-- 
+                                                        <form action="{{ route('admin.application.destroy', encrypt($data->id)) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this data?');">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </form> 
+                                                    --}}
                                                 </div>
                                             </td>
                                         </tr>

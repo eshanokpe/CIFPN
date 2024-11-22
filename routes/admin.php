@@ -66,6 +66,7 @@ Route::prefix('admin')->group(function () {
         Route::name('admin.')->group(function () {
             Route::resource('application', ApplicationController::class);
         });
+        Route::get('/transaction', [AdminController::class, 'transaction'])->name('admin.transaction.index');
      
         //About us
         Route::get('/settings/about-us', [SettingsController::class, 'getAboutUs'])->name('admin.settings.aboutUs');

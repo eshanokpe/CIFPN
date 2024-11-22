@@ -46,7 +46,7 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($transactions as $index => $transaction)
-                                    <tr>
+                                    <tr> 
                                         <td><strong>{{  $index + 1 }}</strong></td>
                                         <td>{{ $transaction->transaction_reference}}</td>
                                         <td>{{ $transaction->created_at->format('d F Y') }}</td>

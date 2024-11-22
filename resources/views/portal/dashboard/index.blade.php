@@ -135,7 +135,7 @@
                                     <!-- Add more fields here as needed -->
                                 </div>
                                 <div class="col-lg-6">
-                                     {{-- <div class="mb-3">
+                                     <div class="mb-3">
                                         <label>Upload Relevant Certifications</label>
                                         <input type="file" name="certification" class="form-control" required>
                                     </div>
@@ -154,7 +154,7 @@
                                     <div class="mb-3">
                                         <label>Proof of Identification</label>
                                         <input type="file" name="identification" class="form-control" required>
-                                    </div>--}}
+                                    </div>
                                     <input type="hidden" name="amount" value="25000" >
                                     <div class="mb-3">
                                         <label>Payment Option</label>

@@ -55,6 +55,7 @@ class ApplicationController extends Controller
                 'work_experience_path' => 'assets/application/work_experience/'.$workExperiencePath,
                 'professional_certifications_path' => 'assets/application/professional_certifications/'.$professionalCertificationsPath,
                 'identification_path' => $identificationPath,
+                'applicant_status' => 'pending',
                 'payment_option' => $request->payment_option,
                 'fee_acknowledged' => $request->fee_acknowledged ? 1 : 0,
                 'reference' => $reference,
