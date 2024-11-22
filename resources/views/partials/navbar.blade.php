@@ -4,7 +4,7 @@
         <div class="content">
             <div class="left-header-top">
                 <p class="top-details">
-                    Are you ready to grow up your business? <a href="{{ route('home.pages', 'contactus') }}">Contact Us <i class="fal fa-arrow-right"></i></a>
+                    Admission Going On, Hurry To  <a href="{{ route('home.pages', 'membership-login') }}">Enroll Now <i class="fal fa-arrow-right"></i></a>
                 </p>
             </div> 
             <div class="right-header-top">
@@ -27,60 +27,14 @@
         </div>
     </div>
 
-    {{-- <div class="header-main-one bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-lg-3 col-md-3 col-sm- col-4">
-                    <div class="thumbnail">
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset($contactUs->site_logo)}}"  alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-xl-10 col-lg-9 col-md-9 col-sm-9 col-8">
-                    <div class="main-header">
-                       
-                        <nav class="nav-main mainmenu-nav d-none d-xl-block">
-                            <ul class="mainmenu">
-                                @forelse ($menuItems as $item)
-                                    <li class="menu-item {{ $item->dropdownItems->count() > 0 ? 'has-droupdown' : '' }}">
-                                        <a class="menu-link" href="{{ route('home.pages', $item->slug) }}">{{ $item->name }}</a>
-                                        
-                                        @if($item->dropdownItems->count() > 0)
-                                            <ul class="submenu">
-                                                @foreach ($item->dropdownItems as $dropdownItem)
-                                                    <li >
-                                                        <a href="{{ route('home.pages', $dropdownItem->slug) }}">{{ $dropdownItem->name }}</a>
-                                                         
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-                                    </li>
-                                @empty
-                                    <p>No data found</p>
-                                @endforelse
-                                
-                             </ul>
-                        </nav>
-                        <div class="button-area">
-                            <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
-                                <img class="menu-dark" src="{{ asset('assets/images/icon/menu.png')}}" alt="Menu-icon">
-                                <img class="menu-light" src="{{ asset('assets/images/icon/menu-light.png')}}" alt="Menu-icon">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+ 
 
 
     <div class="main-header">
         <div class="content">
             <div class="header-left">
                 <a class="thumbnail" href="{{ route('home') }}">
-                    <img src="{{ asset($contactUs->site_logo)}}"  alt="" style="object-fit: contain; width: 60%;">
+                    <img src="{{ asset($contactUs->site_logo)}}"  alt="" style="object-fit: cover; width: 80%;">
                 </a> 
                 <nav class="nav-main mainmenu-nav d-none d-xl-block">
                     <ul class="mainmenu">
@@ -107,7 +61,7 @@
                 </nav>
             </div>
             <div class="header-right">
-               
+                <a href="{{ route('home.pages','membership-login')}}" class="rts-btn btn-primary ml--10  header-one-btn quote-btn">Enroll Now</a>
                 <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20">
                     <img class="menu-dark" src="{{ asset('assets/images/icon/menu.png')}}" alt="Menu-icon">
                     <img class="menu-light" src="{{ asset('assets/images/icon/menu-light.png')}}" alt="Menu-icon">
@@ -129,7 +83,8 @@
         <a class="logo-4" href="{{ route('home') }}"><img style="object-fit: cover; width: 100%; height: 51px;"  class="logo" src="{{ asset($contactUs->footer_logo)}}" alt="finbiz_logo"></a>
         <div class="body d-none d-xl-block">
             <p class="disc">
-                Infoscert Xpression Streams Limited is a forward-thinking technology systems integration company dedicated to delivering ...
+                The Institute of Financial Crime and Fraud Prevention of Nigeria (IFPN) is a leading professional body dedicated to the advancement of financial crime prevention and fraud control in Nigeria. ...
+                           
                 <snap ><a href="{{ route('home.pages', 'about-us') }}" class="" style="font-weight: bold">Read more</a></snap>
            </p>
             <div class="get-in-touch">
@@ -202,7 +157,8 @@
                 <a href="{{ $sociallink->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
                 <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
             </div>
-            <a href="{{ route('home.pages', 'appointment') }}" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Get Quote</a>
+           
+            <a href="{{ route('home.pages', 'membership-login') }}" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">Enroll Now</a>
         </div>
 
     </div>

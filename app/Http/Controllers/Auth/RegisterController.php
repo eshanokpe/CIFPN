@@ -11,8 +11,7 @@ use App\Events\UserCreating;
 use Mail;
 use Http;   
 use App\Mail\MailNotify;
-use App\Mail\EmailVerification;
-use App\Mail\EmailConfirmation;
+use App\Mail\VerificationEmail;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use App\Models\Notifications;
@@ -191,7 +190,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        // Send verification email
+        Mail::to($user->email)->send(new VerificationEmail($user));
 
         // Redirect to the intended page or dashboard
         return redirect()->back()->with('success', 'Registration successful!, Please Login');

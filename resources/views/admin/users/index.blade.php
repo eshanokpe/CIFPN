@@ -72,7 +72,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="text-center">No Post items found.</td>
+                                            <td colspan="7" class="text-center">No User found.</td>
                                         </tr>
                                     @endforelse
                                     

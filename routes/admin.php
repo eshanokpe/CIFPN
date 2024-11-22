@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\ContactFormController;
 use App\Http\Controllers\Admin\AdovacyPolicyController;
 use App\Http\Controllers\Admin\AdvisoryBoardMemberController;
+use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\CertificationController;
 
 
@@ -56,11 +57,16 @@ Route::prefix('admin')->group(function () {
         Route::get('/settings/content', [SettingsController::class, 'WhyChooseUs'])->name('admin.settings.content');
         Route::post('/settings/store/why-choose-us', [SettingsController::class, 'storeWhyChooseUs'])->name('admin.settings.store_why_choose_us');
         Route::put('/settings/update/why-choose-us/{id}', [SettingsController::class, 'updateWhyChooseUs'])->name('admin.settings.update_why_choose_us');
-        
+         
         //User
         Route::name('admin.')->group(function () {
             Route::resource('users', UserController::class);
         });
+        //Application
+        Route::name('admin.')->group(function () {
+            Route::resource('application', ApplicationController::class);
+        });
+     
         //About us
         Route::get('/settings/about-us', [SettingsController::class, 'getAboutUs'])->name('admin.settings.aboutUs');
         Route::post('/settings/store/about-us', [SettingsController::class, 'storeAboutUs'])->name('admin.settings.storeAboutus');

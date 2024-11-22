@@ -12,19 +12,14 @@
                 <i class="flaticon-381-layer-1"></i>
                 <span class="nav-text">Students</span>
                 </a>
-            </li>
+            </li> 
             <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.about-us') }}" aria-expanded="false">
+                <a class="has-arrow ai-icon" href="{{ route('admin.application.index') }}" aria-expanded="false">
                 <i class="flaticon-381-layer-1"></i>
-                <span class="nav-text">About Us</span>
+                <span class="nav-text">Application</span>
                 </a>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="{{ route('admin.members') }}" aria-expanded="false">
-                <i class="flaticon-381-layer-1"></i>
-                <span class="nav-text">Membership</span>
-                </a>
-            </li>
+            </li> 
+            
             <li>
                 <a class="has-arrow ai-icon" href="{{ route('admin.certification') }}" aria-expanded="false">
                 <i class="flaticon-381-layer-1"></i>
@@ -70,6 +65,14 @@
                     <span class="nav-text">Settings</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
+                    <li>
+                        <a class="has-arrow" href="{{route('admin.about-us')}}" aria-expanded="false">About us</a>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="{{ route('admin.members') }}" aria-expanded="false">
+                            Membership
+                        </a>
+                    </li>
                     <li>
                         <a class="has-arrow" href="{{route('admin.livestream.index')}}" aria-expanded="false">Livestream</a>
                     </li>

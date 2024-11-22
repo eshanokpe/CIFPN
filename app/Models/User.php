@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\EmailVerificationNotification; 
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -38,7 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return array<string, string>
      */
-    protected function casts(): array
+    public function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
@@ -46,34 +47,13 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    public function passwordModel()
+    /**
+     * Send the email verification notification.
+     *
+     * @return void
+     */
+    public function sendEmailVerificationNotification()
     {
-        return $this->hasOne(PasswordModel::class);
+        $this->notify(new EmailVerificationNotification); // Ensure this notification is created properly
     }
-
-    public function referralsCount()
-    {
-        return $this->hasMany(User::class, 'referred_by')->count();
-    }
-
-
-    public function referrer()
-    {
-        return $this->belongsTo(User::class, 'referred_by');
-    }
-    
-    public function referrals()
-    {
-        return $this->hasMany(User::class, 'referred_by');
-    }
-
-    public function tokens(){
-        return $this->hasMany(UserToken::class);
-    }
-
-    public function latestTokenCount()
-    {
-        return $this->tokens()->latest()->value('token_count') ?? 0;
-    }
-
 }

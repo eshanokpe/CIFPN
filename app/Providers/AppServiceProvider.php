@@ -7,6 +7,7 @@ use App\Models\ContactUs;
 use App\Models\Posts; 
 use App\Models\CoreActivities; 
 use App\Models\Slider;
+use App\Models\Transaction;
 use App\Models\MenuItem;
 use App\Models\CoreValue;
 use App\Models\VisionMission;
@@ -61,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('visionMission', VisionMission::first()); 
         View::share('governanceBoard', GovernanceBoard::first()); 
         
-        View::share('solutions', Service::first()); 
+        View::share('solutions', Service::first());  
         View::share('career', Career::first());  
         View::share('coreValue', CoreValue::first()); 
         View::share('sociallink', Sociallink::first());
@@ -84,6 +85,9 @@ class AppServiceProvider extends ServiceProvider
         View::share('events', Event::latest()->paginate(20)); 
         View::share('livestream', Livestream::latest()->paginate(20)); 
         View::share('advisoryBoardMember', AdvisoryBoardMember::latest()->paginate(20));
+        View::share('transactions', Transaction::latest()->paginate(20)); 
+
+        
 
 
         

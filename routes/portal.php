@@ -2,13 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\Admin\ContactFormController;
-use App\Http\Controllers\Admin\SolutionsController;
-use App\Http\Controllers\Admin\CoreActivitiesController; 
+// use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\ApplicationController;
+use App\Http\Controllers\User\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +20,13 @@ use App\Http\Controllers\Admin\CoreActivitiesController;
 
 
 
-use App\Http\Controllers\DashboardController;
 
-Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
+Route::prefix('membership')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('user.dashboard');
+    Route::post('/application', [ApplicationController::class, 'store'])->name('application.submit');
+    Route::get('/payment/callback', [PaymentController::class, 'handleCallback'])->name('payment.callback');
+
+    Route::get('/transactions', [HomeController::class, 'transactions'])->name('user.transactions');
+    
 });
 

@@ -29,170 +29,152 @@
                   <div class="card">
                       <div class="card-header">
                           <h4 class="card-title">Application Form </h4>
-                          
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if (session('error'))
+                                <div class="alert alert-success">{{ session('error') }}</div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                       </div><!--end card-header-->
                       <div class="card-body">  
-                          <div class="row">
-                              <div class="col-lg-6">
-                                  <div class="mb-3 row">
-                                      <label for="example-text-input" class="col-sm-2 col-form-label text-end">Full Name</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" type="text" @disabled(true) value="{{ Auth::user()->name }}" id="name">
-                                      </div>
-                                  </div>
-                                  <div class="mb-3 row">
-                                      <label for="example-email-input" class="col-sm-2 col-form-label text-end">Email</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" type="email" @disabled(true) value="{{ Auth::user()->email }}"  id="email">
-                                      </div>
-                                  </div> 
-                                  <div class="mb-3 row">
-                                      <label for="example-tel-input" class="col-sm-2 col-form-label text-end">Phone Number</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" type="tel" value="" id="example-tel-input" placeholder="Phone number">
-                                      </div>
-                                  </div>
-                               
+                        <form action="{{ route('application.submit') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3 row">
+                                        <label for="name" class="col-sm-2 col-form-label text-end">Full Name</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="text" value="{{ Auth::user()->name }}" id="name" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="email" value="{{ Auth::user()->email }}" id="email" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="phone_number" class="col-sm-2 col-form-label text-end">Phone Number</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" name="phone_number" type="tel" placeholder="Phone number" required>
+                                        </div>
+                                        @error('phone_number')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-2 col-form-label text-end">Educational Qualifications</label>
                                         <div class="col-sm-10">
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select name="qualification" class="form-select" required>
                                                 <option value="">-- Select Qualification --</option>
-                                                <option value="high-school">High School Diploma</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="master">Master's Degree</option>
-                                                <option value="phd">PhD</option>
-                                                <option value="professional-certification">Professional Certification</option>
-                                                <option value="other">Other</option>
+                                                <option value="High School Diploma">High School Diploma</option>
+                                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                                <option value="Master's Degree">Master's Degree</option>
+                                                <option value="PhD">PhD</option>
+                                                <option value="Professional Certification">Professional Certification</option>
+                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
+                                        @error('qualification')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-2 col-form-label text-end">Membership category</label>
+                                        <label class="col-sm-2 col-form-label text-end">Membership Category</label>
                                         <div class="col-sm-10">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option value="">-- Select Qualification --</option>
-                                                <option value="high-school">High School Diploma</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="master">Master's Degree</option>
-                                                <option value="phd">PhD</option>
-                                                <option value="professional-certification">Professional Certification</option>
-                                                <option value="other">Other</option>
+                                            <select name="membership_category" class="form-select" required>
+                                                <option value="">-- Select Membership Category --</option>
+                                                <option value="Student Membership">Student Membership</option>
+                                                <option value="Associate Membership ">Associate Membership</option>
+                                                <option value="Full Membership">Full Membership</option>
+                                                <option value="Fellow Membership ">Fellow Membership </option>
+                                                <option value="Corporate Membership">Corporate Membership</option>
                                             </select>
-                                            <small class="text-danger">(Please note that each membership category has different payment plans)</small>
                                         </div>
+                                        @error('membership_category')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
+                                    <!-- Membership category -->
                                     <div class="mb-3 row">
-                                    <div class="col-lg-2"></div>
-                                    <div class="col-lg-10">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <div class="row align-items-center">
-                                                    <div class="col">                      
-                                                        <h4 class="card-title">PAYMENT DETAIL FOR STUDENT MEMBER</h4>                  
-                                                    </div><!--end col-->                                        
-                                                </div>  <!--end row-->                                  
-                                            </div><!--end card-header-->
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    
-                                                    <div class="col-md-12 align-self-center">
-                                                        <div class="card-body">
-                                                            <h6 class="mb-0 font-22 fw-bold">Information on Student Member Category</h6>                                            
-                                                            <p class="mb-1 text-muted fw-semibold">
-                                                                <ul>
-                                                                <li>He/She satisfies the council that he/she is fit and proper person to be so registered</li>
-                                                                <li>Has obtained academic qualification such as B.Sc, BA, ACS, LLB, HND, ACA, ACIS, AIPM and any other qualification as may be prescribed by the Council from time to time.</li>
-                                                                <li>Has been upgraded from ordinary member Grade</li>
-                                                                <li>Is of good character and must not have been involed in fraud, dishonestyor any criminal act</li>
-                                                                </ul>
-                                                            </p>                                                                                                                    
-                                                        </div><!--end card-body-->
-                                                    </div><!--end col-->
-                                                </div><!--end row-->
-                                                                                            
-                                                
-                                                <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
-                                                    <a href="#" target="_blank" class="alert-link">N 80,000</a>
-                                                  </div>
-                                            </div><!--end card-body--> 
-                                        </div><!--end card-->
-                                    </div>
-                                    </div>
-                                 
-                                  
-                                                                  
-                              </div>
-
-
-                              <div class="col-lg-6">    
-                               
-                                <div class="mb-3 row">
-                                    <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                    <div class="col-sm-10">
-                                        <label for="exampleInputEmail1">Upload of Relevant certifications (documents that validate your expertise in areas like AML, KYC, or compliance)</label>
-                                        <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                </div>
-                                    <div class="mb-3 row">
-                                        <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                        <div class="col-sm-10">
-                                            <label for="exampleInputEmail1">Proof of Academic Qualifications</label>
-                                            <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
-                                        </div>
-                                    </div>
-                                
-
-                                    <div class="mb-3 row">
-                                        <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                        <div class="col-sm-10">
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1">Work Experience letters or references from current/past employers</label>
-                                                <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-10">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">                      
+                                                            <h4 class="card-title">The application fee is non-refundable.</h4>                                    
+                                                        </div><!--end col-->                                        
+                                                    </div>  <!--end row-->                                  
+                                                </div><!--end card-header-->
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 align-self-center">
+                                                            <div class="card-body">
+                                                                <div class="alert alert-warning border-0" role="alert">
+                                                                    <strong>Application Fee </strong> ₦25,000
+                                                                </div>                                                                
+                                                            </div><!--end card-body-->
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                        <div class="col-sm-10">
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1">Professional Certifications (if applicable)</label>
-                                            <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
-                                        </div>
-                                        </div>
+                                    <!-- Add more fields here as needed -->
+                                </div>
+                                <div class="col-lg-6">
+                                     {{-- <div class="mb-3">
+                                        <label>Upload Relevant Certifications</label>
+                                        <input type="file" name="certification" class="form-control" required>
                                     </div>
-                                  
-                                    <div class="mb-3 row">
-                                        <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                        <div class="col-sm-10">
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1">Proof of Identification (e.g., passport, national ID)</label>
-                                            <input type="file" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
-                                        </div>
-                                        </div>
+                                   <div class="mb-3">
+                                        <label>Proof of Academic Qualifications</label>
+                                        <input type="file" name="academic_qualifications" class="form-control" required>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <div for="example-date-input" class="col-sm-2 col-form-label text-end"></div>
-                                        <div class="col-sm-10">
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1">Payment option</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option value="">-- Select Payment option --</option>
-                                                <option value="high-school">Paystack</option>
-                                                <option value="bachelor">Opay</option>
-                                            </select>
-                                        </div>
-                                        </div>
+                                    <div class="mb-3">
+                                        <label>Work Experience Letters</label>
+                                        <input type="file" name="work_experience" class="form-control" required>
                                     </div>
-
-                                  <div class="mb-3 row has-error">
-                                      <label for="inputHorizontalDnger" class="col-sm-2 col-form-label text-end"></label>
-                                      <div class="col-sm-10">
-                                        <button type="button" class="btn btn-primary">Continue</button>
-                                      </div>
-                                  </div>                                            
-                              </div>
-                          </div>                                                                      
+                                    <div class="mb-3">
+                                        <label>Professional Certifications</label>
+                                        <input type="file" name="professional_certifications" class="form-control">
+                                    </div> 
+                                    <div class="mb-3">
+                                        <label>Proof of Identification</label>
+                                        <input type="file" name="identification" class="form-control" required>
+                                    </div>--}}
+                                    <input type="hidden" name="amount" value="25000" >
+                                    <div class="mb-3">
+                                        <label>Payment Option</label>
+                                        <select name="payment_option" class="form-select" required>
+                                            <option value="">-- Select Payment Option --</option>
+                                            <option value="paystack">Paystack</option>
+                                            <option value="moniepoint">Moniepoint</option>
+                                            <option value="opay">Opay</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <input type="checkbox" name="fee_acknowledged" required>
+                                        <label>I understand that the application fee is non-refundable.</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                        </form>
+                                                                                         
                       </div><!--end card-body-->
                   </div><!--end card-->
               </div><!--end col-->

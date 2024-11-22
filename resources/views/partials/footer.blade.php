@@ -4,8 +4,8 @@
         <div class="container pb--100 pb_sm--40" >
             <div class="row g-5">
                 <div class="col-xl-3 col-lg-6">
-                    <div class="footer-three-single-wized left" style=" color:#fff">
-                        <a href="{{ route('home') }}" class="logo_footer" style="background-color: #fff">
+                    <div class="footer-three-single-wized left" style=" color:#fff; ">
+                        <a href="{{ route('home') }}" class="logo_footer" style="background-color: #fff; padding:10px">
                             <img src="{{ asset($contactUs->footer_logo)}}" alt="Logo-image">
                         </a>
                         <div class="text-white" style="text-align: justify; color:#fff">
@@ -157,18 +157,18 @@
 
 
     <!-- scripts start form hear -->
-    <script src="{{ asset ('assets/js/vendor/jquery.min.js')}}"></script>
-    <script src="{{ asset ('assets/js/vendor/jqueryui.js')}}"></script>
-    <script src="{{ asset ('assets/js/vendor/waypoint.js')}}"></script>
-    <script src="{{ asset ('assets/js/plugins/swiper.js')}}"></script>
-    <script src="{{ asset ('assets/js/plugins/counterup.js')}}"></script>
-    <script src="{{ asset ('assets/js/plugins/sal.min.js')}}"></script>
-    <script src="{{ asset ('assets/js/vendor/bootstrap.min.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/jquery.min.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/jqueryui.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/waypoint.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/swiper.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/counterup.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/sal.min.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/bootstrap.min.js')}}"></script>
 
-    <script src="{{ asset ('assets/js/vendor/waw.js')}}"></script>
-    <script src="{{ asset ('assets/js/plugins/contact.form.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/waw.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/contact.form.js')}}"></script>
     <!-- main Js -->
-    <script src="{{ asset ('assets/js/main.js')}}"></script>
+    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/main.js')}}"></script>
     <!-- scripts end form hear -->
     <style>
         /* Increase font size of Toastr */
@@ -177,7 +177,11 @@
         }
     </style>
     <script>
-       
+        @if(session('status'))
+            $(document).ready(function() {
+                toastr.success("{{ session('status') }}");
+            });
+        @endif
         @if(session('success'))
             $(document).ready(function() {
                 toastr.success("{{ session('success') }}");

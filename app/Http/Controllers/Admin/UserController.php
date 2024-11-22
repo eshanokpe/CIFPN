@@ -82,6 +82,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+    
         $user = User::findOrFail(decrypt($id));
         if(!$user){
             return view('home.errors.404'); 

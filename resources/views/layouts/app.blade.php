@@ -10,12 +10,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($contactUs->favicon)}}">
     
     
-    <link rel="stylesheet" href="{{ asset ('assets/css/plugins/swiper.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/plugins/fontawesome-5.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/plugins/animate.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/plugins/unicons.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/vendor/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/fontawesome-5.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/animate.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/unicons.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/vendor/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/style.css')}}">
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- jQuery (required for Toastr) -->

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -34,21 +35,39 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        // Validate the login request
         $this->validateLogin($request);
 
         $credentials = $this->credentials($request);
 
+        // Attempt to log in with credentials
         if (Auth::attempt($credentials)) {
-            // Authentication passed, redirect to the intended route
-            return redirect()->intended($this->redirectTo);
+            // Check if the user is verified
+            if (Auth::user()->hasVerifiedEmail()) {
+                return redirect()->intended($this->redirectTo);
+            }
+
+            // If the user is not verified, logout the user and send a message
+            Auth::logout();
+            return $this->sendFailedLoginResponse($request);
         }
 
-        // Authentication failed, redirect back with error message
         return back()->withErrors([
             'login_error' => 'Invalid email or password.',
-        ])->onlyInput('email'); // retain the email input value
-    } 
+        ])->onlyInput('email'); 
+    }
+
+    /**
+     * Handle failed login response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        throw ValidationException::withMessages([
+            $this->username() => 'Your account has not been verified. Please check your email to verify your account.',
+        ]);
+    }
 
     /**
      * Validate the login request.
@@ -58,10 +77,21 @@ class LoginController extends Controller
      */
     protected function validateLogin(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:8',
-        ]);
+        // $request->validate([
+        //     'email' => 'required|email',
+        //     'password' => 'required|string|min:8',
+        // ]);
+        try {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required|string|min:8',
+
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            // Log validation errors for debugging
+            dd($e->errors());
+            
+        }
     }
 
     /**

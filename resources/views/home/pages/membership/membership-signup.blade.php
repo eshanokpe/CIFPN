@@ -71,21 +71,65 @@
                             @enderror
                         </div>
                         
-                        <!-- Password -->
+                       <!-- Password -->
                         <div class="form-group mb-3">
-                            <input type="password" name="password" placeholder="Password" class="form-control" required autocomplete="new-password">
-                            @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <div class="input-group">
+                                <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+                                <span class="input-group-text" style="height: 55px">
+                                    <div id="togglePassword1">
+                                        <i class="fa fa-eye fs-3"></i>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
-                    
+                        @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
                         <!-- Confirm Password -->
                         <div class="form-group mb-3">
-                            <input type="password" name="password_confirmation" placeholder="Confirm Password" class="form-control" required autocomplete="new-password">
-                            @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <div class="input-group">
+                                <input type="password" placeholder="Confirm Password" class="form-control" id="password_confirmation" name="password_confirmation">
+                                <span class="input-group-text" style="height: 55px">
+                                    <div id="togglePassword2">
+                                        <i class="fa fa-eye fs-3"></i>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
+                        @error('password_confirmation')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                        <!-- JavaScript to toggle password visibility -->
+                        <script>
+                            // Password visibility toggle for the first password field
+                            const togglePassword1 = document.getElementById('togglePassword1');
+                            const passwordField1 = document.getElementById('password');
+
+                            togglePassword1.addEventListener('click', function () {
+                                const type = passwordField1.type === 'password' ? 'text' : 'password';
+                                passwordField1.type = type;
+
+                                this.innerHTML = type === 'password' 
+                                    ? '<i class="fa fa-eye"></i>'  // Eye icon when password is hidden
+                                    : '<i class="fa fa-eye-slash"></i>';  // Slash-eye icon when password is visible
+                            });
+
+                            // Password visibility toggle for the confirm password field
+                            const togglePassword2 = document.getElementById('togglePassword2');
+                            const passwordField2 = document.getElementById('password_confirmation');
+
+                            togglePassword2.addEventListener('click', function () {
+                                const type = passwordField2.type === 'password' ? 'text' : 'password';
+                                passwordField2.type = type;
+
+                                this.innerHTML = type === 'password' 
+                                    ? '<i class="fa fa-eye"></i>'  // Eye icon when password is hidden
+                                    : '<i class="fa fa-eye-slash"></i>';  // Slash-eye icon when password is visible
+                            });
+                        </script>
+
                         
                         <!-- Submit Button -->
                         <button type="submit" class="rts-btn btn-primary">Register</button>

@@ -55,6 +55,14 @@
                         </div><!--end sidebarProjects-->
                     </li><!--end nav-item-->
 
+                    <!-- Transaction Log -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.transactions') }}">
+                            <i class="ti ti-wallet menu-icon"></i>
+                            <span>Transaction Log</span>
+                        </a>
+                    </li><!--end nav-item-->
+
                   
 
                     <li class="menu-label mt-0 text-primary font-12 fw-semibold">S<span>etting</span></li> 

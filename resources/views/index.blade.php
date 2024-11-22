@@ -38,53 +38,14 @@
             <div
                 class="col-xl-7 col-lg-7 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 mt_sm--30">
                 <div class="title-area about-company">
-                    <span>About Us</span>
+                    <span style="font-weight: bold">About Us</span>
                 </div>
-                <div class="about-company-wrapper">
+                <div class="about-company-wrapper" style="text-align: justify">
                     <p class="disc" style="text-align: justify">
-                        {!! Str::limit($aboutUs->content, 400) !!} <snap> <a href="{{ route('home.pages', 'about-us') }}"  class="font-weight: bold" style="font-weight: bold">Read More</a></snap>
+                        {!! Str::limit($aboutUs->content, 700) !!} 
+                        <snap> <a href="{{ route('home.pages', 'about-us') }}"  class="font-weight: bold" style="font-weight: bold">Read More</a></snap>
                     </p>
-                    <div class="rts-tab-style-one">
-                        <div class="d-flex align-items-start contoler-company">
-                            <div class="nav flex-column nav-pills me-3 button-area" id="v-pills-tab" role="tablist"
-                                aria-orientation="vertical">
-                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                                    aria-selected="true">Our Mission</button>
-                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-profile" type="button" role="tab"
-                                    aria-controls="v-pills-profile" aria-selected="false">Our Vision</button>
-                            </div>
-                            <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
-                                    <!-- start tab content -->
-                                    <div class="rts-tab-content-one">
-                                        <p class="disc" style="text-align: justify">
-                                            {!! Str::limit($visionMission->mission, 150) !!}
-                                        </p>
-                                        
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages', 'mission') }}">Read More</a>
-                                    </div>
-                                    <!-- start tab content End -->
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                    aria-labelledby="v-pills-profile-tab">
-                                    <!-- start tab content -->
-                                    <div class="rts-tab-content-one">
-                                        <p class="disc" style="text-align: justify">
-                                            {!! Str::limit($visionMission->vision, 150) !!}
-
-                                        </p>
-                                       
-                                        <a class="rts-btn btn-primary-2 color-h-black" href="{{ route('home.pages', 'vison') }}">Read More</a>
-                                    </div>   
-                                    <!-- start tab content End -->
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-1">
