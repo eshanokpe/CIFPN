@@ -8,7 +8,7 @@
     <title>{{ $contactUs->company_name }}</title> 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($contactUs->favicon)}}">
-    
+     
     
     <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/swiper.min.css')}}">
     <link rel="stylesheet" href="{{ asset ('https://4d5a-102-89-23-23.ngrok-free.app/assets/css/plugins/fontawesome-5.css')}}">
