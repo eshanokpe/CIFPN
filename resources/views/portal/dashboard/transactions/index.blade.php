@@ -42,6 +42,7 @@
                                     <th>Amount</th>
                                     <th>Payment Status</th>
                                     <th>Transaction Type</th>
+                                    <th> Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,17 +53,18 @@
                                         <td>{{ $transaction->created_at->format('d F Y') }}</td>
                                         <td>₦{{ number_format($transaction->amount, 2) }}</td>
                                         <td>
-                                            @if($transaction->payment_status === 'pending')
-                                                <span class="badge badge-soft-success">{{ ucfirst($transaction->payment_status) }}</span>
-                                            @elseif($transaction->payment_status === 'completed')
-                                                <span class="badge badge-soft-warning">{{ ucfirst($transaction->payment_status) }}</span>
-                                            @elseif($transaction->payment_status === 'failed')
-                                                <span class="badge badge-soft-danger">{{ ucfirst($transaction->payment_status) }}</span>
-                                            @elseif($transaction->payment_status === 'cancelled')
-                                                <span class="badge badge-soft-danger">{{ ucfirst($transaction->payment_status) }}</span>
+                                            @if($transaction->status === 'pending')
+                                                <span class="badge badge-soft-success">{{ ucfirst($transaction->status) }}</span>
+                                            @elseif($transaction->status === 'completed' || $transaction->status === 'success')
+                                                <span class="badge badge-soft-success">{{ ucfirst($transaction->status) }}</span>
+                                            @elseif($transaction->status === 'failed' || $transaction->status === 'cancelled')
+                                                <span class="badge badge-soft-danger">{{ ucfirst($transaction->status) }}</span>
                                             @endif
                                         </td>
                                         <td>{{ ucfirst($transaction->transaction_type)}}</td>
+                                        <td >
+                                            <a href="{{ route('user.transaction.show', encrypt($transaction->id)) }}" class="badge badge-boxed  badge-outline-primary">View </a>
+                                        </td>
                                         
                                     </tr>
                                     @empty

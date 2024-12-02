@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ApplicationForm;
+use App\Mail\ApplicationStatusNotification;
 
 class ApplicationController extends Controller
 {
@@ -63,24 +65,32 @@ class ApplicationController extends Controller
         return view('admin.application.show', compact('data'));
     } 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $application = ApplicationForm::findOrFail($id);
+        $application->applicant_status = $request->input('applicant_status');
+        $application->save();
+        $message = '';
+
+        if ($application->applicant_status === 'rejected') {
+            $message = "Dear {$application->name}, we regret to inform you that your submitted documents failed the verification process and your application has been rejected.";
+        } elseif ($application->applicant_status === 'approved') {
+            $message = "Dear {$application->name}, congratulations! Your submitted documents have been verified successfully and your application has been approved.";
+        }
+        $this->sendMessage($application->user_email, $message);
+
+        return redirect()->back()
+                     ->with('success', 'Application status updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    private function sendMessage($email, $message)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            Mail::to($email)->send(new ApplicationStatusNotification($message));
+        } else {
+            return redirect()->back()->with('error', 'Invalid or missing email address.');
+        }
+    }
     
     public function destroy($id)
     {

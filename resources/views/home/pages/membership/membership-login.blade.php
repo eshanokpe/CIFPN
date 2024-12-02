@@ -59,7 +59,7 @@
                             </ul>
                         </div>
                     @endif
-
+ 
                     <!-- register Form -->
                     <form id="register-form" action="{{ route('login') }}" method="POST" class="mb-3">
                         @csrf
@@ -69,11 +69,12 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group mb-3">
+                         <!-- Password -->
+                         <div class="form-group mb-3">
                             <div class="input-group">
                                 <input type="password" placeholder="Password" class="form-control" id="password" name="password">
                                 <span class="input-group-text" style="height: 55px">
-                                    <div id="togglePassword">
+                                    <div id="togglePassword1" style="cursor: pointer">
                                         <i class="fa fa-eye fs-3"></i>
                                     </div>
                                 </span>
@@ -89,6 +90,23 @@
                         </div>
                         <button type="submit" class="rts-btn btn-primary">Login</button>
                     </form>
+                    <!-- JavaScript to toggle password visibility -->
+                    <script>
+                        // Password visibility toggle for the first password field
+                        const togglePassword1 = document.getElementById('togglePassword1');
+                        const passwordField1 = document.getElementById('password');
+
+                        togglePassword1.addEventListener('click', function () {
+                            const type = passwordField1.type === 'password' ? 'text' : 'password';
+                            passwordField1.type = type;
+
+                            this.innerHTML = type === 'password' 
+                                ? '<i class="fa fa-eye"></i>'  // Eye icon when password is hidden
+                                : '<i class="fa fa-eye-slash"></i>';  // Slash-eye icon when password is visible
+                        });
+
+                    </script>
+
                     
                      
                     <div class="form-group mb-3">

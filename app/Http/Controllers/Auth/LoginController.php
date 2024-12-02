@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; 
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -17,14 +17,15 @@ class LoginController extends Controller
      * Where to redirect users after login.
      *
      * @var string
-     */
-    protected $redirectTo = '/membership/dashboard';
+     */  
+    // user.check.status
+    protected $redirectTo = '/user/dashboard';
 
     public function __construct()
     {
         // Middleware to ensure guests can only access login, and authenticated users can only access logout
-        $this->middleware('guest')->except('logout');
-        $this->middleware('auth')->only('logout');
+        // $this->middleware('guest')->except('logout');
+        // $this->middleware('auth')->only('logout');
     }
 
     /**
@@ -34,19 +35,17 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function login(Request $request)
-    {
+    { 
         $this->validateLogin($request);
 
         $credentials = $this->credentials($request);
 
         // Attempt to log in with credentials
         if (Auth::attempt($credentials)) {
-            // Check if the user is verified
             if (Auth::user()->hasVerifiedEmail()) {
-                return redirect()->intended($this->redirectTo);
+                return redirect()->route('user.dashboard');
             }
 
-            // If the user is not verified, logout the user and send a message
             Auth::logout();
             return $this->sendFailedLoginResponse($request);
         }
@@ -56,12 +55,7 @@ class LoginController extends Controller
         ])->onlyInput('email'); 
     }
 
-    /**
-     * Handle failed login response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+    
     protected function sendFailedLoginResponse(Request $request)
     {
         throw ValidationException::withMessages([
@@ -77,10 +71,6 @@ class LoginController extends Controller
      */
     protected function validateLogin(Request $request)
     {
-        // $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required|string|min:8',
-        // ]);
         try {
             $request->validate([
                 'email' => 'required|email',
@@ -122,7 +112,7 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect to the login page or the home page
-        return redirect()->route('membership.logout');
+        return redirect()->route('user.logout');
     }
 
     /**

@@ -16,46 +16,45 @@
                 <a href="{{route('admin.application.index')}}" class="btn btn-primary rounded light">View Application</a>
             </div>
             <div class="card">
+                @if(session('success'))
+                    <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-header">
                     <h4 class="card-title"> 
                         Application Details
                     </h4>
                    
-                        <div class="row">
-                            <div class="col-md-12 align-self-center">
-                                <div class="card-body mb-3">
-                                    <div class="alert alert-warning border-0 " role="alert">
-                                        <strong>Applicant Status </strong> 
-                                        @if($data->applicant_status === 'pending')
-                                            <button class="btn btn-warning btn-sm">{{ ucfirst($data->payment_status) }}</button>
-                                        @elseif($data->applicant_status === 'completed')
-                                            <button class="btn btn-success btn-sm">{{ ucfirst($data->payment_status) }}</button>
-                                        @elseif($data->applicant_status === 'failed')
-                                            <button class="btn btn-danger btn-sm">{{ ucfirst($data->payment_status) }}</button>
-                                        @elseif($data->applicant_status === 'cancelled')
-                                            <button class="btn btn-danger btn-sm">{{ ucfirst($data->payment_status) }}</button>
-                                        @endif
-                                    </div>                                                                
-                                </div><!--end card-body-->
-                            </div><!--end col-->
-                        </div><!--end row-->
-                 
+                    <div class="row">
+                        <div class="col-md-12 align-self-center">
+                            <div class="card-body mb-3">
+                                <div class="alert alert-warning border-0 " role="alert">
+                                    <strong>Applicant Status </strong> 
+                                    @if($data->applicant_status === 'pending')
+                                        <button class="btn btn-warning btn-sm">{{ ucfirst($data->applicant_status) }}</button>
+                                    @elseif($data->applicant_status === 'rejected')
+                                        <button class="btn btn-danger btn-sm">{{ ucfirst($data->applicant_status) }}</button>
+                                    @elseif($data->applicant_status === 'approved')
+                                        <button class="btn btn-success btn-sm">{{ ucfirst($data->applicant_status) }}</button>
+                                    @endif
+                                </div>                                                                
+                            </div><!--end card-body-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                
                 </div>
                 <div class="row justify-content-center">
-                    @if(session('success'))
-                        <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
                 
                     <div class="col-xl-6 col-lg-12 align-center">
                         <div class="card">
@@ -240,13 +239,22 @@
                         <div class="col-lg-3 "></div>
                         <div class="col-lg-6 ">
                             <label class="col align-center col-form-label form-label">Status</label>
-                            <div class="col align-center">
-                                <select class="form-select mb-3" name="status" required>
-                                    <option selected disabled>Select status type</option>
-                                    <option value="Rejected">Rejected</option>
-                                    <option value="Approved">Approved</option>
-                                </select>
-                            </div>
+                            <form action="{{ route('admin.application.update', $data->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="col align-center">
+                                    <select  class="form-select mb-3" name="applicant_status" required>
+                                        <option selected disabled>Select status type</option>
+                                        <option value="rejected" {{ $data->applicant_status == 'rejected' ? 'selected':''}}>Rejected</option>
+                                        <option value="approved" {{ $data->applicant_status == 'approved' ? 'selected':''}}>Approved</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Update Record</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         <div class="col-lg-3 "></div>
                     </div>

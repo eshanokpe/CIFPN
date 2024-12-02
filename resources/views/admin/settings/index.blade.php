@@ -44,7 +44,6 @@
                                     {{-- <a href="{{ route('admin.privacyPolicy.index') }}"  class="nav-link" >Privacy Policy</a> --}}
                                     {{-- <a href="{{ route('admin.team.getTeam') }}"  class="nav-link" >Team</a> --}}
                                     <a href="{{ route('admin.socialLink.index') }}"  class="nav-link" >Social Link</a>
-                                    <a href="{{ route('admin.quicklink.index') }}"  class="nav-link" >Quick Link</a>
                                     <a href="{{ route('admin.officeHours.index') }}"  class="nav-link " >Office Hours </a>
                                 </div>
                             </div>

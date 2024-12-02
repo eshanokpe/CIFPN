@@ -54,7 +54,7 @@
                                         <th>Transaction Type</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody> 
                                     @forelse ($data as $index => $transaction)
                                     <tr> 
                                         <td><strong>{{  $index + 1 }}</strong></td>

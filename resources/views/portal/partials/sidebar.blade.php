@@ -32,10 +32,17 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav tab-pane active" id="Main" role="tabpanel">
                     <li class="nav-item">
-                        <a class="nav-link" href="#sidebarAnalytics" role="button"
+                        <a class="nav-link" href="{{ route('user.dashboard')}}" role="button"
                             aria-expanded="false" aria-controls="sidebarAnalytics">
                             <i class="ti ti-stack menu-icon"></i>
                             <span>Dashboard</span>
+                        </a>
+                    </li><!--end nav-item-->
+                   
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.application.create') }}">
+                            <i class="ti ti-file menu-icon"></i>
+                            <span>Application </span>
                         </a>
                     </li><!--end nav-item-->
 
@@ -57,7 +64,7 @@
 
                     <!-- Transaction Log -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.transactions') }}">
+                        <a class="nav-link" href="{{ route('user.transaction') }}">
                             <i class="ti ti-wallet menu-icon"></i>
                             <span>Transaction Log</span>
                         </a>

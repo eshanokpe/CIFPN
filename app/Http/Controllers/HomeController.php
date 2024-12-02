@@ -28,45 +28,6 @@ class HomeController extends Controller
         return view('portal.dashboard.index');
     }
 
-    public function processHistory()
-    {
-        $id = Auth::user()->id;
-        $email = Auth::user()->email;
-        $processhistory = ProcessHistory::where('user_id', $id)
-                                        ->latest()
-                                        ->get();
-
-        return view('user.processhistory', compact('id', 'email', 'processhistory'));
-    }
-
-    public function deleteprocesshistory(Request $request){
-        $id =  $request->itemId;
-        $history = ProcessHistory::findOrFail($id);
-        $history->delete();
-        return response()->json([
-            'message' => 'Process History deleted successfully', 
-        ]);
-    }
-
-    public function transactionHistory()
-    {
-        $id = Auth::user()->id;
-        $email = Auth::user()->email;
-        $transactionhistory = ProcessHistory::where('user_id', $id)
-                                       // ->where('status',0)
-                                        ->get();
-
-        return view('user.transactionhistory', compact('id', 'email', 'transactionhistory'));
-    }
-
-    public function deletetransactionhistory(Request $request){
-        $id =  $request->itemId;
-        $history = ProcessHistory::findOrFail($id);
-        $history->delete();
-        return response()->json([
-            'message' => 'Transaction History deleted successfully', 
-        ]);
-    }
 
     public function updateProfile(Request $request){
         $validated = Validator::make($request->all(), [

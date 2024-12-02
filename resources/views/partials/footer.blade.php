@@ -157,18 +157,18 @@
 
 
     <!-- scripts start form hear -->
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/jquery.min.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/jqueryui.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/waypoint.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/swiper.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/counterup.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/sal.min.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/bootstrap.min.js')}}"></script>
+    <script src="{{ asset ('assets/js/vendor/jquery.min.js')}}"></script>
+    <script src="{{ asset ('assets/js/vendor/jqueryui.js')}}"></script>
+    <script src="{{ asset ('assets/js/vendor/waypoint.js')}}"></script>
+    <script src="{{ asset ('assets/js/plugins/swiper.js')}}"></script>
+    <script src="{{ asset ('assets/js/plugins/counterup.js')}}"></script>
+    <script src="{{ asset ('assets/js/plugins/sal.min.js')}}"></script>
+    <script src="{{ asset ('assets/js/vendor/bootstrap.min.js')}}"></script>
 
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/vendor/waw.js')}}"></script>
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/plugins/contact.form.js')}}"></script>
+    <script src="{{ asset ('assets/js/vendor/waw.js')}}"></script>
+    <script src="{{ asset ('assets/js/plugins/contact.form.js')}}"></script>
     <!-- main Js -->
-    <script src="{{ asset ('https://193f-102-89-23-23.ngrok-free.app/assets/js/main.js')}}"></script>
+    <script src="{{ asset ('assets/js/main.js')}}"></script>
     <!-- scripts end form hear -->
     <style>
         /* Increase font size of Toastr */

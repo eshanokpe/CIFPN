@@ -42,7 +42,7 @@
                 </div>
                 <div class="about-company-wrapper" style="text-align: justify">
                     <p class="disc" style="text-align: justify">
-                        {!! Str::limit($aboutUs->content, 700) !!} 
+                        {!! Str::limit($aboutUs->content, 800) !!} 
                         <snap> <a href="{{ route('home.pages', 'about-us') }}"  class="font-weight: bold" style="font-weight: bold">Read More</a></snap>
                     </p>
                     

@@ -8,7 +8,7 @@
                
                 <form method="POST" action="{{ isset($examRequirement) ? route('admin.examRequirement.update', $examRequirement->id) : route('admin.examRequirement.store') }}" enctype="multipart/form-data">
                     @csrf
-                    @if(isset($examRequirement))
+                    @if(isset($examRequirement)) 
                         @method('PUT')
                     @endif  
                     <div class="row">

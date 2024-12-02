@@ -15,7 +15,7 @@
                     <span> / </span>
                     <a href="{{ route('home.pages', 'vision') }}" class="active">Vision</a>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>

@@ -31,7 +31,7 @@
                     <img src="{{ asset('assets/images/contact/01.jpg')}}" alt="Login Image">
                 </div>
             </div>
-            
+             
             <!-- Login Form Section -->
             <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="contact-form-area-one">
@@ -74,9 +74,9 @@
                        <!-- Password -->
                         <div class="form-group mb-3">
                             <div class="input-group">
-                                <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+                                <input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
                                 <span class="input-group-text" style="height: 55px">
-                                    <div id="togglePassword1">
+                                    <div id="togglePassword1"  style="cursor: pointer">
                                         <i class="fa fa-eye fs-3"></i>
                                     </div>
                                 </span>
@@ -91,7 +91,7 @@
                             <div class="input-group">
                                 <input type="password" placeholder="Confirm Password" class="form-control" id="password_confirmation" name="password_confirmation">
                                 <span class="input-group-text" style="height: 55px">
-                                    <div id="togglePassword2">
+                                    <div id="togglePassword2"  style="cursor: pointer">
                                         <i class="fa fa-eye fs-3"></i>
                                     </div>
                                 </span>

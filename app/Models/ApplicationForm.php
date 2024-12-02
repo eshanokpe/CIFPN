@@ -20,7 +20,7 @@ class ApplicationForm extends Model
         'work_experience_path',
         'professional_certifications_path',
         'identification_path',
-        'applicant_status',
+        'applicant_status', 
         'payment_option',
         'fee_acknowledged',
         'reference', 

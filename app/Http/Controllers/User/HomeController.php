@@ -21,17 +21,27 @@ class HomeController extends Controller
         $this->middleware(['auth', 'verified']);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('portal.dashboard.index');
+    public function checkApplicationStatus()
+    { 
+        $user = Auth::user(); 
+        
+        return ApplicationForm::where('user_id', $user->id)
+                                ->where('user_email', $user->email)
+                                // ->where('applicant_status', 'approved')
+                                ->first();
     }
 
-   
+    public function index()
+    {
+        $applicationSubmitted = $this->checkApplicationStatus();
+        // dd($applicationSubmitted);
+        if ($applicationSubmitted) {
+            return view('portal.dashboard.index');
+        } else {
+            return redirect()->route('user.application.create',compact('applicationSubmitted'));
+        } 
+    }
+
     public function transactions()
     {
         $id = Auth::user()->id;
@@ -40,17 +50,24 @@ class HomeController extends Controller
                                        ->where('user_email', $email)
                                        ->get();
 
-        return view('portal.dashboard.transactions', compact('id', 'email', 'transactionhistory'));
+        return view('portal.dashboard.transactions.index', compact('id', 'email', 'transactionhistory'));
     }
 
-    public function deletetransactionhistory(Request $request){
-        $id =  $request->itemId;
-        $history = ProcessHistory::findOrFail($id);
-        $history->delete();
-        return response()->json([
-            'message' => 'Transaction History deleted successfully', 
-        ]);
+    public function transactionShow($transactionId)
+    {
+        $userId = Auth::user()->id;
+    
+        $transaction = Transaction::where('id', decrypt($transactionId)) // Assuming you pass the encrypted transaction id
+                                    ->where('user_id', $userId)
+                                    ->first(); // Use first() to get a single transaction
+    
+        if (!$transaction) {
+            return redirect()->back()->with('error', 'Transaction not found or unauthorized access.');
+        }
+    
+        return view('portal.dashboard.transactions.show', compact('transaction'));
     }
+    
 
     public function updateProfile(Request $request){
         $validated = Validator::make($request->all(), [

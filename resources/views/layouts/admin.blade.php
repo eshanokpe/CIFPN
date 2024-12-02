@@ -34,6 +34,11 @@
     <link href="{{ asset ('backend/vendor/datatables/responsive/responsive.css')}}" rel="stylesheet">
     <link href="{{ asset ('backend/vendor/dropzone/dist/dropzone.css')}}" rel="stylesheet">
     <link href="{{ asset ('backend/vendor/nestable2/css/jquery.nestable.min.css')}}" rel="stylesheet">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     
 </head>
 
 <body>
@@ -145,6 +150,33 @@
 			}, 1000); 
 		});
     </script>
+     <style>
+        /* Increase font size of Toastr */
+        #toast-container > .toast {
+            font-size: 18px; /* You can change 18px to any size you want */
+        }
+    </style>
+    <script>
+        @if(session('status'))
+            $(document).ready(function() {
+                toastr.success("{{ session('status') }}");
+            });
+        @endif
+        @if(session('success'))
+            $(document).ready(function() {
+                toastr.success("{{ session('success') }}");
+            });
+        @endif
+    
+        @if($errors->any())
+            $(document).ready(function() {
+                @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}");
+                @endforeach
+            });
+        @endif
+    </script>
+    
 
 </body>
 

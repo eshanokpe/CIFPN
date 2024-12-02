@@ -26,6 +26,7 @@ use App\Models\Career;
 use App\Models\ContactForm;
 use App\Models\Service;
 use App\Models\Livestream;
+use App\Models\ApplicationForm;
 use App\Models\Event;
 use App\Models\ExamRequirement;
 use App\Models\ProgrammeExamination;
@@ -86,6 +87,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('livestream', Livestream::latest()->paginate(20)); 
         View::share('advisoryBoardMember', AdvisoryBoardMember::latest()->paginate(20));
         View::share('transactions', Transaction::latest()->paginate(20)); 
+        View::share('application', ApplicationForm::first()); 
 
         
 

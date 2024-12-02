@@ -14,16 +14,19 @@ class Transaction extends Model
         'user_id',
         'user_email',
         'amount',
-        'payment_status',
+        'status',
         'transaction_type',
-        'transaction_reference',
+        'payment_instrument',
+        'transaction_reference', 
+        'order_no',
+        'currency',
     ];
 
     public function application()
     {
         return $this->belongsTo(ApplicationForm::class);
     }
-
+ 
     public function user()
     {
         return $this->belongsTo(User::class);
